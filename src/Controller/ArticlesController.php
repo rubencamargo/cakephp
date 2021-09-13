@@ -59,7 +59,13 @@ class ArticlesController extends AppController
             }
             $this->Flash->error(__('The article could not be saved. Please, try again.'));
         }
-        $users = $this->Articles->Users->find('list', ['limit' => 200]);
+        $users = $this->Articles->Users->find('list', [
+            'limit' => 200,
+            'keyField' => 'id',
+            'valueField' => function ($article) {
+                return $article->get('label');
+            }
+        ]);
         $tags = $this->Articles->Tags->find('list', ['limit' => 200]);
         $this->set(compact('article', 'users', 'tags'));
     }

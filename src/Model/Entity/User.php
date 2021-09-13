@@ -51,4 +51,9 @@ class User extends Entity
     protected $_hidden = [
         'password',
     ];
+    
+    protected function _getLabel()
+    {
+        return $this->_fields['name'] . ' ' . $this->_fields['lastname'];
+    }
 }

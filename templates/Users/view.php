@@ -19,6 +19,10 @@
             <h3><?= h($user->name) ?></h3>
             <table>
                 <tr>
+                    <th><?= __('Id') ?></th>
+                    <td><?= $this->Number->format($user->id) ?></td>
+                </tr>
+                <tr>
                     <th><?= __('Role') ?></th>
                     <td><?= $user->has('role') ? $this->Html->link($user->role->name, ['controller' => 'Roles', 'action' => 'view', $user->role->id]) : '' ?></td>
                 </tr>
@@ -39,10 +43,6 @@
                     <td><?= h($user->password) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Id') ?></th>
-                    <td><?= $this->Number->format($user->id) ?></td>
-                </tr>
-                <tr>
                     <th><?= __('Created') ?></th>
                     <td><?= h($user->created) ?></td>
                 </tr>
@@ -57,11 +57,11 @@
                 <div class="table-responsive">
                     <table>
                         <tr>
-                            <th><?= __('Id') ?></th>
-                            <th><?= __('User Id') ?></th>
+                            <!-- <th><?= __('Id') ?></th>
+                            <th><?= __('User Id') ?></th> -->
                             <th><?= __('Title') ?></th>
-                            <th><?= __('Slug') ?></th>
-                            <th><?= __('Body') ?></th>
+                            <!-- <th><?= __('Slug') ?></th>
+                            <th><?= __('Body') ?></th> -->
                             <th><?= __('Published') ?></th>
                             <th><?= __('Created') ?></th>
                             <th><?= __('Modified') ?></th>
@@ -69,11 +69,11 @@
                         </tr>
                         <?php foreach ($user->articles as $articles) : ?>
                         <tr>
-                            <td><?= h($articles->id) ?></td>
-                            <td><?= h($articles->user_id) ?></td>
+                            <!-- <td><?= h($articles->id) ?></td>
+                            <td><?= h($articles->user_id) ?></td> -->
                             <td><?= h($articles->title) ?></td>
-                            <td><?= h($articles->slug) ?></td>
-                            <td><?= h($articles->body) ?></td>
+                            <!-- <td><?= h($articles->slug) ?></td>
+                            <td><?= h($articles->body) ?></td> -->
                             <td><?= h($articles->published) ?></td>
                             <td><?= h($articles->created) ?></td>
                             <td><?= h($articles->modified) ?></td>

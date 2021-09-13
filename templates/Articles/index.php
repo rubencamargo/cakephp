@@ -14,7 +14,7 @@
                     <th><?= $this->Paginator->sort('id') ?></th>
                     <th><?= $this->Paginator->sort('user_id') ?></th>
                     <th><?= $this->Paginator->sort('title') ?></th>
-                    <th><?= $this->Paginator->sort('slug') ?></th>
+                    <!-- <th><?= $this->Paginator->sort('slug') ?></th> -->
                     <th><?= $this->Paginator->sort('published') ?></th>
                     <th><?= $this->Paginator->sort('created') ?></th>
                     <th><?= $this->Paginator->sort('modified') ?></th>
@@ -27,7 +27,7 @@
                     <td><?= $this->Number->format($article->id) ?></td>
                     <td><?= $article->has('user') ? $this->Html->link($article->user->name, ['controller' => 'Users', 'action' => 'view', $article->user->id]) : '' ?></td>
                     <td><?= h($article->title) ?></td>
-                    <td><?= h($article->slug) ?></td>
+                    <!-- <td><?= h($article->slug) ?></td> -->
                     <td><?= h($article->published) ?></td>
                     <td><?= h($article->created) ?></td>
                     <td><?= h($article->modified) ?></td>
