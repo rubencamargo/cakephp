@@ -23,11 +23,11 @@
             <fieldset>
                 <legend><?= __('Edit User') ?></legend>
                 <?php
+                    echo $this->Form->control('role_id', ['options' => $roles]);
                     echo $this->Form->control('name');
                     echo $this->Form->control('lastname');
                     echo $this->Form->control('email');
                     echo $this->Form->control('password');
-                    echo $this->Form->control('roles._ids', ['options' => $roles]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

@@ -9,6 +9,7 @@ use Cake\ORM\Entity;
  * User Entity
  *
  * @property int $id
+ * @property int $role_id
  * @property string $name
  * @property string $lastname
  * @property string $email
@@ -16,8 +17,8 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\FrozenTime|null $created
  * @property \Cake\I18n\FrozenTime|null $modified
  *
+ * @property \App\Model\Entity\Role $role
  * @property \App\Model\Entity\Article[] $articles
- * @property \App\Model\Entity\Role[] $roles
  */
 class User extends Entity
 {
@@ -31,14 +32,15 @@ class User extends Entity
      * @var array
      */
     protected $_accessible = [
+        'role_id' => true,
         'name' => true,
         'lastname' => true,
         'email' => true,
         'password' => true,
         'created' => true,
         'modified' => true,
+        'role' => true,
         'articles' => true,
-        'roles' => true,
     ];
 
     /**

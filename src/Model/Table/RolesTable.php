@@ -11,7 +11,7 @@ use Cake\Validation\Validator;
 /**
  * Roles Model
  *
- * @property \App\Model\Table\UsersTable&\Cake\ORM\Association\BelongsToMany $Users
+ * @property \App\Model\Table\UsersTable&\Cake\ORM\Association\HasMany $Users
  *
  * @method \App\Model\Entity\Role newEmptyEntity()
  * @method \App\Model\Entity\Role newEntity(array $data, array $options = [])
@@ -42,15 +42,13 @@ class RolesTable extends Table
         parent::initialize($config);
 
         $this->setTable('roles');
-        $this->setDisplayField('id');
+        $this->setDisplayField('name');
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
 
-        $this->belongsToMany('Users', [
+        $this->hasMany('Users', [
             'foreignKey' => 'role_id',
-            'targetForeignKey' => 'user_id',
-            'joinTable' => 'users_roles',
         ]);
     }
 
@@ -67,9 +65,10 @@ class RolesTable extends Table
             ->allowEmptyString('id', null, 'create');
 
         $validator
-            ->integer('role')
-            ->requirePresence('role', 'create')
-            ->notEmptyString('role');
+            ->scalar('name')
+            ->maxLength('name', 100)
+            ->requirePresence('name', 'create')
+            ->notEmptyString('name');
 
         return $validator;
     }

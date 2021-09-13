@@ -18,6 +18,7 @@ class UsersFixture extends TestFixture
     // phpcs:disable
     public $fields = [
         'id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
+        'role_id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'name' => ['type' => 'string', 'length' => 200, 'null' => false, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null],
         'lastname' => ['type' => 'string', 'length' => 200, 'null' => false, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null],
         'email' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null],
@@ -43,12 +44,13 @@ class UsersFixture extends TestFixture
         $this->records = [
             [
                 'id' => 1,
+                'role_id' => 1,
                 'name' => 'Lorem ipsum dolor sit amet',
                 'lastname' => 'Lorem ipsum dolor sit amet',
                 'email' => 'Lorem ipsum dolor sit amet',
                 'password' => 'Lorem ipsum dolor sit amet',
-                'created' => '2021-09-13 21:02:15',
-                'modified' => '2021-09-13 21:02:15',
+                'created' => '2021-09-13 21:37:28',
+                'modified' => '2021-09-13 21:37:28',
             ],
         ];
         parent::init();

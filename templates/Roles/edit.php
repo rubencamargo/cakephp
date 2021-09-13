@@ -2,7 +2,6 @@
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Role $role
- * @var string[]|\Cake\Collection\CollectionInterface $users
  */
 ?>
 <div class="row">
@@ -23,8 +22,7 @@
             <fieldset>
                 <legend><?= __('Edit Role') ?></legend>
                 <?php
-                    echo $this->Form->control('role');
-                    echo $this->Form->control('users._ids', ['options' => $users]);
+                    echo $this->Form->control('name');
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

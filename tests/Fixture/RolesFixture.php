@@ -18,7 +18,7 @@ class RolesFixture extends TestFixture
     // phpcs:disable
     public $fields = [
         'id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
-        'role' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'name' => ['type' => 'string', 'length' => 100, 'null' => false, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null],
         'created' => ['type' => 'datetime', 'length' => null, 'precision' => null, 'null' => false, 'default' => null, 'comment' => ''],
         'modified' => ['type' => 'datetime', 'length' => null, 'precision' => null, 'null' => false, 'default' => null, 'comment' => ''],
         '_constraints' => [
@@ -40,9 +40,9 @@ class RolesFixture extends TestFixture
         $this->records = [
             [
                 'id' => 1,
-                'role' => 1,
-                'created' => '2021-09-13 21:02:35',
-                'modified' => '2021-09-13 21:02:35',
+                'name' => 'Lorem ipsum dolor sit amet',
+                'created' => '2021-09-13 21:37:00',
+                'modified' => '2021-09-13 21:37:00',
             ],
         ];
         parent::init();
