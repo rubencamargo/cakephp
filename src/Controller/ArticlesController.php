@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Cake\Utility\Text;
+
 /**
  * Articles Controller
  *
@@ -82,13 +84,19 @@ class ArticlesController extends AppController
         $article = $this->Articles->get($id, [
             'contain' => ['Tags'],
         ]);
+        
         if ($this->request->is(['patch', 'post', 'put'])) {
             $article = $this->Articles->patchEntity($article, $this->request->getData());
+            
+            if ($article['slug'] == "") {
+                $article['slug'] = strtolower(Text::slug($article['title']));
+            }
+            
             if ($this->Articles->save($article)) {
                 $this->Flash->success(__('The article has been saved.'));
-
                 return $this->redirect(['action' => 'index']);
             }
+            
             $this->Flash->error(__('The article could not be saved. Please, try again.'));
         }
         $users = $this->Articles->Users->find('list', ['limit' => 200]);

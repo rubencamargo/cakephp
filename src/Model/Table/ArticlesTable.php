@@ -8,6 +8,9 @@ use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
+use Cake\Utility\Text;
+use Cake\Event\EventInterface;
+
 /**
  * Articles Model
  *
@@ -59,6 +62,14 @@ class ArticlesTable extends Table
         ]);
     }
 
+    public function beforeSave(EventInterface $event, $entity, $options)
+    {
+        if ($entity->isNew() && !$entity->slug) {
+            $sluggedTitle = Text::slug($entity->title);
+            $entity->slug = substr($sluggedTitle, 0, 200);
+        }
+    }
+    
     /**
      * Default validation rules.
      *
@@ -77,12 +88,12 @@ class ArticlesTable extends Table
             ->requirePresence('title', 'create')
             ->notEmptyString('title');
 
-        $validator
-            ->scalar('slug')
-            ->maxLength('slug', 255)
-            ->requirePresence('slug', 'create')
-            ->notEmptyString('slug')
-            ->add('slug', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
+//         $validator
+//             ->scalar('slug')
+//             ->maxLength('slug', 255)
+//             ->requirePresence('slug', 'create')
+//             ->notEmptyString('slug')
+//             ->add('slug', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
             ->scalar('body')
@@ -104,7 +115,7 @@ class ArticlesTable extends Table
      */
     public function buildRules(RulesChecker $rules): RulesChecker
     {
-        $rules->add($rules->isUnique(['slug']), ['errorField' => 'slug']);
+        //$rules->add($rules->isUnique(['slug']), ['errorField' => 'slug']);
         $rules->add($rules->existsIn(['user_id'], 'Users'), ['errorField' => 'user_id']);
 
         return $rules;
