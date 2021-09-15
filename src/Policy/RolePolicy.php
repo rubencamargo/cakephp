@@ -20,6 +20,7 @@ class RolePolicy
      */
     public function canAdd(IdentityInterface $user, Role $role)
     {
+        return $this->isAdmin($user);
     }
 
     /**
@@ -31,6 +32,7 @@ class RolePolicy
      */
     public function canEdit(IdentityInterface $user, Role $role)
     {
+        return $this->isAdmin($user);
     }
 
     /**
@@ -42,6 +44,7 @@ class RolePolicy
      */
     public function canDelete(IdentityInterface $user, Role $role)
     {
+        return $this->isAdmin($user);
     }
 
     /**
@@ -53,5 +56,11 @@ class RolePolicy
      */
     public function canView(IdentityInterface $user, Role $role)
     {
+        return $this->isAdmin($user);
+    }
+    
+    protected function isAdmin(IdentityInterface $user)
+    {
+        return $user->role_id === 1;
     }
 }

@@ -19,8 +19,12 @@
             <h3><?= h($article->title) ?></h3>
             <table>
                 <tr>
+                    <th><?= __('Id') ?></th>
+                    <td><?= $this->Number->format($article->id) ?></td>
+                </tr>
+                <tr>
                     <th><?= __('User') ?></th>
-                    <td><?= $article->has('user') ? $this->Html->link($article->user->name, ['controller' => 'Users', 'action' => 'view', $article->user->id]) : '' ?></td>
+                    <td><?= $article->has('user') ? $article->user->name . ' ' . $article->user->lastname : '' ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Title') ?></th>
@@ -31,16 +35,12 @@
                     <td><?= h($article->slug) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Id') ?></th>
-                    <td><?= $this->Number->format($article->id) ?></td>
-                </tr>
-                <tr>
                     <th><?= __('Created') ?></th>
-                    <td><?= h($article->created) ?></td>
+                    <td><?= h($article->created->format('d/m/y H:i:s')) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Modified') ?></th>
-                    <td><?= h($article->modified) ?></td>
+                    <td><?= h($article->modified->format('d/m/y H:i:s')) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Published') ?></th>
@@ -69,8 +69,8 @@
                         <tr>
                             <td><?= h($tags->id) ?></td>
                             <td><?= h($tags->title) ?></td>
-                            <td><?= h($tags->created) ?></td>
-                            <td><?= h($tags->modified) ?></td>
+                            <td><?= h($tags->created->format('d/m/y H:i:s')) ?></td>
+                            <td><?= h($tags->modified->format('d/m/y H:i:s')) ?></td>
                             <td class="actions">
                                 <?= $this->Html->link(__('View'), ['controller' => 'Tags', 'action' => 'view', $tags->id]) ?>
                                 <?= $this->Html->link(__('Edit'), ['controller' => 'Tags', 'action' => 'edit', $tags->id]) ?>

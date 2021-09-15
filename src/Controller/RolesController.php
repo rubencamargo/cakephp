@@ -18,6 +18,10 @@ class RolesController extends AppController
      */
     public function index()
     {
+        $this->loadModel('Users');
+        $user = $this->Users->get($this->request->getSession()->read('Auth.id'));
+        $this->Authorization->authorize($user);
+        
         $roles = $this->paginate($this->Roles);
 
         $this->set(compact('roles'));
@@ -32,6 +36,10 @@ class RolesController extends AppController
      */
     public function view($id = null)
     {
+        $this->loadModel('Users');
+        $user = $this->Users->get($this->request->getSession()->read('Auth.id'));
+        $this->Authorization->authorize($user);
+        
         $role = $this->Roles->get($id, [
             'contain' => ['Users'],
         ]);
@@ -46,7 +54,12 @@ class RolesController extends AppController
      */
     public function add()
     {
+        $this->loadModel('Users');
+        $user = $this->Users->get($this->request->getSession()->read('Auth.id'));
+        $this->Authorization->authorize($user);
+        
         $role = $this->Roles->newEmptyEntity();
+        
         if ($this->request->is('post')) {
             $role = $this->Roles->patchEntity($role, $this->request->getData());
             if ($this->Roles->save($role)) {
@@ -56,6 +69,7 @@ class RolesController extends AppController
             }
             $this->Flash->error(__('The role could not be saved. Please, try again.'));
         }
+        
         $this->set(compact('role'));
     }
 
@@ -68,16 +82,23 @@ class RolesController extends AppController
      */
     public function edit($id = null)
     {
+        $this->loadModel('Users');
+        $user = $this->Users->get($this->request->getSession()->read('Auth.id'));
+        $this->Authorization->authorize($user);
+        
         $role = $this->Roles->get($id, [
             'contain' => [],
         ]);
+        
         if ($this->request->is(['patch', 'post', 'put'])) {
             $role = $this->Roles->patchEntity($role, $this->request->getData());
+            
             if ($this->Roles->save($role)) {
                 $this->Flash->success(__('The role has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
+            
             $this->Flash->error(__('The role could not be saved. Please, try again.'));
         }
         $this->set(compact('role'));
@@ -92,8 +113,13 @@ class RolesController extends AppController
      */
     public function delete($id = null)
     {
+        $this->loadModel('Users');
+        $user = $this->Users->get($this->request->getSession()->read('Auth.id'));
+        $this->Authorization->authorize($user);
+        
         $this->request->allowMethod(['post', 'delete']);
         $role = $this->Roles->get($id);
+        
         if ($this->Roles->delete($role)) {
             $this->Flash->success(__('The role has been deleted.'));
         } else {

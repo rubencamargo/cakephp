@@ -34,7 +34,7 @@ class ArticlePolicy
     public function canEdit(IdentityInterface $user, Article $article)
     {
         // logged in users can edit their own articles.
-        return $this->isAuthor($user, $article);
+        return ($this->isAuthor($user, $article) || $this->isAdmin($user));
     }
 
     /**
@@ -65,5 +65,10 @@ class ArticlePolicy
     protected function isAuthor(IdentityInterface $user, Article $article)
     {
         return $article->user_id === $user->getIdentifier();
+    }
+    
+    protected function isAdmin(IdentityInterface $user)
+    {
+        return $user->role_id === 1;
     }
 }

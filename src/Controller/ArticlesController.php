@@ -23,7 +23,7 @@ class ArticlesController extends AppController
         $this->Authorization->skipAuthorization();
         
         $this->paginate = [
-            'contain' => ['Users'],
+            'contain' => ['Users', 'Tags'],
         ];
         $articles = $this->paginate($this->Articles);
 

@@ -18,6 +18,10 @@ class TagsController extends AppController
      */
     public function index()
     {
+        $this->loadModel('Users');
+        $user = $this->Users->get($this->request->getSession()->read('Auth.id'));
+        $this->Authorization->authorize($user);
+        
         $tags = $this->paginate($this->Tags);
 
         $this->set(compact('tags'));
@@ -32,6 +36,10 @@ class TagsController extends AppController
      */
     public function view($id = null)
     {
+        $this->loadModel('Users');
+        $user = $this->Users->get($this->request->getSession()->read('Auth.id'));
+        $this->Authorization->authorize($user);
+        
         $tag = $this->Tags->get($id, [
             'contain' => ['Articles'],
         ]);
@@ -46,7 +54,12 @@ class TagsController extends AppController
      */
     public function add()
     {
+        $this->loadModel('Users');
+        $user = $this->Users->get($this->request->getSession()->read('Auth.id'));
+        $this->Authorization->authorize($user);
+        
         $tag = $this->Tags->newEmptyEntity();
+        
         if ($this->request->is('post')) {
             $tag = $this->Tags->patchEntity($tag, $this->request->getData());
             if ($this->Tags->save($tag)) {
@@ -56,6 +69,7 @@ class TagsController extends AppController
             }
             $this->Flash->error(__('The tag could not be saved. Please, try again.'));
         }
+        
         $articles = $this->Tags->Articles->find('list', ['limit' => 200]);
         $this->set(compact('tag', 'articles'));
     }
@@ -69,9 +83,14 @@ class TagsController extends AppController
      */
     public function edit($id = null)
     {
+        $this->loadModel('Users');
+        $user = $this->Users->get($this->request->getSession()->read('Auth.id'));
+        $this->Authorization->authorize($user);
+        
         $tag = $this->Tags->get($id, [
             'contain' => ['Articles'],
         ]);
+        
         if ($this->request->is(['patch', 'post', 'put'])) {
             $tag = $this->Tags->patchEntity($tag, $this->request->getData());
             if ($this->Tags->save($tag)) {
@@ -81,6 +100,7 @@ class TagsController extends AppController
             }
             $this->Flash->error(__('The tag could not be saved. Please, try again.'));
         }
+        
         $articles = $this->Tags->Articles->find('list', ['limit' => 200]);
         $this->set(compact('tag', 'articles'));
     }
@@ -94,8 +114,13 @@ class TagsController extends AppController
      */
     public function delete($id = null)
     {
+        $this->loadModel('Users');
+        $user = $this->Users->get($this->request->getSession()->read('Auth.id'));
+        $this->Authorization->authorize($user);
+        
         $this->request->allowMethod(['post', 'delete']);
         $tag = $this->Tags->get($id);
+        
         if ($this->Tags->delete($tag)) {
             $this->Flash->success(__('The tag has been deleted.'));
         } else {

@@ -15,6 +15,7 @@
                     <th><?= $this->Paginator->sort('user_id') ?></th>
                     <th><?= $this->Paginator->sort('title') ?></th>
                     <!-- <th><?= $this->Paginator->sort('slug') ?></th> -->
+                    <th>Tags</th>
                     <th><?= $this->Paginator->sort('published') ?></th>
                     <th><?= $this->Paginator->sort('created') ?></th>
                     <th><?= $this->Paginator->sort('modified') ?></th>
@@ -25,12 +26,19 @@
                 <?php foreach ($articles as $article): ?>
                 <tr>
                     <td><?= $this->Number->format($article->id) ?></td>
-                    <td><?= $article->has('user') ? $this->Html->link($article->user->name, ['controller' => 'Users', 'action' => 'view', $article->user->id]) : '' ?></td>
+                    <td><?= $article->has('user') ? $article->user->name . ' ' . $article->user->lastname : '' ?></td>
                     <td><?= h($article->title) ?></td>
                     <!-- <td><?= h($article->slug) ?></td> -->
-                    <td><?= h($article->published) ?></td>
-                    <td><?= h($article->created) ?></td>
-                    <td><?= h($article->modified) ?></td>
+                    <td>
+                    	<?php
+                    	    foreach ($article->tags as $tag) {
+                    		    echo $tag->title . ' ';
+                    	    }
+                    	?>
+                    </td>
+                    <td><?= $article->published ? __('Yes') : __('No'); ?></td>
+                    <td><?= h($article->created->format('d/m/y H:i:s')) ?></td>
+                    <td><?= h($article->modified->format('d/m/y H:i:s')) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $article->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $article->id]) ?>

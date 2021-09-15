@@ -20,6 +20,7 @@ class UserPolicy
      */
     public function canAdd(IdentityInterface $user, User $resource)
     {
+        return true;
     }
 
     /**
@@ -31,6 +32,7 @@ class UserPolicy
      */
     public function canEdit(IdentityInterface $user, User $resource)
     {
+        return ($this->isAdmin($user) || $this->isProfile($user, $resource));
     }
 
     /**
@@ -42,6 +44,7 @@ class UserPolicy
      */
     public function canDelete(IdentityInterface $user, User $resource)
     {
+        return $this->isAdmin($user);
     }
 
     /**
@@ -53,5 +56,21 @@ class UserPolicy
      */
     public function canView(IdentityInterface $user, User $resource)
     {
+        return ($this->isAdmin($user) || $this->isProfile($user, $resource));
+    }
+    
+    public function canIndex(IdentityInterface $user, User $resource)
+    {
+        return $this->isAdmin($user);
+    }
+    
+    protected function isAdmin(IdentityInterface $user)
+    {
+        return $user->role_id === 1;
+    }
+    
+    protected function isProfile(IdentityInterface $user, User $resource)
+    {
+        return $user->id === $resource->id;
     }
 }

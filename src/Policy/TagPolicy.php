@@ -20,6 +20,7 @@ class TagPolicy
      */
     public function canAdd(IdentityInterface $user, Tag $tag)
     {
+        return $this->isAdmin($user);
     }
 
     /**
@@ -31,6 +32,7 @@ class TagPolicy
      */
     public function canEdit(IdentityInterface $user, Tag $tag)
     {
+        return $this->isAdmin($user);
     }
 
     /**
@@ -42,6 +44,7 @@ class TagPolicy
      */
     public function canDelete(IdentityInterface $user, Tag $tag)
     {
+        return $this->isAdmin($user);
     }
 
     /**
@@ -53,5 +56,11 @@ class TagPolicy
      */
     public function canView(IdentityInterface $user, Tag $tag)
     {
+        return $this->isAdmin($user);
+    }
+    
+    protected function isAdmin(IdentityInterface $user)
+    {
+        return $user->role_id === 1;
     }
 }

@@ -61,6 +61,9 @@ class UsersController extends AppController
      */
     public function index()
     {
+        $user = $this->Users->get($this->request->getSession()->read('Auth.id'));
+        $this->Authorization->authorize($user);
+        
         $this->paginate = [
             'contain' => ['Roles'],
         ];
@@ -81,6 +84,8 @@ class UsersController extends AppController
         $user = $this->Users->get($id, [
             'contain' => ['Roles', 'Articles'],
         ]);
+        
+        $this->Authorization->authorize($user);
 
         $this->set(compact('user'));
     }
@@ -94,6 +99,7 @@ class UsersController extends AppController
     {
         $this->Authorization->skipAuthorization();
         $user = $this->Users->newEmptyEntity();
+        
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
@@ -103,6 +109,7 @@ class UsersController extends AppController
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
+        
         $roles = $this->Users->Roles->find('list', ['limit' => 200]);
         $this->set(compact('user', 'roles'));
     }
@@ -116,9 +123,12 @@ class UsersController extends AppController
      */
     public function edit($id = null)
     {
-        $user = $this->Users->get($id, [
-            'contain' => [],
-        ]);
+        $user = $this->Users->get($id);
+        //$resourse = $this->Users->get($this->request->getSession()->read('Auth.id'));
+        
+        //$resourse = (string)$resourse->id;
+        $this->Authorization->authorize($user);
+        
         if ($this->request->is(['patch', 'post', 'put'])) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
@@ -128,6 +138,7 @@ class UsersController extends AppController
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
+        
         $roles = $this->Users->Roles->find('list', ['limit' => 200]);
         $this->set(compact('user', 'roles'));
     }
@@ -143,6 +154,9 @@ class UsersController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         $user = $this->Users->get($id);
+        
+        $this->Authorization->authorize($user);
+        
         if ($this->Users->delete($user)) {
             $this->Flash->success(__('The user has been deleted.'));
         } else {
