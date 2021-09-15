@@ -40,20 +40,30 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <div class="top-nav-title">
             <a href="<?= $this->Url->build('/') ?>"><span>Cake</span>PHP</a>
         </div>
+        
         <div class="top-nav-links">
-            <a href="users">Users</a>
-            <a href="roles">Roles</a>
-            <a href="articles">Articles</a>
-            <a href="tags">Tags</a>
+        	<?php if ($this->request->getSession()->check('Auth')) { ?>
+            <a href="<?= $this->Url->build('/') ?>users/edit/<?= $this->request->getSession()->read('Auth.id') ?>"><?= $this->request->getSession()->read('Auth.name') . ' ' . $this->request->getSession()->read('Auth.lastname') ?></a>
+            <a href="<?= $this->Url->build('/') ?>users">Users</a>
+            <a href="<?= $this->Url->build('/') ?>roles">Roles</a>
+            <a href="<?= $this->Url->build('/') ?>articles">Articles</a>
+            <a href="<?= $this->Url->build('/') ?>tags">Tags</a>
+            <a href="<?= $this->Url->build('/') ?>users/logout">Logout</a>
+            <?php } else { ?>
+            <a href="<?= $this->Url->build('/') ?>users/login">Login</a>
+            <?php } ?>
         </div>
     </nav>
+    
     <main class="main">
         <div class="container">
             <?= $this->Flash->render() ?>
             <?= $this->fetch('content') ?>
         </div>
     </main>
+    
     <footer>
+    	
     </footer>
 </body>
 </html>

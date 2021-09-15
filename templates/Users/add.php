@@ -18,7 +18,7 @@
             <fieldset>
                 <legend><?= __('Add User') ?></legend>
                 <?php
-                    echo $this->Form->control('role_id', ['options' => $roles]);
+                    echo $this->Form->hidden('role_id', ['options' => $roles, 'value' => 2]);
                     echo $this->Form->control('name');
                     echo $this->Form->control('lastname');
                     echo $this->Form->control('email');
