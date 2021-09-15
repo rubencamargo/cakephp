@@ -20,6 +20,8 @@ class ArticlesController extends AppController
      */
     public function index()
     {
+        $this->Authorization->skipAuthorization();
+        
         $this->paginate = [
             'contain' => ['Users'],
         ];
@@ -37,6 +39,8 @@ class ArticlesController extends AppController
      */
     public function view($id = null)
     {
+        $this->Authorization->skipAuthorization();
+        
         $article = $this->Articles->get($id, [
             'contain' => ['Users', 'Tags'],
         ]);
@@ -52,15 +56,22 @@ class ArticlesController extends AppController
     public function add()
     {
         $article = $this->Articles->newEmptyEntity();
+        $this->Authorization->authorize($article);
+        
         if ($this->request->is('post')) {
             $article = $this->Articles->patchEntity($article, $this->request->getData());
+            
+            // Changed: Set the user_id from the current user.
+            $article->user_id = $this->request->getAttribute('identity')->getIdentifier();
+            
             if ($this->Articles->save($article)) {
                 $this->Flash->success(__('The article has been saved.'));
-
                 return $this->redirect(['action' => 'index']);
             }
+            
             $this->Flash->error(__('The article could not be saved. Please, try again.'));
         }
+        
         $users = $this->Articles->Users->find('list', [
             'limit' => 200,
             'keyField' => 'id',
@@ -68,6 +79,7 @@ class ArticlesController extends AppController
                 return $article->get('label');
             }
         ]);
+        
         $tags = $this->Articles->Tags->find('list', ['limit' => 200]);
         $this->set(compact('article', 'users', 'tags'));
     }
@@ -85,8 +97,13 @@ class ArticlesController extends AppController
             'contain' => ['Tags'],
         ]);
         
+        $this->Authorization->authorize($article);
+        
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $article = $this->Articles->patchEntity($article, $this->request->getData());
+            $article = $this->Articles->patchEntity($article, $this->request->getData(), [
+                // Added: Disable modification of user_id.
+                'accessibleFields' => ['user_id' => false]
+            ]);
             
             if ($article['slug'] == "") {
                 $article['slug'] = strtolower(Text::slug($article['title']));
@@ -99,6 +116,7 @@ class ArticlesController extends AppController
             
             $this->Flash->error(__('The article could not be saved. Please, try again.'));
         }
+        
         $users = $this->Articles->Users->find('list', ['limit' => 200]);
         $tags = $this->Articles->Tags->find('list', ['limit' => 200]);
         $this->set(compact('article', 'users', 'tags'));
@@ -115,6 +133,9 @@ class ArticlesController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         $article = $this->Articles->get($id);
+        
+        $this->Authorization->authorize($article);
+        
         if ($this->Articles->delete($article)) {
             $this->Flash->success(__('The article has been deleted.'));
         } else {
