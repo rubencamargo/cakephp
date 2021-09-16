@@ -46,10 +46,10 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         		<a href="<?= $this->Url->build('/') ?>users/edit/<?= $this->request->getSession()->read('Auth.id') ?>"><?= $this->request->getSession()->read('Auth.name') . ' ' . $this->request->getSession()->read('Auth.lastname') ?></a>
         		
             	<?php if ($this->request->getSession()->read('Auth.role_id') == 1) { ?>
-                    <a href="<?= $this->Url->build('/') ?>users">Users</a>
-                    <a href="<?= $this->Url->build('/') ?>roles">Roles</a>
                     <a href="<?= $this->Url->build('/') ?>articles">Articles</a>
                     <a href="<?= $this->Url->build('/') ?>tags">Tags</a>
+                    <a href="<?= $this->Url->build('/') ?>users">Users</a>
+                    <a href="<?= $this->Url->build('/') ?>roles">Roles</a>
                 <?php } ?>
                 <a href="<?= $this->Url->build('/') ?>users/logout">Logout</a>
                 <?php } else { ?>
