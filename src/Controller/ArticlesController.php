@@ -26,7 +26,9 @@ class ArticlesController extends AppController
         
         $this->paginate = [
             'contain' => ['Users', 'Tags'],
+            'conditions' => ['Published' => 1]
         ];
+        
         $articles = $this->paginate($this->Articles);
         
         $this->set(compact('articles'));
@@ -99,6 +101,10 @@ class ArticlesController extends AppController
             
             // Changed: Set the user_id from the current user.
             $article->user_id = $this->request->getAttribute('identity')->getIdentifier();
+            
+            //if ($article['slug'] == "") {
+                $article['slug'] = strtolower(Text::slug($article['title']));
+            //}
             
             if ($this->Articles->save($article)) {
                 $this->Flash->success(__('The article has been saved.'));

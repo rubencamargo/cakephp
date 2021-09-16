@@ -43,15 +43,15 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         
         <div class="top-nav-links">
         	<?php if ($this->request->getSession()->check('Auth')) { ?>
-        		<a href="<?= $this->Url->build('/') ?>users/edit/<?= $this->request->getSession()->read('Auth.id') ?>"><?= $this->request->getSession()->read('Auth.name') . ' ' . $this->request->getSession()->read('Auth.lastname') ?></a>
-        		
-            	<?php if ($this->request->getSession()->read('Auth.role_id') == 1) { ?>
+        		<?php if ($this->request->getSession()->read('Auth.role_id') == 1) { ?>
+                    <a href="<?= $this->Url->build('/') ?>articles/blog">Blog</a>
                     <a href="<?= $this->Url->build('/') ?>articles">Articles</a>
                     <a href="<?= $this->Url->build('/') ?>tags">Tags</a>
                     <a href="<?= $this->Url->build('/') ?>users">Users</a>
                     <a href="<?= $this->Url->build('/') ?>roles">Roles</a>
                 <?php } ?>
-                <a href="<?= $this->Url->build('/') ?>users/logout">Logout</a>
+                <a href="<?= $this->Url->build('/') ?>users/edit/<?= $this->request->getSession()->read('Auth.id') ?>"><?= $this->request->getSession()->read('Auth.name') . ' ' . $this->request->getSession()->read('Auth.lastname') ?></a>
+        		<a href="<?= $this->Url->build('/') ?>users/logout">Logout</a>
                 <?php } else { ?>
                 <a href="<?= $this->Url->build('/') ?>users/login">Login</a>
             

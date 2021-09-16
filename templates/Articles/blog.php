@@ -1,55 +1,41 @@
-<?php
-/**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\Article[]|\Cake\Collection\CollectionInterface $articles
- */
-?>
 <div class="articles index content">
     <h3><?= __('Blog') ?></h3>
-    <div class="table-responsive">
-        <table>
-            <thead>
-                <tr>
-                    <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('user_id') ?></th>
-                    <th><?= $this->Paginator->sort('title') ?></th>
-                    <!-- <th><?= $this->Paginator->sort('slug') ?></th> -->
-                    <th>Tags</th>
-                    <th><?= $this->Paginator->sort('published') ?></th>
-                    <th><?= $this->Paginator->sort('created') ?></th>
-                    <th><?= $this->Paginator->sort('modified') ?></th>
-                    <!-- <th class="actions"><?= __('Actions') ?></th> -->
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($articles as $article): ?>
-                <tr>
-                    <td><?= $this->Number->format($article->id) ?></td>
-                    <td><?= $article->has('user') ? $article->user->name . ' ' . $article->user->lastname : '' ?></td>
-                    <td><?= h($article->title) ?></td>
-                    <!-- <td><?= h($article->slug) ?></td> -->
-                    <td>
+</div>
+
+<br />
+
+<?php
+$columns = 3;
+$porcentByPost = floor(100 / $columns);
+$i = 1;
+?>
+
+<div class="row">
+    <?php foreach ($articles as $article): ?>
+        <?php if ($i > $columns) {echo '</div><br /><div class="row">'; $i = 1;} ?>
+            <div class="column-responsive column-<?= $porcentByPost ?>">
+            	<div class="articles view content">
+                    <h3><?= h($article->id) ?> <?= h($article->title) ?></h3>
+                    <p>
+                    	<?= h($article->created->format('d/m/Y')) ?>
+                    </p>
+                    <p>
+                    	<?= __('Tags') ?>:
                     	<?php
                     	    foreach ($article->tags as $tag) {
                     		    echo $tag->title . ' ';
                     	    }
                     	?>
-                    </td>
-                    <td><?= $article->published ? __('Yes') : __('No'); ?></td>
-                    <td><?= h($article->created->format('d/m/y H:i:s')) ?></td>
-                    <td><?= h($article->modified->format('d/m/y H:i:s')) ?></td>
-                    <!-- 
-                    <td class="actions">
-                        <?= $this->Html->link(__('View'), ['action' => 'view', $article->id]) ?>
-                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $article->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $article->id], ['confirm' => __('Are you sure you want to delete # {0}?', $article->id)]) ?>
-                    </td>
-                    -->
-                </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </div>
+                    </p>
+                </div>
+            </div>
+        <?php $i++; ?>
+    <?php endforeach; ?>
+</div>
+
+<br />
+
+<div class="articles index content">
     <div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->first('<< ' . __('first')) ?>
