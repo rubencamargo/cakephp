@@ -19,7 +19,7 @@ class UserPolicy
      * @return bool
      */
     public function canAdd(IdentityInterface $user, User $resource)
-    {debug('User');die($user);
+    {
         return true;
     }
 
@@ -31,7 +31,7 @@ class UserPolicy
      * @return bool
      */
     public function canEdit(IdentityInterface $user, User $resource)
-    {debug('User');die($user);
+    {
         return ($this->isAdmin($user) || $this->isProfile($user, $resource));
     }
 
