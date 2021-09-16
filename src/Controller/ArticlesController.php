@@ -13,6 +13,13 @@ use Cake\Utility\Text;
  */
 class ArticlesController extends AppController
 {
+    public function beforeFilter(\Cake\Event\EventInterface $event)
+    {
+        parent::beforeFilter($event);
+        // Configure the blog action to not require authentication
+        $this->Authentication->addUnauthenticatedActions(['blog']);
+    }
+    
     public function blog()
     {
         $this->Authorization->skipAuthorization();
