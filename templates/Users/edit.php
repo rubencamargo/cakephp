@@ -23,10 +23,14 @@
             <fieldset>
                 <legend><?= __('Edit User') ?></legend>
                 <?php
-                    echo $this->Form->control('role_id', ['options' => $roles]);
                     echo $this->Form->control('name');
                     echo $this->Form->control('lastname');
-                    echo $this->Form->control('email');
+                    if ($this->request->getSession()->read('Auth.role_id') == 1) {
+                        echo $this->Form->control('role_id', ['options' => $roles]);
+                        echo $this->Form->control('email');
+                    } else {
+                        echo $this->Form->control('email', ['disabled' => 'disabled']);
+                    }
                     echo $this->Form->control('password');
                 ?>
             </fieldset>

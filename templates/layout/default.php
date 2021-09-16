@@ -55,7 +55,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         		<a href="<?= $this->Url->build('/') ?>users/logout">Logout</a>
                 <?php } else { ?>
                 <a href="<?= $this->Url->build('/') ?>users/login">Login</a>
-            
             <?php } ?>
         </div>
     </nav>
