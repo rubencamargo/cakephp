@@ -62,7 +62,12 @@ class UsersController extends AppController
     public function index()
     {
         $user = $this->Users->get($this->request->getSession()->read('Auth.id'));
-        $this->Authorization->authorize($user);
+        
+        //$this->Authorization->authorize($user);
+        if (!$this->Authorization->can($user, 'index')) {
+            $this->Flash->error(__('Restricted access.'));
+            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+        }
         
         $this->paginate = [
             'contain' => ['Roles'],
@@ -85,8 +90,12 @@ class UsersController extends AppController
             'contain' => ['Roles', 'Articles'],
         ]);
         
-        $this->Authorization->authorize($user);
-
+        //$this->Authorization->authorize($user);
+        if (!$this->Authorization->can($user, 'view')) {
+            $this->Flash->error(__('Restricted access.'));
+            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+        }
+        
         $this->set(compact('user'));
     }
 
@@ -102,11 +111,12 @@ class UsersController extends AppController
         
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
+            
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
-
                 return $this->redirect(['action' => 'index']);
             }
+            
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
         
@@ -124,18 +134,21 @@ class UsersController extends AppController
     public function edit($id = null)
     {
         $user = $this->Users->get($id);
-        //$resourse = $this->Users->get($this->request->getSession()->read('Auth.id'));
         
-        //$resourse = (string)$resourse->id;
-        $this->Authorization->authorize($user);
+        //$this->Authorization->authorize($user);
+        if (!$this->Authorization->can($user, 'edit')) {
+            $this->Flash->error(__('Restricted access.'));
+            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+        }
         
         if ($this->request->is(['patch', 'post', 'put'])) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
+            
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
-
                 return $this->redirect(['action' => 'index']);
             }
+            
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
         
@@ -155,7 +168,11 @@ class UsersController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $user = $this->Users->get($id);
         
-        $this->Authorization->authorize($user);
+        //$this->Authorization->authorize($user);
+        if (!$this->Authorization->can($user, 'delete')) {
+            $this->Flash->error(__('Restricted access.'));
+            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+        }
         
         if ($this->Users->delete($user)) {
             $this->Flash->success(__('The user has been deleted.'));

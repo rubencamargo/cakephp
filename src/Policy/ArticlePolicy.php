@@ -62,6 +62,12 @@ class ArticlePolicy
         return true;
     }
     
+    public function canIndex(IdentityInterface $user, Article $article)
+    {
+        // All logged in users can create articles.
+        return true;
+    }
+    
     protected function isAuthor(IdentityInterface $user, Article $article)
     {
         return $article->user_id === $user->getIdentifier();

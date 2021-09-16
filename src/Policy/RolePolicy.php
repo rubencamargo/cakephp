@@ -59,6 +59,11 @@ class RolePolicy
         return $this->isAdmin($user);
     }
     
+    public function canIndex(IdentityInterface $user, Role $role)
+    {
+        return $this->isAdmin($user);
+    }
+    
     protected function isAdmin(IdentityInterface $user)
     {
         return $user->role_id === 1;

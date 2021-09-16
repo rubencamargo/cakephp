@@ -18,9 +18,13 @@ class RolesController extends AppController
      */
     public function index()
     {
-        $this->loadModel('Users');
-        $user = $this->Users->get($this->request->getSession()->read('Auth.id'));
-        $this->Authorization->authorize($user);
+        $role = $this->Roles->newEmptyEntity();
+        
+        //$this->Authorization->authorize($role);
+        if (!$this->Authorization->can($role, 'index')) {
+            $this->Flash->error(__('Restricted access.'));
+            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+        }
         
         $roles = $this->paginate($this->Roles);
 
@@ -36,14 +40,16 @@ class RolesController extends AppController
      */
     public function view($id = null)
     {
-        $this->loadModel('Users');
-        $user = $this->Users->get($this->request->getSession()->read('Auth.id'));
-        $this->Authorization->authorize($user);
-        
         $role = $this->Roles->get($id, [
             'contain' => ['Users'],
         ]);
-
+        
+        //$this->Authorization->authorize($user);
+        if (!$this->Authorization->can($role, 'view')) {
+            $this->Flash->error(__('Restricted access.'));
+            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+        }
+        
         $this->set(compact('role'));
     }
 
@@ -54,19 +60,22 @@ class RolesController extends AppController
      */
     public function add()
     {
-        $this->loadModel('Users');
-        $user = $this->Users->get($this->request->getSession()->read('Auth.id'));
-        $this->Authorization->authorize($user);
-        
         $role = $this->Roles->newEmptyEntity();
+        
+        //$this->Authorization->authorize($role);
+        if (!$this->Authorization->can($role, 'add')) {
+            $this->Flash->error(__('Restricted access.'));
+            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+        }
         
         if ($this->request->is('post')) {
             $role = $this->Roles->patchEntity($role, $this->request->getData());
+            
             if ($this->Roles->save($role)) {
                 $this->Flash->success(__('The role has been saved.'));
-
                 return $this->redirect(['action' => 'index']);
             }
+            
             $this->Flash->error(__('The role could not be saved. Please, try again.'));
         }
         
@@ -82,20 +91,21 @@ class RolesController extends AppController
      */
     public function edit($id = null)
     {
-        $this->loadModel('Users');
-        $user = $this->Users->get($this->request->getSession()->read('Auth.id'));
-        $this->Authorization->authorize($user);
-        
         $role = $this->Roles->get($id, [
             'contain' => [],
         ]);
+        
+        //$this->Authorization->authorize($role);
+        if (!$this->Authorization->can($role, 'edit')) {
+            $this->Flash->error(__('Restricted access.'));
+            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+        }
         
         if ($this->request->is(['patch', 'post', 'put'])) {
             $role = $this->Roles->patchEntity($role, $this->request->getData());
             
             if ($this->Roles->save($role)) {
                 $this->Flash->success(__('The role has been saved.'));
-
                 return $this->redirect(['action' => 'index']);
             }
             
@@ -113,12 +123,14 @@ class RolesController extends AppController
      */
     public function delete($id = null)
     {
-        $this->loadModel('Users');
-        $user = $this->Users->get($this->request->getSession()->read('Auth.id'));
-        $this->Authorization->authorize($user);
-        
         $this->request->allowMethod(['post', 'delete']);
         $role = $this->Roles->get($id);
+        
+        //$this->Authorization->authorize($role);
+        if (!$this->Authorization->can($role, 'delete')) {
+            $this->Flash->error(__('Restricted access.'));
+            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+        }
         
         if ($this->Roles->delete($role)) {
             $this->Flash->success(__('The role has been deleted.'));

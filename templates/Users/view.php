@@ -38,10 +38,10 @@
                     <th><?= __('Email') ?></th>
                     <td><?= h($user->email) ?></td>
                 </tr>
-                <tr>
+                <!-- <tr>
                     <th><?= __('Password') ?></th>
                     <td><?= h($user->password) ?></td>
-                </tr>
+                </tr> -->
                 <tr>
                     <th><?= __('Created') ?></th>
                     <td><?= h($user->created) ?></td>

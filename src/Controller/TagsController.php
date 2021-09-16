@@ -18,9 +18,13 @@ class TagsController extends AppController
      */
     public function index()
     {
-        $this->loadModel('Users');
-        $user = $this->Users->get($this->request->getSession()->read('Auth.id'));
-        $this->Authorization->authorize($user);
+        $tag = $this->Tags->newEmptyEntity();
+        
+        //$this->Authorization->authorize($tag);
+        if (!$this->Authorization->can($tag, 'index')) {
+            $this->Flash->error(__('Restricted access.'));
+            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+        }
         
         $tags = $this->paginate($this->Tags);
 
@@ -36,14 +40,16 @@ class TagsController extends AppController
      */
     public function view($id = null)
     {
-        $this->loadModel('Users');
-        $user = $this->Users->get($this->request->getSession()->read('Auth.id'));
-        $this->Authorization->authorize($user);
-        
         $tag = $this->Tags->get($id, [
             'contain' => ['Articles'],
         ]);
 
+        //$this->Authorization->authorize($tag);
+        if (!$this->Authorization->can($tag, 'view')) {
+            $this->Flash->error(__('Restricted access.'));
+            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+        }
+        
         $this->set(compact('tag'));
     }
 
@@ -54,19 +60,23 @@ class TagsController extends AppController
      */
     public function add()
     {
-        $this->loadModel('Users');
-        $user = $this->Users->get($this->request->getSession()->read('Auth.id'));
-        $this->Authorization->authorize($user);
-        
         $tag = $this->Tags->newEmptyEntity();
+        
+        //$this->Authorization->authorize($tag);
+        if (!$this->Authorization->can($tag, 'add')) {
+            $this->Flash->error(__('Restricted access.'));
+            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+        }
         
         if ($this->request->is('post')) {
             $tag = $this->Tags->patchEntity($tag, $this->request->getData());
+            
             if ($this->Tags->save($tag)) {
                 $this->Flash->success(__('The tag has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
+            
             $this->Flash->error(__('The tag could not be saved. Please, try again.'));
         }
         
@@ -83,21 +93,24 @@ class TagsController extends AppController
      */
     public function edit($id = null)
     {
-        $this->loadModel('Users');
-        $user = $this->Users->get($this->request->getSession()->read('Auth.id'));
-        $this->Authorization->authorize($user);
-        
         $tag = $this->Tags->get($id, [
             'contain' => ['Articles'],
         ]);
         
+        //$this->Authorization->authorize($tag);
+        if (!$this->Authorization->can($tag, 'edit')) {
+            $this->Flash->error(__('Restricted access.'));
+            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+        }
+        
         if ($this->request->is(['patch', 'post', 'put'])) {
             $tag = $this->Tags->patchEntity($tag, $this->request->getData());
+            
             if ($this->Tags->save($tag)) {
                 $this->Flash->success(__('The tag has been saved.'));
-
                 return $this->redirect(['action' => 'index']);
             }
+            
             $this->Flash->error(__('The tag could not be saved. Please, try again.'));
         }
         
@@ -114,12 +127,14 @@ class TagsController extends AppController
      */
     public function delete($id = null)
     {
-        $this->loadModel('Users');
-        $user = $this->Users->get($this->request->getSession()->read('Auth.id'));
-        $this->Authorization->authorize($user);
-        
         $this->request->allowMethod(['post', 'delete']);
         $tag = $this->Tags->get($id);
+        
+        //$this->Authorization->authorize($tag);
+        if (!$this->Authorization->can($tag, 'delete')) {
+            $this->Flash->error(__('Restricted access.'));
+            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+        }
         
         if ($this->Tags->delete($tag)) {
             $this->Flash->success(__('The tag has been deleted.'));
