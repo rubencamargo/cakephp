@@ -43,7 +43,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         </div>
         
         <div class="top-nav-links">
-        	<a href="<?= $this->Url->build('/') ?>articles/blog">Blog</a>
+        	<a href="<?= $this->Url->build('/') ?>blog">Blog</a>
         	<?php if ($this->request->getSession()->check('Auth')) { ?>
         		<?php if ($this->request->getSession()->read('Auth.role_id') == 1) { ?>
                     <a href="<?= $this->Url->build('/') ?>articles">Articles</a>

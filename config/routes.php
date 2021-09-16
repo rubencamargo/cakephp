@@ -53,6 +53,13 @@ $routes->scope('/', function (RouteBuilder $builder) {
     //$builder->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
     $builder->connect('/', ['controller' => 'Articles', 'action' => 'blog']);
 
+    $builder->connect('/blog', ['controller' => 'Articles', 'action' => 'blog']);
+    $builder->connect('/detail/*', ['controller' => 'Articles', 'action' => 'detail']);
+    
+    //$builder->connect('/login', ['controller' => 'Users', 'action' => 'login']);
+    //$builder->connect('/logout', ['controller' => 'Users', 'action' => 'logout']);
+    //$builder->connect('/profile/*', ['controller' => 'Users', 'action' => 'edit']);
+    
     /*
      * ...and connect the rest of 'Pages' controller's URLs.
      */
