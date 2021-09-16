@@ -17,7 +17,7 @@ class ArticlesController extends AppController
     {
         parent::beforeFilter($event);
         // Configure the blog action to not require authentication
-        $this->Authentication->addUnauthenticatedActions(['blog']);
+        $this->Authentication->addUnauthenticatedActions(['blog', 'detail']);
     }
     
     public function blog()
@@ -32,6 +32,17 @@ class ArticlesController extends AppController
         $articles = $this->paginate($this->Articles);
         
         $this->set(compact('articles'));
+    }
+    
+    public function detail($id = null)
+    {
+        $this->Authorization->skipAuthorization();
+        
+        $article = $this->Articles->get($id, [
+            'contain' => ['Users', 'Tags'],
+        ]);
+        
+        $this->set(compact('article'));
     }
     
     /**

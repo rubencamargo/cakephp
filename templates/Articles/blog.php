@@ -15,7 +15,9 @@ $i = 1;
         <?php if ($i > $columns) {echo '</div><br /><div class="row">'; $i = 1;} ?>
             <div class="column-responsive column-<?= $porcentByPost ?>">
             	<div class="articles view content">
-                    <h3><?= h($article->id) ?> <?= h($article->title) ?></h3>
+                    <h3>
+                    	<?= $this->Html->link($article->title, ['action' => 'detail', $article->id]) ?>
+                    </h3>
                     <p>
                     	<?= h($article->created->format('d/m/Y')) ?>
                     </p>

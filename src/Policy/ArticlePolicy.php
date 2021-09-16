@@ -13,7 +13,12 @@ class ArticlePolicy
 {
     public function canBlog(IdentityInterface $user, Article $article)
     {
-        return true; // All logged in users can create articles.
+        return true;
+    }
+    
+    public function canDetail(IdentityInterface $user, Article $article)
+    {
+        return true;
     }
     
     /**
