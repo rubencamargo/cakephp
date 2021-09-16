@@ -58,7 +58,7 @@ $routes->scope('/', function (RouteBuilder $builder) {
     
     //$builder->connect('/login', ['controller' => 'Users', 'action' => 'login']);
     //$builder->connect('/logout', ['controller' => 'Users', 'action' => 'logout']);
-    //$builder->connect('/profile/*', ['controller' => 'Users', 'action' => 'edit']);
+    $builder->connect('/profile/*', ['controller' => 'Users', 'action' => 'edit']);
     
     /*
      * ...and connect the rest of 'Pages' controller's URLs.

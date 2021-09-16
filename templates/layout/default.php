@@ -51,7 +51,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                     <a href="<?= $this->Url->build('/') ?>users">Users</a>
                     <a href="<?= $this->Url->build('/') ?>roles">Roles</a>
                 <?php } ?>
-                <a href="<?= $this->Url->build('/') ?>users/edit/<?= $this->request->getSession()->read('Auth.id') ?>"><?= $this->request->getSession()->read('Auth.name') . ' ' . $this->request->getSession()->read('Auth.lastname') ?></a>
+                <a href="<?= $this->Url->build('/') ?>profile/<?= $this->request->getSession()->read('Auth.id') ?>"><?= $this->request->getSession()->read('Auth.name') . ' ' . $this->request->getSession()->read('Auth.lastname') ?></a>
         		<a href="<?= $this->Url->build('/') ?>users/logout">Logout</a>
                 <?php } else { ?>
                 <a href="<?= $this->Url->build('/') ?>users/login">Login</a>
