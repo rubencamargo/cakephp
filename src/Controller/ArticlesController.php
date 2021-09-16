@@ -13,6 +13,18 @@ use Cake\Utility\Text;
  */
 class ArticlesController extends AppController
 {
+    public function blog()
+    {
+        $this->Authorization->skipAuthorization();
+        
+        $this->paginate = [
+            'contain' => ['Users', 'Tags'],
+        ];
+        $articles = $this->paginate($this->Articles);
+        
+        $this->set(compact('articles'));
+    }
+    
     /**
      * Index method
      *
@@ -20,7 +32,13 @@ class ArticlesController extends AppController
      */
     public function index()
     {
-        $this->Authorization->skipAuthorization();
+        $article = $this->Articles->newEmptyEntity();
+        
+        //$this->Authorization->authorize($article);
+        if (!$this->Authorization->can($article, 'index')) {
+            $this->Flash->error(__('Restricted access.'));
+            return $this->redirect(['controller' => 'Articles', 'action' => 'blog']);
+        }
         
         $this->paginate = [
             'contain' => ['Users', 'Tags'],
@@ -39,7 +57,13 @@ class ArticlesController extends AppController
      */
     public function view($id = null)
     {
-        $this->Authorization->skipAuthorization();
+        $article = $this->Articles->newEmptyEntity();
+        
+        //$this->Authorization->authorize($article);
+        if (!$this->Authorization->can($article, 'view')) {
+            $this->Flash->error(__('Restricted access.'));
+            return $this->redirect(['controller' => 'Articles', 'action' => 'blog']);
+        }
         
         $article = $this->Articles->get($id, [
             'contain' => ['Users', 'Tags'],
@@ -60,7 +84,7 @@ class ArticlesController extends AppController
         //$this->Authorization->authorize($article);
         if (!$this->Authorization->can($article, 'add')) {
             $this->Flash->error(__('Restricted access.'));
-            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+            return $this->redirect(['controller' => 'Articles', 'action' => 'blog']);
         }
         
         if ($this->request->is('post')) {
@@ -105,7 +129,7 @@ class ArticlesController extends AppController
         //$this->Authorization->authorize($article);
         if (!$this->Authorization->can($article, 'edit')) {
             $this->Flash->error(__('Restricted access.'));
-            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+            return $this->redirect(['controller' => 'Articles', 'action' => 'blog']);
         }
         
         if ($this->request->is(['patch', 'post', 'put'])) {
@@ -146,7 +170,7 @@ class ArticlesController extends AppController
         //$this->Authorization->authorize($article);
         if (!$this->Authorization->can($article, 'delete')) {
             $this->Flash->error(__('Restricted access.'));
-            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+            return $this->redirect(['controller' => 'Articles', 'action' => 'blog']);
         }
         
         if ($this->Articles->delete($article)) {

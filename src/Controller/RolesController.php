@@ -23,7 +23,7 @@ class RolesController extends AppController
         //$this->Authorization->authorize($role);
         if (!$this->Authorization->can($role, 'index')) {
             $this->Flash->error(__('Restricted access.'));
-            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+            return $this->redirect(['controller' => 'Articles', 'action' => 'blog']);
         }
         
         $roles = $this->paginate($this->Roles);
@@ -47,7 +47,7 @@ class RolesController extends AppController
         //$this->Authorization->authorize($user);
         if (!$this->Authorization->can($role, 'view')) {
             $this->Flash->error(__('Restricted access.'));
-            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+            return $this->redirect(['controller' => 'Articles', 'action' => 'blog']);
         }
         
         $this->set(compact('role'));
@@ -65,7 +65,7 @@ class RolesController extends AppController
         //$this->Authorization->authorize($role);
         if (!$this->Authorization->can($role, 'add')) {
             $this->Flash->error(__('Restricted access.'));
-            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+            return $this->redirect(['controller' => 'Articles', 'action' => 'blog']);
         }
         
         if ($this->request->is('post')) {
@@ -98,7 +98,7 @@ class RolesController extends AppController
         //$this->Authorization->authorize($role);
         if (!$this->Authorization->can($role, 'edit')) {
             $this->Flash->error(__('Restricted access.'));
-            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+            return $this->redirect(['controller' => 'Articles', 'action' => 'blog']);
         }
         
         if ($this->request->is(['patch', 'post', 'put'])) {
@@ -129,7 +129,7 @@ class RolesController extends AppController
         //$this->Authorization->authorize($role);
         if (!$this->Authorization->can($role, 'delete')) {
             $this->Flash->error(__('Restricted access.'));
-            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+            return $this->redirect(['controller' => 'Articles', 'action' => 'blog']);
         }
         
         if ($this->Roles->delete($role)) {

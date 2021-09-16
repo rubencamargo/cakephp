@@ -30,7 +30,7 @@ class UsersController extends AppController
             // redirect to /articles after login success
             $redirect = $this->request->getQuery('redirect', [
                 'controller' => 'Articles',
-                'action' => 'index',
+                'action' => 'blog',
             ]);
             
             return $this->redirect($redirect);
@@ -66,7 +66,7 @@ class UsersController extends AppController
         //$this->Authorization->authorize($user);
         if (!$this->Authorization->can($user, 'index')) {
             $this->Flash->error(__('Restricted access.'));
-            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+            return $this->redirect(['controller' => 'Articles', 'action' => 'blog']);
         }
         
         $this->paginate = [
@@ -93,7 +93,7 @@ class UsersController extends AppController
         //$this->Authorization->authorize($user);
         if (!$this->Authorization->can($user, 'view')) {
             $this->Flash->error(__('Restricted access.'));
-            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+            return $this->redirect(['controller' => 'Articles', 'action' => 'blog']);
         }
         
         $this->set(compact('user'));
@@ -138,7 +138,7 @@ class UsersController extends AppController
         //$this->Authorization->authorize($user);
         if (!$this->Authorization->can($user, 'edit')) {
             $this->Flash->error(__('Restricted access.'));
-            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+            return $this->redirect(['controller' => 'Articles', 'action' => 'blog']);
         }
         
         if ($this->request->is(['patch', 'post', 'put'])) {
@@ -171,7 +171,7 @@ class UsersController extends AppController
         //$this->Authorization->authorize($user);
         if (!$this->Authorization->can($user, 'delete')) {
             $this->Flash->error(__('Restricted access.'));
-            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+            return $this->redirect(['controller' => 'Articles', 'action' => 'blog']);
         }
         
         if ($this->Users->delete($user)) {

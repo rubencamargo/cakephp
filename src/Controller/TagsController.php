@@ -23,7 +23,7 @@ class TagsController extends AppController
         //$this->Authorization->authorize($tag);
         if (!$this->Authorization->can($tag, 'index')) {
             $this->Flash->error(__('Restricted access.'));
-            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+            return $this->redirect(['controller' => 'Articles', 'action' => 'blog']);
         }
         
         $tags = $this->paginate($this->Tags);
@@ -47,7 +47,7 @@ class TagsController extends AppController
         //$this->Authorization->authorize($tag);
         if (!$this->Authorization->can($tag, 'view')) {
             $this->Flash->error(__('Restricted access.'));
-            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+            return $this->redirect(['controller' => 'Articles', 'action' => 'blog']);
         }
         
         $this->set(compact('tag'));
@@ -65,7 +65,7 @@ class TagsController extends AppController
         //$this->Authorization->authorize($tag);
         if (!$this->Authorization->can($tag, 'add')) {
             $this->Flash->error(__('Restricted access.'));
-            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+            return $this->redirect(['controller' => 'Articles', 'action' => 'blog']);
         }
         
         if ($this->request->is('post')) {
@@ -100,7 +100,7 @@ class TagsController extends AppController
         //$this->Authorization->authorize($tag);
         if (!$this->Authorization->can($tag, 'edit')) {
             $this->Flash->error(__('Restricted access.'));
-            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+            return $this->redirect(['controller' => 'Articles', 'action' => 'blog']);
         }
         
         if ($this->request->is(['patch', 'post', 'put'])) {
@@ -133,7 +133,7 @@ class TagsController extends AppController
         //$this->Authorization->authorize($tag);
         if (!$this->Authorization->can($tag, 'delete')) {
             $this->Flash->error(__('Restricted access.'));
-            return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+            return $this->redirect(['controller' => 'Articles', 'action' => 'blog']);
         }
         
         if ($this->Tags->delete($tag)) {
