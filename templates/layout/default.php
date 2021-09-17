@@ -14,16 +14,22 @@
  * @var \App\View\AppView $this
  */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
+$cakeDescription = 'RubenCAMARGO';
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <?= $this->Html->charset() ?>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Website developed with CakePHP Framework.">
+    <meta name="keywords" content="Ruben Camargo, PHP, CakePHP, JavaScript, CSS, HTML">
+    <meta name="author" content="Ruben Camargo">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>
-        <?= $cakeDescription ?>:
-        <?= $this->fetch('title') ?>
+        <?= $cakeDescription ?>
+        <?php //echo $this->fetch('title') ?>
     </title>
     <?= $this->Html->meta('icon') ?>
 
@@ -39,7 +45,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <body>
     <nav class="top-nav">
         <div class="top-nav-title">
-            <a href="<?= $this->Url->build('/') ?>"><span>Cake</span>PHP</a>
+            <a href="<?= $this->Url->build('/') ?>"><span>Ruben</span>CAMARGO</a>
         </div>
         
         <div class="top-nav-links">
