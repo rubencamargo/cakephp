@@ -75,7 +75,8 @@ class UsersController extends AppController
             $conditions = [
                 'OR' => [
                     'Users.name like ' => '%' . $search . '%',
-                    'Users.lastname like ' => '%' . $search . '%'
+                    'Users.lastname like ' => '%' . $search . '%',
+                    'Users.email like ' => '%' . $search . '%'
                 ]
             ];
         }

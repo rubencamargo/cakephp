@@ -2,7 +2,7 @@
 <?= $this->Form->create(null, ['type' => 'get']) ?>
     <fieldset>
         <?php
-            echo $this->Form->control('search', ['name' => 'search', 'label' => false, 'placeholder' => __('Users search by name and lastname')]);
+            echo $this->Form->control('search', ['name' => 'search', 'label' => false, 'placeholder' => __('Users search by name, lastname and email')]);
         ?>
     </fieldset>
     <?php //echo $this->Form->button(__('Submit')) ?>
