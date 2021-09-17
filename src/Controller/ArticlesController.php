@@ -60,8 +60,15 @@ class ArticlesController extends AppController
             return $this->redirect(['controller' => 'Articles', 'action' => 'blog']);
         }
         
+        $conditions = [];
+        if ($this->request->getQuery('search') != '') {
+            $search = $this->request->getQuery('search');
+            $conditions = ['Articles.title like ' => '%' . $search . '%'];
+        }
+        
         $this->paginate = [
             'contain' => ['Users', 'Tags'],
+            'conditions' => $conditions
         ];
         $articles = $this->paginate($this->Articles);
 
