@@ -24,6 +24,15 @@ $i = 1;
         <?php if ($i > $columns) {echo '</div><br /><div class="row">'; $i = 1;} ?>
             <div class="column-responsive column-<?= $porcentByPost ?>">
             	<div class="articles view content">
+                    <div>
+                    	<?php
+                    	if (($article->image_name) && (is_file(WWW_ROOT . 'img/articles/' . $article->image_name))) {
+                    	   echo $this->Html->image('articles/' . $article->image_name);
+                    	} else {
+                    	    echo $this->Html->image('no-image-available.jpeg');
+                    	}
+                    	?>
+                    </div>
                     <h3>
                     	<?= $this->Html->link($article->title, ['action' => 'detail', $article->slug]) ?>
                     </h3>

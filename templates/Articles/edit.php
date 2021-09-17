@@ -18,9 +18,10 @@
             <?= $this->Html->link(__('List Articles'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
+    
     <div class="column-responsive column-80">
         <div class="articles form content">
-            <?= $this->Form->create($article) ?>
+            <?= $this->Form->create($article, ['type' => 'file']) ?>
             <fieldset>
                 <legend><?= __('Edit Article') ?></legend>
                 <?php
@@ -28,8 +29,16 @@
                     echo $this->Form->control('title');
                     echo $this->Form->control('slug');
                     echo $this->Form->control('body');
+                    
+                    if (($article->image_name) && (is_file(WWW_ROOT . 'img/articles/' . $article->image_name))) {
+                        echo $this->Html->image('articles/' . $article->image_name, ['width' => '200']);
+                    } else {
+                        echo $this->Html->image('no-image-available.jpeg', ['width' => '200']);
+                    }
+                    
+                    echo $this->Form->control('image', ['type' => 'file']);
                     echo $this->Form->control('published');
-                    echo $this->Form->control('tags._ids', ['options' => $tags]);
+                    echo $this->Form->control('tags._ids', ['options' => $tags, 'size' => 5]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

@@ -129,9 +129,26 @@ class ArticlesController extends AppController
             // Changed: Set the user_id from the current user.
             $article->user_id = $this->request->getAttribute('identity')->getIdentifier();
             
-            //if ($article['slug'] == "") {
-                $article['slug'] = strtolower(Text::slug($article['title']));
-            //}
+            $article['slug'] = strtolower(Text::slug($article['title']));
+            
+            $article->image_name = null;
+            $article->image_type = null;
+            $article->image_size = null;
+            
+            if ((!$article->getErrors()) && ($this->request->getData('image')->getClientFilename() != '')) {
+                // Save and upload image
+                $image = $this->request->getData('image');
+                
+                $article->image_name = $article->id . '-' . $image->getClientFilename();
+                $article->image_type = $image->getClientMediaType();
+                $article->image_size = $image->getSize();
+                
+                $targetPath = WWW_ROOT . 'img' . DS . 'articles' . DS . $article->image_name;
+                
+                if ($article->image_name) {
+                    $image->moveTo($targetPath);
+                }
+            }
             
             if ($this->Articles->save($article)) {
                 $this->Flash->success(__('The article has been saved.'));
@@ -180,6 +197,21 @@ class ArticlesController extends AppController
             
             if ($article['slug'] == "") {
                 $article['slug'] = strtolower(Text::slug($article['title']));
+            }
+            
+            if ((!$article->getErrors()) && ($this->request->getData('image')->getClientFilename() != '')) {
+                // Save and upload image
+                $image = $this->request->getData('image');
+                
+                $article->image_name = $article->id . '-' . $image->getClientFilename();
+                $article->image_type = $image->getClientMediaType();
+                $article->image_size = $image->getSize();
+                
+                $targetPath = WWW_ROOT . 'img' . DS . 'articles' . DS . $article->image_name;
+                
+                if ($article->image_name) {
+                    $image->moveTo($targetPath);
+                }
             }
             
             if ($this->Articles->save($article)) {
