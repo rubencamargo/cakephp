@@ -1,5 +1,14 @@
 <div class="articles index content">
     <h3><?= __('Blog') ?></h3>
+    
+    <?= $this->Form->create(null, ['type' => 'get']) ?>
+    <fieldset>
+        <?php
+            echo $this->Form->control('search', ['name' => 'search', 'label' => false, 'placeholder' => __('Articles search by title')]);
+        ?>
+    </fieldset>
+    <?php //echo $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->end() ?>
 </div>
 
 <br />

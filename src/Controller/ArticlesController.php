@@ -24,9 +24,15 @@ class ArticlesController extends AppController
     {
         $this->Authorization->skipAuthorization();
         
+        $conditions = ['Published' => 1];
+        if ($this->request->getQuery('search') != '') {
+            $search = $this->request->getQuery('search');
+            $conditions = ['Articles.title like ' => '%' . $search . '%'];
+        }
+        
         $this->paginate = [
             'contain' => ['Users', 'Tags'],
-            'conditions' => ['Published' => 1]
+            'conditions' => $conditions
         ];
         
         $articles = $this->paginate($this->Articles);
@@ -70,6 +76,7 @@ class ArticlesController extends AppController
             'contain' => ['Users', 'Tags'],
             'conditions' => $conditions
         ];
+        
         $articles = $this->paginate($this->Articles);
 
         $this->set(compact('articles'));
