@@ -40,13 +40,15 @@ class ArticlesController extends AppController
         $this->set(compact('articles'));
     }
     
-    public function detail($id = null)
+    public function detail($slug = null)
     {
         $this->Authorization->skipAuthorization();
         
-        $article = $this->Articles->get($id, [
+        $article = $this->Articles->find('all', [
             'contain' => ['Users', 'Tags'],
-        ]);
+            'conditions' => ['slug' => $slug]
+        ])
+        ->first();
         
         $this->set(compact('article'));
     }

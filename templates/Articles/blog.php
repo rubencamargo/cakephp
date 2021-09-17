@@ -25,7 +25,7 @@ $i = 1;
             <div class="column-responsive column-<?= $porcentByPost ?>">
             	<div class="articles view content">
                     <h3>
-                    	<?= $this->Html->link($article->title, ['action' => 'detail', $article->id]) ?>
+                    	<?= $this->Html->link($article->title, ['action' => 'detail', $article->slug]) ?>
                     </h3>
                     <p>
                     	<?= h($article->created->format('d/m/Y')) ?>
