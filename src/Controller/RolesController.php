@@ -26,6 +26,16 @@ class RolesController extends AppController
             return $this->redirect(['controller' => 'Articles', 'action' => 'blog']);
         }
         
+        $conditions = [];
+        if ($this->request->getQuery('search') != '') {
+            $search = $this->request->getQuery('search');
+            $conditions = ['Roles.name like ' => '%' . $search . '%'];
+        }
+        
+        $this->paginate = [
+            'conditions' => $conditions
+        ];
+        
         $roles = $this->paginate($this->Roles);
 
         $this->set(compact('roles'));

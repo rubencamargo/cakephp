@@ -69,9 +69,22 @@ class UsersController extends AppController
             return $this->redirect(['controller' => 'Articles', 'action' => 'blog']);
         }
         
+        $conditions = [];
+        if ($this->request->getQuery('search') != '') {
+            $search = $this->request->getQuery('search');
+            $conditions = [
+                'OR' => [
+                    'Users.name like ' => '%' . $search . '%',
+                    'Users.lastname like ' => '%' . $search . '%'
+                ]
+            ];
+        }
+        
         $this->paginate = [
             'contain' => ['Roles'],
+            'conditions' => $conditions
         ];
+        
         $users = $this->paginate($this->Users);
 
         $this->set(compact('users'));

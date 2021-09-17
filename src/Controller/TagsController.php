@@ -26,6 +26,16 @@ class TagsController extends AppController
             return $this->redirect(['controller' => 'Articles', 'action' => 'blog']);
         }
         
+        $conditions = [];
+        if ($this->request->getQuery('search') != '') {
+            $search = $this->request->getQuery('search');
+            $conditions = ['Tags.title like ' => '%' . $search . '%'];
+        }
+        
+        $this->paginate = [
+            'conditions' => $conditions
+        ];
+        
         $tags = $this->paginate($this->Tags);
 
         $this->set(compact('tags'));

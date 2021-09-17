@@ -1,10 +1,13 @@
-<?php
-/**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\Role[]|\Cake\Collection\CollectionInterface $roles
- */
-?>
 <div class="roles index content">
+<?= $this->Form->create(null, ['type' => 'get']) ?>
+    <fieldset>
+        <?php
+            echo $this->Form->control('search', ['name' => 'search', 'label' => false, 'placeholder' => __('Roles search by title')]);
+        ?>
+    </fieldset>
+    <?php //echo $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->end() ?>
+    
     <?= $this->Html->link(__('New Role'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Roles') ?></h3>
     <div class="table-responsive">

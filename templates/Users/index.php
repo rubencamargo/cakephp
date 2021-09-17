@@ -1,10 +1,13 @@
-<?php
-/**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\User[]|\Cake\Collection\CollectionInterface $users
- */
-?>
 <div class="users index content">
+<?= $this->Form->create(null, ['type' => 'get']) ?>
+    <fieldset>
+        <?php
+            echo $this->Form->control('search', ['name' => 'search', 'label' => false, 'placeholder' => __('Users search by name and lastname')]);
+        ?>
+    </fieldset>
+    <?php //echo $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->end() ?>
+    
     <?= $this->Html->link(__('New User'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Users') ?></h3>
     <div class="table-responsive">
