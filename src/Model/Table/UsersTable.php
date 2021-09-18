@@ -92,6 +92,10 @@ class UsersTable extends Table
             ->requirePresence('password', 'create')
             ->notEmptyString('password');
 
+            
+        $validator
+            ->sameAs('retype_password', 'password', 'Password not match.');
+            
         return $validator;
     }
 
