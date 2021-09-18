@@ -38,6 +38,8 @@ class User extends Entity
         'lastname' => true,
         'email' => true,
         'password' => true,
+        'ip' => true,
+        'active' => true,
         'created' => true,
         'modified' => true,
         'role' => true,

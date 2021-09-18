@@ -18,7 +18,6 @@
     
     <div class="column-responsive column-40">
         <div class="articles view">
-            
             <div class="text">
                 <div>
                 	<?php
@@ -29,7 +28,6 @@
                 	}
                 	?>
                 </div>
-                
             </div>
         </div>
     </div>

@@ -129,7 +129,7 @@ class ArticlesController extends AppController
             // Changed: Set the user_id from the current user.
             $article->user_id = $this->request->getAttribute('identity')->getIdentifier();
             
-            $article['slug'] = strtolower(Text::slug($article['title']));
+            $article->slug = strtolower(Text::slug($article->title));
             
             $article->image_name = null;
             $article->image_type = null;
