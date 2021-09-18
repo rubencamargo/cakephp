@@ -17,7 +17,7 @@
                     echo $this->Form->control('lastname');
                     echo $this->Form->control('email');
                     echo $this->Form->control('password');
-                    echo $this->Form->control('retype_password');
+                    echo $this->Form->control('retype_password', ['type' => 'password']);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
