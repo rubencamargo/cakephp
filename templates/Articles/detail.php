@@ -14,10 +14,6 @@
                     <td><?= h($article->title) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Slug') ?></th>
-                    <td><?= h($article->slug) ?></td>
-                </tr>
-                <tr>
                     <th><?= __('Created') ?></th>
                     <td><?= h($article->created->format('d/m/y H:i:s')) ?></td>
                 </tr>
