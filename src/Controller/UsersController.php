@@ -25,6 +25,11 @@ class UsersController extends AppController
         $this->request->allowMethod(['get', 'post']);
         $result = $this->Authentication->getResult();
         
+        if (($result->getData()) && (!$result->getData()->active)) {
+            $this->Flash->error(__('User inactive'));
+            $this->Authentication->logout();
+        }
+        
         // regardless of POST or GET, redirect if user is logged in
         if ($result->isValid()) {
             // redirect to /articles after login success
