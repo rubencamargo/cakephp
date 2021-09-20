@@ -123,6 +123,14 @@ class UsersController extends AppController
         $this->Authorization->skipAuthorization();
         $user = $this->Users->newEmptyEntity();
         
+        $sum = $this->request->getData('var1') + $this->request->getData('var2');
+        if ($sum != $this->request->getData('captcha_local')) {
+            $this->Flash->error(__('The sum is not correct. Please, try again.'));
+            return $this->redirect($this->referer());
+            die();
+        }
+        //debug($this->request->getData()); die();
+
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
             

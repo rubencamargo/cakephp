@@ -35,7 +35,7 @@ $cakeDescription = 'RubenCAMARGO';
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
 
-    <?= $this->Html->css(['normalize.min', 'milligram.min', 'cake']) ?>
+    <?= $this->Html->css(['normalize.min', 'milligram.min', 'cake', 'style.css']) ?>
 	<?= $this->Html->script(['jquery-3.6.0.min.js', 'app.js'], ['block' => 'js']) ?>
 
     <?= $this->fetch('meta') ?>
@@ -78,6 +78,5 @@ $cakeDescription = 'RubenCAMARGO';
     </footer>
     
     <?= $this->fetch('js') ?>
-    <?= $this->Html->css('style.css') ?>
 </body>
 </html>

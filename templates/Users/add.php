@@ -11,15 +11,27 @@
             <?= $this->Form->create($user) ?>
             <fieldset>
                 <legend><?= __('Register') ?></legend>
+                <br />
                 <?php
                     echo $this->Form->hidden('role_id', ['options' => $roles, 'value' => 2]);
-                    echo $this->Form->control('name');
-                    echo $this->Form->control('lastname');
-                    echo $this->Form->control('email');
-                    echo $this->Form->control('password');
-                    echo $this->Form->control('retype_password', ['type' => 'password']);
+                    echo $this->Form->control('name', ['placeholder' => __('Name'), 'label' => false]);
+                    echo $this->Form->control('lastname', ['placeholder' => __('Lastame'), 'label' => false]);
+                    echo $this->Form->control('email', ['placeholder' => __('Email'), 'label' => false]);
+                    echo $this->Form->control('password', ['placeholder' => __('Password'), 'label' => false]);
+                    echo $this->Form->control('retype_password', ['type' => 'password', 'placeholder' => __('Retype Password'), 'label' => false]);
+                ?>
+                
+                <?php
+                    $var1 = rand(0, 9);
+                    $var2 = rand(0, 9);
+                    echo $this->Form->hidden('var1', ['value' => $var1]);
+                    echo $this->Form->hidden('var2', ['value' => $var2]);
+                    $label = "Write the result of (" . $var1 . " + " . $var2 . "):";
+                    
+                    echo $this->Form->control('captcha_local', ['placeholder' => $label, 'label' => false]);
                 ?>
             </fieldset>
+            
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
         </div>
