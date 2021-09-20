@@ -14,11 +14,11 @@
                 <br />
                 <?php
                     echo $this->Form->hidden('role_id', ['options' => $roles, 'value' => 2]);
-                    echo $this->Form->control('name', ['placeholder' => __('Name'), 'label' => false]);
-                    echo $this->Form->control('lastname', ['placeholder' => __('Lastame'), 'label' => false]);
-                    echo $this->Form->control('email', ['placeholder' => __('Email'), 'label' => false]);
-                    echo $this->Form->control('password', ['placeholder' => __('Password'), 'label' => false]);
-                    echo $this->Form->control('retype_password', ['type' => 'password', 'placeholder' => __('Retype Password'), 'label' => false]);
+                    echo $this->Form->control('name', ['placeholder' => __('Name'), 'label' => false, 'autocomplete' => 'off']);
+                    echo $this->Form->control('lastname', ['placeholder' => __('Lastame'), 'label' => false, 'autocomplete' => 'off']);
+                    echo $this->Form->control('email', ['placeholder' => __('Email'), 'label' => false, 'autocomplete' => 'off']);
+                    echo $this->Form->control('password', ['placeholder' => __('Password'), 'label' => false, 'autocomplete' => 'off']);
+                    echo $this->Form->control('retype_password', ['type' => 'password', 'placeholder' => __('Retype Password'), 'label' => false, 'autocomplete' => 'off']);
                 ?>
                 
                 <?php
@@ -28,7 +28,7 @@
                     echo $this->Form->hidden('var2', ['value' => $var2]);
                     $label = "Write the result of (" . $var1 . " + " . $var2 . "):";
                     
-                    echo $this->Form->control('captcha_local', ['placeholder' => $label, 'label' => false]);
+                    echo $this->Form->control('captcha_local', ['placeholder' => $label, 'label' => false, 'autocomplete' => 'off']);
                 ?>
             </fieldset>
             

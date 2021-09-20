@@ -8,8 +8,8 @@
                 <legend><?= __('Login') ?></legend>
                 <br />
                 <?php
-                    echo $this->Form->control('email', ['placeholder' => __('Email'), 'label' => false]);
-                    echo $this->Form->control('password', ['placeholder' => __('Password'), 'label' => false]);
+                    echo $this->Form->control('email', ['placeholder' => __('Email'), 'label' => false, 'autocomplete' => 'off']);
+                    echo $this->Form->control('password', ['placeholder' => __('Password'), 'label' => false, 'autocomplete' => 'off']);
                 ?>
             </fieldset>
             
