@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Cake\Http\Client;
+
 /**
  * Users Controller
  *
@@ -24,6 +26,17 @@ class UsersController extends AppController
         $this->Authorization->skipAuthorization();
         $this->request->allowMethod(['get', 'post']);
         $result = $this->Authentication->getResult();
+        
+        // Geoip
+        /*
+        $http = new Client();
+        //$response = $http->get('http://api.ipstack.com/181.46.165.130?access_key=ecbce6011232d8a6d3de6b08d27bff48&output=json');
+        $response = $http->get(
+            'http://api.ipstack.com/181.46.165.130',
+            ['q' => 'test', '_content' => json_encode($data)],
+            ['type' => 'json']
+        );
+        debug($response);*/
         
         if (($result->getData()) && (!$result->getData()->active)) {
             $this->Flash->error(__('User inactive'));

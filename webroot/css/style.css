@@ -1,3 +1,23 @@
 input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="month"], input[type="week"], input[type="datetime"], input[type="datetime-local"], input:not([type]) {
 	height: 40px;
 }
+
+.image-header {
+	background-image: url("../img/software-developer.jpg");
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 400px;
+	margin-bottom: 30px;
+}
+
+.text-header {
+	color: #ffffff;
+	text-align: center;
+	padding-top: 50px;
+	font-size: 40px;
+	font-weight: bold;
+}
+
+.top-nav {
+	margin-bottom: 0px;
+}
