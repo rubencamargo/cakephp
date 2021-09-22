@@ -1,5 +1,8 @@
 <div class="articles index content">
-	<?= $this->Form->create(null, ['type' => 'get']) ?>
+    <?= $this->Html->link(__('New Article'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+    <h3><?= __('Articles') ?></h3>
+    
+    <?= $this->Form->create(null, ['type' => 'get']) ?>
     <fieldset>
         <?php
             echo $this->Form->control('search', ['name' => 'search', 'label' => false, 'placeholder' => __('Articles search by title')]);
@@ -7,9 +10,7 @@
     </fieldset>
     <?php //echo $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
-
-    <?= $this->Html->link(__('New Article'), ['action' => 'add'], ['class' => 'button float-right']) ?>
-    <h3><?= __('Articles') ?></h3>
+    
     <div class="table-responsive">
         <table>
             <thead>

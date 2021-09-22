@@ -1,5 +1,8 @@
 <div class="roles index content">
-<?= $this->Form->create(null, ['type' => 'get']) ?>
+	<?= $this->Html->link(__('New Role'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+    <h3><?= __('Roles') ?></h3>
+    
+    <?= $this->Form->create(null, ['type' => 'get']) ?>
     <fieldset>
         <?php
             echo $this->Form->control('search', ['name' => 'search', 'label' => false, 'placeholder' => __('Roles search by title')]);
@@ -8,8 +11,6 @@
     <?php //echo $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
     
-    <?= $this->Html->link(__('New Role'), ['action' => 'add'], ['class' => 'button float-right']) ?>
-    <h3><?= __('Roles') ?></h3>
     <div class="table-responsive">
         <table>
             <thead>
