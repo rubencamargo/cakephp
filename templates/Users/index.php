@@ -19,7 +19,7 @@
                     <th><?= $this->Paginator->sort('name') ?></th>
                     <th><?= $this->Paginator->sort('lastname') ?></th>
                     <th><?= $this->Paginator->sort('email') ?></th>
-                    <!-- <th><?= $this->Paginator->sort('password') ?></th> -->
+                    <th><?= $this->Paginator->sort('active') ?></th>
                     <th><?= $this->Paginator->sort('created') ?></th>
                     <th><?= $this->Paginator->sort('modified') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
@@ -33,7 +33,10 @@
                     <td><?= h($user->name) ?></td>
                     <td><?= h($user->lastname) ?></td>
                     <td><?= h($user->email) ?></td>
-                    <!-- <td><?= h($user->password) ?></td> -->
+                    <td>
+                    	<?php //h($user->active) ? __('Yes') : __('No'); ?>
+                    	<?= $this->Form->postLink(h($user->active) ? __('Yes') : __('No'), ['action' => 'changeStatus', $user->id, $user->active], ['confirm' => __('Are you sure you want to {0}?', h($user->active) ? __('Deactivate') : __('Activate'))]) ?>
+                    </td>
                     <td><?= h($user->created) ?></td>
                     <td><?= h($user->modified) ?></td>
                     <td class="actions">
