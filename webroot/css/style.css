@@ -20,4 +20,6 @@ input[type="email"], input[type="number"], input[type="password"], input[type="s
 
 .top-nav {
 	margin-bottom: 0px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }

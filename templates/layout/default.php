@@ -66,11 +66,13 @@ $cakeDescription = 'RubenCAMARGO';
         </div>
     </nav>
     
+    <?php if ($this->request->getParam('action') == 'blog') { ?>
     <div class="image-header">
     	<div class="text-header">
     		Programador
     	</div>
     </div>
+    <?php } ?>
 
     <main class="main">
         <div class="container">

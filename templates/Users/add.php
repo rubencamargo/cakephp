@@ -15,7 +15,7 @@
                 <?php
                     echo $this->Form->hidden('role_id', ['options' => $roles, 'value' => 2]);
                     echo $this->Form->control('name', ['placeholder' => __('Name'), 'label' => false, 'autocomplete' => 'off']);
-                    echo $this->Form->control('lastname', ['placeholder' => __('Lastame'), 'label' => false, 'autocomplete' => 'off']);
+                    echo $this->Form->control('lastname', ['placeholder' => __('Lastname'), 'label' => false, 'autocomplete' => 'off']);
                     echo $this->Form->control('email', ['placeholder' => __('Email'), 'label' => false, 'autocomplete' => 'off']);
                     echo $this->Form->control('password', ['placeholder' => __('Password'), 'label' => false, 'autocomplete' => 'off']);
                     echo $this->Form->control('retype_password', ['type' => 'password', 'placeholder' => __('Retype Password'), 'label' => false, 'autocomplete' => 'off']);
