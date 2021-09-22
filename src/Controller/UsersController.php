@@ -101,8 +101,7 @@ class UsersController extends AppController
         
         $this->paginate = [
             'contain' => ['Roles'],
-            'conditions' => $conditions,
-            'limit' => 4
+            'conditions' => $conditions
         ];
         
         $users = $this->paginate($this->Users);
