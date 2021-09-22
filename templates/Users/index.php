@@ -38,9 +38,9 @@
                     	<?php //h($user->active) ? __('Yes') : __('No'); ?>
                     	<?= $this->Form->postLink(h($user->active) ? __('Yes') : __('No'), ['action' => 'changeStatus', $user->id, $user->active], ['confirm' => __('Are you sure you want to {0}?', h($user->active) ? __('Deactivate') : __('Activate'))]) ?>
                     </td>
-                    <td><?= h($user->created) ?></td>
-                    <td><?= h($user->modified) ?></td>
-                    <td class="actions">
+                    <td><?= h($user->created->format('d/m/y H:i:s')) ?></td>
+                    <td><?= h($user->modified->format('d/m/y H:i:s')) ?></td>
+                    <td class="actions" nowrap="nowrap">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>
                         <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?>

@@ -27,9 +27,9 @@
                 <tr>
                     <td><?= $this->Number->format($role->id) ?></td>
                     <td><?= h($role->name) ?></td>
-                    <td><?= h($role->created) ?></td>
-                    <td><?= h($role->modified) ?></td>
-                    <td class="actions">
+                    <td><?= h($role->created->format('d/m/y H:i:s')) ?></td>
+                    <td><?= h($role->modified->format('d/m/y H:i:s')) ?></td>
+                    <td nowrap="nowrap" class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $role->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $role->id]) ?>
                         <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $role->id], ['confirm' => __('Are you sure you want to delete # {0}?', $role->id)]) ?>

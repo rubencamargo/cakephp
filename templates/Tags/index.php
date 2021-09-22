@@ -27,9 +27,9 @@
                 <tr>
                     <td><?= $this->Number->format($tag->id) ?></td>
                     <td><?= h($tag->title) ?></td>
-                    <td><?= h($tag->created) ?></td>
-                    <td><?= h($tag->modified) ?></td>
-                    <td class="actions">
+                    <td><?= h($tag->created->format('d/m/y H:i:s')) ?></td>
+                    <td><?= h($tag->modified->format('d/m/y H:i:s')) ?></td>
+                    <td nowrap="nowrap" class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $tag->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $tag->id]) ?>
                         <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $tag->id], ['confirm' => __('Are you sure you want to delete # {0}?', $tag->id)]) ?>

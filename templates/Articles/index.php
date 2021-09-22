@@ -43,7 +43,7 @@
                     <td><?= $article->published ? __('Yes') : __('No'); ?></td>
                     <td><?= h($article->created->format('d/m/y H:i:s')) ?></td>
                     <td><?= h($article->modified->format('d/m/y H:i:s')) ?></td>
-                    <td class="actions">
+                    <td nowrap="nowrap" class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $article->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $article->id]) ?>
                         <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $article->id], ['confirm' => __('Are you sure you want to delete # {0}?', $article->id)]) ?>
