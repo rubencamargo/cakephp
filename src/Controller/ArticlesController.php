@@ -253,4 +253,28 @@ class ArticlesController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+    
+    public function changeStatus($id = null, $status = null)
+    {
+        $this->request->allowMethod(['post', 'delete']);
+        $this->loadModel('Users');
+        $user = $this->Users->get($this->request->getAttribute('identity')->getIdentifier());
+        $article = $this->Articles->get($id);
+        
+        //$this->Authorization->authorize($user);
+        if (!$this->Authorization->can($user, 'delete')) {
+            $this->Flash->error(__('Restricted access.'));
+            return $this->redirect(['controller' => 'Users', 'action' => 'index']);
+        }
+        
+        $article->published = !$status;
+        
+        if ($this->Articles->save($article)) {
+            $this->Flash->success(__('The article has been saved.'));
+        } else {
+            $this->Flash->error(__('The article could not be saved. Please, try again.'));
+        }
+        
+        return $this->redirect($this->referer());
+    }
 }
