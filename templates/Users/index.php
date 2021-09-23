@@ -45,7 +45,7 @@
                     </td>
                     <td>
                     	<?php //h($user->active) ? __('Yes') : __('No'); ?>
-                    	<?= $this->Form->postLink(h($user->active) ? __('Yes') : __('No'), ['action' => 'changeStatus', $user->id, $user->active], ['confirm' => __('Are you sure you want to {0}?', h($user->active) ? __('Deactivate') : __('Activate'))]) ?>
+                    	<?= $this->Form->postLink(h($user->active) ? __('Yes') : __('No'), ['action' => 'changeStatus', $user->id, $user->active], ['title' => __('Change status'), 'confirm' => __('Are you sure you want to {0}?', h($user->active) ? __('Deactivate') : __('Activate'))]) ?>
                     </td>
                     <td><?= h($user->last_login->format('d/m/y H:i:s')) ?></td>
                     <td><?= h($user->created->format('d/m/y H:i:s')) ?></td>

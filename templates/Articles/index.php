@@ -42,7 +42,7 @@
                     </td>
                     <td>
                     	<?php //echo $article->published ? __('Yes') : __('No'); ?>
-                    	<?= $this->Form->postLink(h($article->published) ? __('Yes') : __('No'), ['action' => 'changeStatus', $article->id, $article->published], ['confirm' => __('Are you sure you want to {0}?', h($article->published) ? __('Unpublish') : __('Publish'))]) ?>
+                    	<?= $this->Form->postLink(h($article->published) ? __('Yes') : __('No'), ['action' => 'changeStatus', $article->id, $article->published], ['title' => __('Change status'), 'confirm' => __('Are you sure you want to {0}?', h($article->published) ? __('Unpublish') : __('Publish'))]) ?>
                     </td>
                     <td><?= h($article->created->format('d/m/y H:i:s')) ?></td>
                     <td><?= h($article->modified->format('d/m/y H:i:s')) ?></td>
