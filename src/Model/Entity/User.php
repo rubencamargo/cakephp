@@ -47,6 +47,7 @@ class User extends Entity
         'latitude' => true,
         'longitude' => true,
         'active' => true,
+        'last_login' => true,
         'created' => true,
         'modified' => true,
         'role' => true,
