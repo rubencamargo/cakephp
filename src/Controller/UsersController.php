@@ -27,17 +27,6 @@ class UsersController extends AppController
         $this->request->allowMethod(['get', 'post']);
         $result = $this->Authentication->getResult();
         
-        // Geoip
-        /*
-        $http = new Client();
-        //$response = $http->get('http://api.ipstack.com/181.46.165.130?access_key=ecbce6011232d8a6d3de6b08d27bff48&output=json');
-        $response = $http->get(
-            'http://api.ipstack.com/181.46.165.130',
-            ['q' => 'test', '_content' => json_encode($data)],
-            ['type' => 'json']
-        );
-        debug($response);*/
-        
         if (($result->getData()) && (!$result->getData()->active)) {
             $this->Flash->error(__('User inactive'));
             $this->Authentication->logout();
@@ -153,6 +142,29 @@ class UsersController extends AppController
             $user = $this->Users->patchEntity($user, $this->request->getData());
             
             $user->ip = $this->request->clientIp();
+            
+            if ($user->ip == '127.0.0.1') { // Localhost
+                $user->ip = '181.46.165.130';
+            }
+            
+            $user->name = ucwords($user->name);
+            $user->lastname = ucwords($user->lastname);
+            
+            // Geoip
+            $http = new Client();
+            //$response = $http->get('http://api.ipapi.com/134.201.250.155?access_key=d12feaf54bcf5b9edf3ad592cba4c205&format=1');
+            $response = $http->get('http://api.ipapi.com/' . $user->ip . '?access_key=d12feaf54bcf5b9edf3ad592cba4c205&format=1');
+            $response_json = $response->getJson();
+            
+            if (isset($response_json['ip'])) {
+                $user->country_flag = $response_json['location']['country_flag'];
+                $user->country_code = $response_json['country_code'];
+                $user->country_name = $response_json['country_name'];
+                $user->region_name = $response_json['region_name'];
+                $user->city = $response_json['city'];
+                $user->latitude = $response_json['latitude'];
+                $user->longitude = $response_json['longitude'];
+            }
             
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been registered. Please login now here.'));

@@ -20,6 +20,7 @@
                     <th><?= $this->Paginator->sort('name') ?></th>
                     <th><?= $this->Paginator->sort('lastname') ?></th>
                     <th><?= $this->Paginator->sort('email') ?></th>
+                    <th><?= $this->Paginator->sort('country_code', __('Country')) ?></th>
                     <th><?= $this->Paginator->sort('active') ?></th>
                     <th><?= $this->Paginator->sort('created') ?></th>
                     <th><?= $this->Paginator->sort('modified') ?></th>
@@ -34,6 +35,11 @@
                     <td><?= h($user->name) ?></td>
                     <td><?= h($user->lastname) ?></td>
                     <td><?= h($user->email) ?></td>
+                    <td>
+                    	<?php //echo $user->country_code; ?>
+                    	<?php //debug($user->country_flag); ?>
+                    	<?php echo $this->Html->image($user->country_flag, ['alt' => $user->country_code, 'title' => $user->country_name, 'width' => '40px']); ?>
+                    </td>
                     <td>
                     	<?php //h($user->active) ? __('Yes') : __('No'); ?>
                     	<?= $this->Form->postLink(h($user->active) ? __('Yes') : __('No'), ['action' => 'changeStatus', $user->id, $user->active], ['confirm' => __('Are you sure you want to {0}?', h($user->active) ? __('Deactivate') : __('Activate'))]) ?>
