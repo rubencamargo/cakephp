@@ -22,6 +22,7 @@
                     <th><?= $this->Paginator->sort('email') ?></th>
                     <th><?= $this->Paginator->sort('country_code', __('Country')) ?></th>
                     <th><?= $this->Paginator->sort('active') ?></th>
+                    <th><?= $this->Paginator->sort('last_login') ?></th>
                     <th><?= $this->Paginator->sort('created') ?></th>
                     <th><?= $this->Paginator->sort('modified') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
@@ -35,18 +36,21 @@
                     <td><?= h($user->name) ?></td>
                     <td><?= h($user->lastname) ?></td>
                     <td><?= h($user->email) ?></td>
-                    <td>
+                    <td style="text-align: center;">
                     	<?php //echo $user->country_code; ?>
                     	<?php //debug($user->country_flag); ?>
-                    	<?php echo $this->Html->image($user->country_flag, ['alt' => $user->country_code, 'title' => $user->country_name, 'width' => '40px']); ?>
+                    	<?php echo $this->Html->image($user->country_flag, ['alt' => $user->country_code, 'title' => $user->country_name, 'width' => '20px']); ?>
+                    	<br>
+                    	<?php echo $user->city; ?>
                     </td>
                     <td>
                     	<?php //h($user->active) ? __('Yes') : __('No'); ?>
                     	<?= $this->Form->postLink(h($user->active) ? __('Yes') : __('No'), ['action' => 'changeStatus', $user->id, $user->active], ['confirm' => __('Are you sure you want to {0}?', h($user->active) ? __('Deactivate') : __('Activate'))]) ?>
                     </td>
+                    <td><?= h($user->last_login->format('d/m/y H:i:s')) ?></td>
                     <td><?= h($user->created->format('d/m/y H:i:s')) ?></td>
                     <td><?= h($user->modified->format('d/m/y H:i:s')) ?></td>
-                    <td class="actions" nowrap="nowrap">
+                    <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>
                         <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?>
