@@ -14,7 +14,7 @@
             </fieldset>
             
             <?= $this->Form->button(__('Login')) ?>
-            <?= $this->Html->link(__('Register'), ['action' => 'add'], ['class' => 'button']) ?>
+            <?= $this->Html->link(__('Register'), '/register', ['class' => 'button']) ?>
             <?= $this->Form->end() ?>
             
         </div>

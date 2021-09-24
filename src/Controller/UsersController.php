@@ -62,6 +62,7 @@ class UsersController extends AppController
         // regardless of POST or GET, redirect if user is logged in
         if ($result->isValid()) {
             $this->Authentication->logout();
+            $this->Flash->success(__('Logout success.'));
             return $this->redirect(['controller' => 'Articles', 'action' => 'blog']);
         }
     }

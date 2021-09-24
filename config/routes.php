@@ -56,8 +56,9 @@ $routes->scope('/', function (RouteBuilder $builder) {
     $builder->connect('/blog', ['controller' => 'Articles', 'action' => 'blog']);
     $builder->connect('/detail/*', ['controller' => 'Articles', 'action' => 'detail']);
     
-    //$builder->connect('/login', ['controller' => 'Users', 'action' => 'login']);
-    //$builder->connect('/logout', ['controller' => 'Users', 'action' => 'logout']);
+    $builder->connect('/register', ['controller' => 'Users', 'action' => 'add']);
+    $builder->connect('/login', ['controller' => 'Users', 'action' => 'login']);
+    $builder->connect('/logout', ['controller' => 'Users', 'action' => 'logout']);
     $builder->connect('/profile/*', ['controller' => 'Users', 'action' => 'edit']);
     
     /*
@@ -76,7 +77,7 @@ $routes->scope('/', function (RouteBuilder $builder) {
      * ```
      *
      * You can remove these routes once you've connected the
-     * routes you want in your application.
+     * routes you want in your <application class=""></application>
      */
     $builder->fallbacks();
 });
