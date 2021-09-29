@@ -11,6 +11,11 @@ use Authorization\IdentityInterface;
  */
 class ArticlePolicy
 {
+    public function canHome(IdentityInterface $user, Article $article)
+    {
+        return true;
+    }
+    
     public function canBlog(IdentityInterface $user, Article $article)
     {
         return true;

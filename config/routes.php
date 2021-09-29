@@ -51,8 +51,9 @@ $routes->scope('/', function (RouteBuilder $builder) {
      * to use (in this case, templates/Pages/home.php)...
      */
     //$builder->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
-    $builder->connect('/', ['controller' => 'Articles', 'action' => 'blog']);
+    $builder->connect('/', ['controller' => 'Articles', 'action' => 'home']);
 
+    $builder->connect('/home', ['controller' => 'Articles', 'action' => 'home']);
     $builder->connect('/blog', ['controller' => 'Articles', 'action' => 'blog']);
     $builder->connect('/detail/*', ['controller' => 'Articles', 'action' => 'detail']);
     

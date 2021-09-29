@@ -17,7 +17,29 @@ class ArticlesController extends AppController
     {
         parent::beforeFilter($event);
         // Configure the blog action to not require authentication
-        $this->Authentication->addUnauthenticatedActions(['blog', 'detail']);
+        $this->Authentication->addUnauthenticatedActions(['home', 'blog', 'detail']);
+    }
+    
+    public function home()
+    {
+        $this->Authorization->skipAuthorization();
+        
+        $conditions = ['Published' => 1];
+        if ($this->request->getQuery('search') != '') {
+            $search = $this->request->getQuery('search');
+            $conditions = ['Articles.title like ' => '%' . $search . '%'];
+        }
+        
+        $this->paginate = [
+            'contain' => ['Users', 'Tags'],
+            'conditions' => $conditions,
+            'order' => ['Articles.id' => 'DESC'],
+            'limit' => 3
+        ];
+        
+        $articles = $this->paginate($this->Articles);
+        
+        $this->set(compact('articles'));
     }
     
     public function blog()
@@ -32,7 +54,8 @@ class ArticlesController extends AppController
         
         $this->paginate = [
             'contain' => ['Users', 'Tags'],
-            'conditions' => $conditions
+            'conditions' => $conditions,
+            'order' => ['Articles.id' => 'DESC']
         ];
         
         $articles = $this->paginate($this->Articles);
