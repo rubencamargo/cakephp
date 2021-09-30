@@ -67,10 +67,17 @@ $cakeDescription = 'RubenCAMARGO';
     </nav>
     
     <?php if ($this->request->getParam('action') == 'home') { ?>
+    <!--
     <div class="image-header">
     	<div class="text-header">
     		Programador
     	</div>
+    </div>
+    -->
+    
+    <!-- Parallax -->
+    <div class="parallax">
+    	<h1 class="text-parallax">Programador Web</h1>
     </div>
     <?php } ?>
 

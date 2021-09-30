@@ -24,11 +24,8 @@ class ArticlesController extends AppController
     {
         $this->Authorization->skipAuthorization();
         
+        /*
         $conditions = ['Published' => 1];
-        if ($this->request->getQuery('search') != '') {
-            $search = $this->request->getQuery('search');
-            $conditions = ['Articles.title like ' => '%' . $search . '%'];
-        }
         
         $this->paginate = [
             'contain' => ['Users', 'Tags'],
@@ -38,6 +35,13 @@ class ArticlesController extends AppController
         ];
         
         $articles = $this->paginate($this->Articles);
+        */
+        
+        $articles = $this->Articles->find('all')
+                    ->contain(['Users', 'Tags'])
+                    ->where(['Published' => 1])
+                    ->order(['Articles.id' => 'DESC'])
+                    ->limit(3);
         
         $this->set(compact('articles'));
     }

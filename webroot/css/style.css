@@ -23,3 +23,24 @@ input[type="email"], input[type="number"], input[type="password"], input[type="s
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+
+.parallax {
+  /* The image used */
+  background-image: url("../img/software-developer.jpg");
+
+  /* Set a specific height */
+  min-height: 400px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 30px;
+}
+
+.text-parallax {
+	text-align: center;
+	color: #ffffff;
+	padding-top: 150px;
+}
