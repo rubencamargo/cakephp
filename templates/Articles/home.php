@@ -1,6 +1,6 @@
 <?php if ($articles->count()) { ?>
 <div class="articles index content">
-    <h3><?= __('News') ?></h3>
+    <h3><i class="fas fa-newspaper"></i> <?= __('News') ?></h3>
 </div>
 
 <br />
@@ -49,7 +49,7 @@ $i = 1;
 <br />
 
 <div class="articles index content">
-    <h3><?= __('Portfolio') ?></h3>    
+    <h3><i class="fas fa-camera"></i> <?= __('Portfolio') ?></h3>    
 </div>
 
 <br />
@@ -155,7 +155,7 @@ $i = 1;
 <br />
 
 <div class="articles index content">
-    <h3><?= __('Contact') ?></h3>    
+    <h3><i class="fas fa-envelope"></i> <?= __('Contact') ?></h3>    
 </div>
 
 <br />
@@ -163,7 +163,9 @@ $i = 1;
 <div class="row">
     <div class="column-responsive column-4">
     	<div class="articles view content">
-            <div>
+            <div class="contact-col">
+            	<i class="fas fa-phone"></i>
+				<br /><br />
 				<h3><?php echo __('Phone'); ?></h3>
 				+54 11 27037330
             </div>
@@ -171,7 +173,9 @@ $i = 1;
     </div>
     <div class="column-responsive column-4">
     	<div class="articles view content">
-            <div>
+            <div class="contact-col">
+            	<i class="fas fa-map-marker-alt"></i>
+				<br /><br />
 				<h3><?php echo __('Office'); ?></h3>
 				Barracas, Buenos Aires, Argentina.
             </div>
@@ -179,7 +183,9 @@ $i = 1;
     </div>
     <div class="column-responsive column-4">
     	<div class="articles view content">
-            <div>
+            <div class="contact-col">
+            	<i class="fas fa-at"></i>
+            	<br /><br />
 				<h3><?php echo __('Email'); ?></h3>
 				rubencamargo@gmail.com
             </div>

@@ -52,3 +52,20 @@ footer {
 	color: #ffffff;
 	text-align: center;
 }
+
+.contact-col {
+	text-align: center;
+}
+
+svg {
+	font-size: 25px !important;
+	color: #d33c43;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 0px;
+}
+
+.footer-icon {
+	color: #ffffff;
+}

@@ -35,8 +35,8 @@ $cakeDescription = 'RubenCAMARGO';
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
 
-    <?= $this->Html->css(['normalize.min', 'milligram.min', 'cake', 'style.css']) ?>
-	<?= $this->Html->script(['jquery-3.6.0.min.js', 'app.js'], ['block' => 'js']) ?>
+    <?= $this->Html->css(['normalize.min', 'milligram.min', 'cake', 'style.css', 'fontawesome/all.min.css']) ?>
+	<?= $this->Html->script(['jquery-3.6.0.min.js', 'app.js', 'fontawesome/all.min.js'], ['block' => 'js']) ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
@@ -98,7 +98,7 @@ $cakeDescription = 'RubenCAMARGO';
         		</div>
         		
         		<div class="column-responsive column-6">
-        		LinkedIN
+        			<i class="fab fa-linkedin footer-icon"></i>
         		</div>
         	</div>
     	</div>
