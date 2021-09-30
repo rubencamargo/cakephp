@@ -167,7 +167,7 @@ $i = 1;
             	<i class="fas fa-phone"></i>
 				<br /><br />
 				<h3><?php echo __('Phone'); ?></h3>
-				+54 11 27037330
+				+54 (9) 11 27037330
             </div>
         </div>
     </div>

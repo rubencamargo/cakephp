@@ -98,7 +98,14 @@ $cakeDescription = 'RubenCAMARGO';
         		</div>
         		
         		<div class="column-responsive column-6">
-        			<i class="fab fa-linkedin footer-icon"></i>
+        			<!-- <i class="fab fa-linkedin footer-icon"></i> -->
+        			<?php
+            			echo $this->Html->link(
+                        '<i class="fab fa-linkedin footer-icon"></i>',
+                        'https://ar.linkedin.com/in/rubencamargo',
+                        ['escape' => false, 'target' => '_blank']
+                        );
+        			?>
         		</div>
         	</div>
     	</div>
