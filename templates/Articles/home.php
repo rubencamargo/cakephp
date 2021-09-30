@@ -1,8 +1,10 @@
+<?php if ($articles->count()) { ?>
 <div class="articles index content">
     <h3><?= __('News') ?></h3>
 </div>
 
 <br />
+<?php } ?>
 
 <?php
 $columns = 3;
