@@ -88,8 +88,20 @@ $cakeDescription = 'RubenCAMARGO';
         </div>
     </main>
     
+    <br />
+    
     <footer>
-    	
+        <div class="container">
+        	<div class="row">
+        		<div class="column-responsive column-6">
+        			&copy; Copyright 2020 - Rubén Camargo.
+        		</div>
+        		
+        		<div class="column-responsive column-6">
+        		LinkedIN
+        		</div>
+        	</div>
+    	</div>
     </footer>
     
     <?= $this->fetch('js') ?>
