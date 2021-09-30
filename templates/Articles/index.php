@@ -16,6 +16,7 @@
             <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
+                    <th><?= __('Image') ?></th>
                     <th><?= $this->Paginator->sort('user_id') ?></th>
                     <th><?= $this->Paginator->sort('title') ?></th>
                     <!-- <th><?= $this->Paginator->sort('slug') ?></th> -->
@@ -30,6 +31,15 @@
                 <?php foreach ($articles as $article): ?>
                 <tr>
                     <td><?= $this->Number->format($article->id) ?></td>
+                    <td>
+                    	<?php
+                    	if (($article->image_name) && (is_file(WWW_ROOT . 'img/articles/' . $article->image_name))) {
+                    	    echo $this->Html->image('articles/' . $article->image_name, ['width' => '50px']);
+                    	} else {
+                    	    echo $this->Html->image('no-image-available.jpeg', ['width' => '50px']);
+                    	}
+                    	?>
+                    </td>
                     <td><?= $article->has('user') ? $article->user->name . ' ' . $article->user->lastname : '' ?></td>
                     <td><?= h($article->title) ?></td>
                     <!-- <td><?= h($article->slug) ?></td> -->
