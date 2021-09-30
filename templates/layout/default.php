@@ -23,7 +23,7 @@ $cakeDescription = 'RubenCAMARGO';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Website developed with CakePHP Framework.">
-    <meta name="keywords" content="Ruben Camargo, PHP, CakePHP, JavaScript, CSS, HTML">
+    <meta name="keywords" content="Ruben Camargo, HTML, CSS, JavaScript, PHP, CakePHP, Font Awesome">
     <meta name="author" content="Ruben Camargo">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
