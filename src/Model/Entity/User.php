@@ -44,6 +44,7 @@ class User extends Entity
         'country_name' => true,
         'region_name' => true,
         'city' => true,
+        'language' => true,
         'latitude' => true,
         'longitude' => true,
         'active' => true,

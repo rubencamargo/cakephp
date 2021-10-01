@@ -19,6 +19,7 @@
                     echo $this->Form->control('email', ['placeholder' => __('Email'), 'label' => false, 'autocomplete' => 'off']);
                     echo $this->Form->control('password', ['placeholder' => __('Password'), 'label' => false, 'autocomplete' => 'off']);
                     echo $this->Form->control('retype_password', ['type' => 'password', 'placeholder' => __('Retype Password'), 'label' => false, 'autocomplete' => 'off']);
+                    echo $this->Form->hidden('language', ['value' => $this->request->getSession()->read('Config.language')]);
                 ?>
                 
                 <?php

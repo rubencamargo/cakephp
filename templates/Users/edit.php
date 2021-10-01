@@ -32,6 +32,7 @@
                         echo $this->Form->control('email', ['disabled' => 'disabled']);
                     }
                     echo $this->Form->control('password');
+                    echo $this->Form->control('language', ['options' => ['es_ES' => 'Español', 'en_US' => 'English']]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

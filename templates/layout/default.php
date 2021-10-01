@@ -58,11 +58,35 @@ $cakeDescription = 'RubenCAMARGO';
                     <a href="<?= $this->Url->build('/') ?>users">Users</a>
                     <a href="<?= $this->Url->build('/') ?>roles">Roles</a>
                 <?php } ?>
-                <a href="<?= $this->Url->build('/') ?>profile/<?= $this->request->getSession()->read('Auth.id') ?>"><?= $this->request->getSession()->read('Auth.name') . ' ' . $this->request->getSession()->read('Auth.lastname') ?></a>
+                <a href="<?= $this->Url->build('/') ?>profile/<?= $this->request->getSession()->read('Auth.id') ?>">
+                	<?= $this->request->getSession()->read('Auth.name') . ' ' . $this->request->getSession()->read('Auth.lastname') ?>
+                </a>
         		<a href="<?= $this->Url->build('/') ?>logout">Logout</a>
                 <?php } else { ?>
                 <a href="<?= $this->Url->build('/') ?>login">Login</a>
             <?php } ?>
+            
+            <?php
+        	if ($this->request->getSession()->read('Config.language') == 'en_US') {
+        	    echo $this->Html->image("flags/united-states.png",
+        	    [
+        	        "alt" => "English",
+        	        'url' => '/changeLanguage/es_ES',
+        	        'title' => __('English'),
+        	        'class' => 'flag-icon'
+        	    ]);
+        	}
+        	
+        	if ($this->request->getSession()->read('Config.language') == 'es_ES') {
+        	    echo $this->Html->image("flags/spain.png",
+        	    [
+        	        "alt" => "Español",
+        	        'url' => '/changeLanguage/en_US',
+        	        'title' => __('Spanish'),
+        	        'class' => 'flag-icon'
+        	    ]);
+        	}
+        	?>
         </div>
     </nav>
     

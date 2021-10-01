@@ -17,6 +17,7 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use Cake\Controller\Controller;
+use Cake\I18n\I18n;
 
 /**
  * Application Controller
@@ -54,5 +55,33 @@ class AppController extends Controller
          * see https://book.cakephp.org/4/en/controllers/components/form-protection.html
          */
         //$this->loadComponent('FormProtection');
+    }
+    
+    public function beforeFilter(\Cake\Event\EventInterface $event)
+    {
+        parent::beforeFilter($event);
+        // Configure the action to not require authentication
+        $this->Authentication->addUnauthenticatedActions(['changeLanguage']);
+        
+        if ($this->request->getSession()->check('Config.language')) {
+            I18n::setLocale($this->request->getSession()->read('Config.language'));
+        } else {
+            $this->request->getSession()->write('Config.language', I18n::getLocale());
+        }
+    }
+    
+    public function changeLanguage($language = null)
+    {
+        $this->Authorization->skipAuthorization();
+        
+        $languages = ['en_US', 'es_ES'];
+        
+        if (($language != null) && (in_array($language, $languages))) {
+            $this->request->getSession()->write('Config.language', $language);
+            return $this->redirect($this->referer());
+        } else {
+            $this->request->getSession()->write('Config.language', I18n::getLocale());
+            return $this->redirect($this->referer());
+        }
     }
 }
