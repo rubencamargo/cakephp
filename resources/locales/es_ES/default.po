@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2021-10-01 16:22+0000\n"
-"PO-Revision-Date: 2021-10-02 16:36-0300\n"
+"PO-Revision-Date: 2021-10-02 18:35-0300\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -333,15 +333,15 @@ msgstr "Cambiar estado"
 
 #: Articles/index.php:55 Users/index.php:48
 msgid "Are you sure you want to {0}?"
-msgstr ""
+msgstr "Realmente desea {0}?"
 
 #: Articles/index.php:55
 msgid "Unpublish"
-msgstr "Despublicado"
+msgstr "Despublicar"
 
 #: Articles/index.php:55
 msgid "Publish"
-msgstr "Publicado"
+msgstr "Publicar"
 
 #: Articles/view.php:12
 msgid "Delete Article"
