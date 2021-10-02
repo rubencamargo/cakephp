@@ -1,0 +1,537 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2021-10-01 16:22+0000\n"
+"PO-Revision-Date: 2021-10-02 15:05-0300\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0\n"
+"Last-Translator: \n"
+"Language: es_ES\n"
+
+#: Controller/ArticlesController.php:93 Controller/ArticlesController.php:126
+#: Controller/ArticlesController.php:148 Controller/ArticlesController.php:214
+#: Controller/ArticlesController.php:270 Controller/ArticlesController.php:292
+#: Controller/RolesController.php:25 Controller/RolesController.php:59
+#: Controller/RolesController.php:77 Controller/RolesController.php:110
+#: Controller/RolesController.php:141 Controller/TagsController.php:25
+#: Controller/TagsController.php:59 Controller/TagsController.php:77
+#: Controller/TagsController.php:112 Controller/TagsController.php:145
+#: Controller/UsersController.php:82 Controller/UsersController.php:123
+#: Controller/UsersController.php:201 Controller/UsersController.php:234
+#: Controller/UsersController.php:254
+msgid "Restricted access."
+msgstr "Acceso restringido."
+
+#: Controller/ArticlesController.php:180 Controller/ArticlesController.php:244
+#: Controller/ArticlesController.php:299
+msgid "The article has been saved."
+msgstr ""
+
+#: Controller/ArticlesController.php:184 Controller/ArticlesController.php:248
+#: Controller/ArticlesController.php:301
+msgid "The article could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/ArticlesController.php:275
+msgid "The article has been deleted."
+msgstr ""
+
+#: Controller/ArticlesController.php:277
+msgid "The article could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/ArticlesTagsController.php:56
+#: Controller/ArticlesTagsController.php:82
+msgid "The articles tag has been saved."
+msgstr ""
+
+#: Controller/ArticlesTagsController.php:60
+#: Controller/ArticlesTagsController.php:86
+msgid "The articles tag could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/ArticlesTagsController.php:105
+msgid "The articles tag has been deleted."
+msgstr ""
+
+#: Controller/ArticlesTagsController.php:107
+msgid "The articles tag could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/RolesController.php:85 Controller/RolesController.php:118
+msgid "The role has been saved."
+msgstr ""
+
+#: Controller/RolesController.php:89 Controller/RolesController.php:122
+msgid "The role could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/RolesController.php:146
+msgid "The role has been deleted."
+msgstr ""
+
+#: Controller/RolesController.php:148
+msgid "The role could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/TagsController.php:85 Controller/TagsController.php:120
+msgid "The tag has been saved."
+msgstr ""
+
+#: Controller/TagsController.php:90 Controller/TagsController.php:124
+msgid "The tag could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/TagsController.php:150
+msgid "The tag has been deleted."
+msgstr ""
+
+#: Controller/TagsController.php:152
+msgid "The tag could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/UsersController.php:31
+msgid "User inactive"
+msgstr "Usuario inactivo"
+
+#: Controller/UsersController.php:54
+msgid "Invalid username or password"
+msgstr ""
+
+#: Controller/UsersController.php:66
+msgid "Logout success."
+msgstr ""
+
+#: Controller/UsersController.php:142
+msgid "The sum is not correct. Please, try again."
+msgstr ""
+
+#: Controller/UsersController.php:177
+msgid "The user has been registered. Please login now here."
+msgstr ""
+
+#: Controller/UsersController.php:181 Controller/UsersController.php:213
+#: Controller/UsersController.php:263
+msgid "The user could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/UsersController.php:209 Controller/UsersController.php:261
+msgid "The user has been saved."
+msgstr ""
+
+#: Controller/UsersController.php:239
+msgid "The user has been deleted."
+msgstr ""
+
+#: Controller/UsersController.php:241
+msgid "The user could not be deleted. Please, try again."
+msgstr ""
+
+#: ArticlesTags/add.php:12 ArticlesTags/edit.php:12 ArticlesTags/index.php:19
+#: ArticlesTags/view.php:10 Articles/add.php:12 Articles/edit.php:12
+#: Articles/index.php:27 Articles/view.php:10 Articles/view.php:67
+#: Roles/add.php:10 Roles/edit.php:10 Roles/index.php:22 Roles/view.php:10
+#: Roles/view.php:52 Tags/add.php:11 Tags/edit.php:11 Tags/index.php:22
+#: Tags/view.php:10 Tags/view.php:52 Users/edit.php:11 Users/index.php:28
+#: Users/view.php:10 Users/view.php:68
+msgid "Actions"
+msgstr "Acciones"
+
+#: ArticlesTags/add.php:13 ArticlesTags/edit.php:18 ArticlesTags/view.php:13
+msgid "List Articles Tags"
+msgstr ""
+
+#: ArticlesTags/add.php:20
+msgid "Add Articles Tag"
+msgstr ""
+
+#: ArticlesTags/add.php:26 ArticlesTags/edit.php:31 Articles/add.php:32
+#: Articles/edit.php:44 Roles/add.php:23 Roles/edit.php:28 Tags/add.php:25
+#: Tags/edit.php:30 Users/add.php:36 Users/edit.php:38
+msgid "Submit"
+msgstr "Enviar"
+
+#: ArticlesTags/edit.php:14 ArticlesTags/index.php:33 Articles/edit.php:14
+#: Articles/index.php:62 Articles/view.php:78 Roles/edit.php:12
+#: Roles/index.php:35 Roles/view.php:67 Tags/edit.php:13 Tags/index.php:35
+#: Tags/view.php:67 Users/edit.php:13 Users/index.php:56 Users/view.php:83
+msgid "Delete"
+msgstr "Eliminar"
+
+#: ArticlesTags/edit.php:16 ArticlesTags/index.php:33 ArticlesTags/view.php:12
+#: Articles/edit.php:16 Articles/index.php:62 Articles/view.php:12
+#: Articles/view.php:78 Roles/edit.php:14 Roles/index.php:35 Roles/view.php:12
+#: Roles/view.php:67 Tags/edit.php:15 Tags/index.php:35 Tags/view.php:12
+#: Tags/view.php:67 Users/edit.php:15 Users/index.php:56 Users/view.php:12
+#: Users/view.php:83
+msgid "Are you sure you want to delete # {0}?"
+msgstr "Está seguro que desea eliminar # {0}?"
+
+#: ArticlesTags/edit.php:25 ArticlesTags/view.php:11
+msgid "Edit Articles Tag"
+msgstr ""
+
+#: ArticlesTags/index.php:8 ArticlesTags/view.php:14
+msgid "New Articles Tag"
+msgstr ""
+
+#: ArticlesTags/index.php:9
+msgid "Articles Tags"
+msgstr ""
+
+#: ArticlesTags/index.php:31 Articles/index.php:60 Articles/view.php:76
+#: Roles/index.php:33 Roles/view.php:65 Tags/index.php:33 Tags/view.php:65
+#: Users/index.php:54 Users/view.php:81 View/Helper/PaginatorHelper.php:1266
+msgid "View"
+msgstr "Ver"
+
+#: ArticlesTags/index.php:32 Articles/index.php:61 Articles/view.php:77
+#: Roles/index.php:34 Roles/view.php:66 Tags/index.php:34 Tags/view.php:66
+#: Users/index.php:55 Users/view.php:82
+msgid "Edit"
+msgstr "Modificar"
+
+#: ArticlesTags/index.php:42 Articles/blog.php:61 Articles/index.php:71
+#: Roles/index.php:44 Tags/index.php:44 Users/index.php:65
+msgid "first"
+msgstr "primero"
+
+#: ArticlesTags/index.php:43 Articles/blog.php:62 Articles/index.php:72
+#: Roles/index.php:45 Tags/index.php:45 Users/index.php:66
+msgid "previous"
+msgstr "anterior"
+
+#: ArticlesTags/index.php:45 Articles/blog.php:64 Articles/index.php:74
+#: Roles/index.php:47 Tags/index.php:47 Users/index.php:68
+msgid "next"
+msgstr "siguiente"
+
+#: ArticlesTags/index.php:46 Articles/blog.php:65 Articles/index.php:75
+#: Roles/index.php:48 Tags/index.php:48 Users/index.php:69
+msgid "last"
+msgstr "último"
+
+#: ArticlesTags/index.php:48 Articles/blog.php:67 Articles/index.php:77
+#: Roles/index.php:50 Tags/index.php:50 Users/index.php:71
+msgid ""
+"Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} "
+"total"
+msgstr ""
+"Página {{page}} de {{pages}}, mostrándo {{current}} registro(s) de un total "
+"de {{count}}"
+
+#: ArticlesTags/view.php:12
+msgid "Delete Articles Tag"
+msgstr ""
+
+#: ArticlesTags/view.php:22
+msgid "Article"
+msgstr "Articuloa"
+
+#: ArticlesTags/view.php:26
+msgid "Tag"
+msgstr "Etiqueta"
+
+#: ArticlesTags/view.php:30 Articles/view.php:23 Articles/view.php:63
+#: Roles/view.php:22 Roles/view.php:44 Tags/view.php:26 Tags/view.php:44
+#: Users/view.php:22 Users/view.php:60
+msgid "Id"
+msgstr ""
+
+#: ArticlesTags/view.php:34 Articles/view.php:39 Articles/view.php:65
+#: Roles/view.php:30 Roles/view.php:50 Tags/view.php:30 Tags/view.php:50
+#: Users/view.php:46 Users/view.php:66
+msgid "Created"
+msgstr "Creado"
+
+#: ArticlesTags/view.php:38 Articles/view.php:43 Articles/view.php:66
+#: Roles/view.php:34 Roles/view.php:51 Tags/view.php:34 Tags/view.php:51
+#: Users/view.php:50 Users/view.php:67
+msgid "Modified"
+msgstr "Modificado"
+
+#: Articles/add.php:13 Articles/edit.php:18 Articles/view.php:13
+msgid "List Articles"
+msgstr "Lista de Artículos"
+
+#: Articles/add.php:21
+msgid "Add Article"
+msgstr "Agregar Artículo"
+
+#: Articles/blog.php:2 layout/default.php:53
+msgid "Blog"
+msgstr "Blog"
+
+#: Articles/blog.php:7 Articles/index.php:8
+msgid "Articles search by title"
+msgstr "Buscar artículos por título"
+
+#: Articles/blog.php:43 Articles/home.php:36 Tags/index.php:3
+#: layout/default.php:57
+msgid "Tags"
+msgstr "Etiquetas"
+
+#: Articles/edit.php:26 Articles/view.php:11
+msgid "Edit Article"
+msgstr "Modificar Artículo"
+
+#: Articles/home.php:3
+msgid "News"
+msgstr "Noticias"
+
+#: Articles/home.php:52
+msgid "Portfolio"
+msgstr "Portafolio"
+
+#: Articles/home.php:158
+msgid "Contact"
+msgstr "Contacto"
+
+#: Articles/home.php:169
+msgid "Phone"
+msgstr "Teléfono"
+
+#: Articles/home.php:179
+msgid "Office"
+msgstr "Oficina"
+
+#: Articles/home.php:189 Roles/view.php:48 Users/add.php:19 Users/login.php:11
+#: Users/view.php:38
+msgid "Email"
+msgstr "Correo Electrónico"
+
+#: Articles/index.php:2 Articles/view.php:14
+msgid "New Article"
+msgstr "Nuevo Artículo"
+
+#: Articles/index.php:3 layout/default.php:56
+msgid "Articles"
+msgstr "Artículos"
+
+#: Articles/index.php:19
+msgid "Image"
+msgstr "Foto"
+
+#: Articles/index.php:55 Articles/view.php:48 Users/index.php:48
+msgid "Yes"
+msgstr "Si"
+
+#: Articles/index.php:55 Articles/view.php:48 Users/index.php:48
+msgid "No"
+msgstr "No"
+
+#: Articles/index.php:55 Users/index.php:48
+msgid "Change status"
+msgstr "Cambiar estado"
+
+#: Articles/index.php:55 Users/index.php:48
+msgid "Are you sure you want to {0}?"
+msgstr ""
+
+#: Articles/index.php:55
+msgid "Unpublish"
+msgstr "Despublicado"
+
+#: Articles/index.php:55
+msgid "Publish"
+msgstr "Publicado"
+
+#: Articles/view.php:12
+msgid "Delete Article"
+msgstr "Eliminar Artículo"
+
+#: Articles/view.php:27
+msgid "User"
+msgstr "Usuario"
+
+#: Articles/view.php:31 Articles/view.php:64 Tags/view.php:22 Tags/view.php:46
+#: Users/view.php:62
+msgid "Title"
+msgstr "Título"
+
+#: Articles/view.php:35 Tags/view.php:47 Users/view.php:63
+msgid "Slug"
+msgstr ""
+
+#: Articles/view.php:47 Tags/view.php:49 Users/view.php:65
+msgid "Published"
+msgstr "Publicado"
+
+#: Articles/view.php:52 Tags/view.php:48 Users/view.php:64
+msgid "Body"
+msgstr "Cuerpo"
+
+#: Articles/view.php:58
+msgid "Related Tags"
+msgstr ""
+
+#: Roles/add.php:11 Roles/edit.php:16 Roles/view.php:13
+msgid "List Roles"
+msgstr "Lista de Roles"
+
+#: Roles/add.php:18
+msgid "Add Role"
+msgstr "Agregar Rol"
+
+#: Roles/edit.php:23 Roles/view.php:11
+msgid "Edit Role"
+msgstr "Modificar Rol"
+
+#: Roles/index.php:2 Roles/view.php:14
+msgid "New Role"
+msgstr "Nuevo Rol"
+
+#: Roles/index.php:3 layout/default.php:59
+msgid "Roles"
+msgstr "Roles"
+
+#: Roles/index.php:8
+msgid "Roles search by title"
+msgstr "Buscar roles por título"
+
+#: Roles/view.php:12
+msgid "Delete Role"
+msgstr "Eliminar Rol"
+
+#: Roles/view.php:26 Roles/view.php:46 Users/add.php:17 Users/view.php:30
+msgid "Name"
+msgstr "Nombre"
+
+#: Roles/view.php:39
+msgid "Related Users"
+msgstr ""
+
+#: Roles/view.php:45
+msgid "Role Id"
+msgstr ""
+
+#: Roles/view.php:47 Users/add.php:18 Users/view.php:34
+msgid "Lastname"
+msgstr "Apellido"
+
+#: Roles/view.php:49 Users/add.php:20 Users/login.php:12 Users/view.php:42
+msgid "Password"
+msgstr "Contraseña"
+
+#: Tags/add.php:12 Tags/edit.php:17 Tags/view.php:13
+msgid "List Tags"
+msgstr "Lista de Etiquetas"
+
+#: Tags/add.php:19
+msgid "Add Tag"
+msgstr "Agregar Etiqueta"
+
+#: Tags/edit.php:24 Tags/view.php:11
+msgid "Edit Tag"
+msgstr "Modificar Etiqueta"
+
+#: Tags/index.php:2 Tags/view.php:14
+msgid "New Tag"
+msgstr "Nueva Etiqueta"
+
+#: Tags/index.php:8
+msgid "Tags search by title"
+msgstr "Buscar etiquetas por título"
+
+#: Tags/view.php:12
+msgid "Delete Tag"
+msgstr "Eliminar Etiqueta"
+
+#: Tags/view.php:39 Users/view.php:55
+msgid "Related Articles"
+msgstr ""
+
+#: Tags/view.php:45 Users/view.php:61
+msgid "User Id"
+msgstr ""
+
+#: Users/add.php:13 Users/login.php:17
+msgid "Register"
+msgstr "Registro"
+
+#: Users/add.php:21
+msgid "Retype Password"
+msgstr "Reescribir contraseña"
+
+#: Users/edit.php:17 Users/view.php:13
+msgid "List Users"
+msgstr "Lista de Usuarios"
+
+#: Users/edit.php:24 Users/view.php:11
+msgid "Edit User"
+msgstr "Modificar Usuario"
+
+#: Users/index.php:2 Users/view.php:14
+msgid "New User"
+msgstr "Nuevo Usuario"
+
+#: Users/index.php:3 layout/default.php:58
+msgid "Users"
+msgstr "Usuarios"
+
+#: Users/index.php:8
+msgid "Users search by name, lastname and email"
+msgstr "Buscar usuarios por nombre, apellido y correo electrónico"
+
+#: Users/index.php:23
+msgid "Country"
+msgstr "País"
+
+#: Users/index.php:48
+msgid "Deactivate"
+msgstr "Desactivar"
+
+#: Users/index.php:48
+msgid "Activate"
+msgstr "Activar"
+
+#: Users/login.php:8 Users/login.php:16 layout/default.php:66
+msgid "Login"
+msgstr "Ingresar"
+
+#: Users/view.php:12
+msgid "Delete User"
+msgstr "Eliminar Usuario"
+
+#: Users/view.php:26
+msgid "Role"
+msgstr "Rol"
+
+#: layout/default.php:25
+msgid "Website developed with CakePHP Framework."
+msgstr "Sitio Web desarrollado con marco de trabajo CakePHP."
+
+#: layout/default.php:64
+msgid "Logout"
+msgstr "Salir"
+
+#: layout/default.php:73 layout/default.php:75
+msgid "English"
+msgstr "Inglés"
+
+#: layout/default.php:83
+msgid "Español"
+msgstr ""
+
+#: layout/default.php:85
+msgid "Spanish"
+msgstr "Español"
+
+#: layout/default.php:96
+msgid "Web Developer"
+msgstr "Desarrollador Web"
+
+#: layout/default.php:113
+msgid "Copyright"
+msgstr "Derechos reservados"
+
+#: layout/error.php:38
+msgid "Back"
+msgstr "Atrás"

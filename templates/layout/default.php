@@ -22,7 +22,7 @@ $cakeDescription = 'RubenCAMARGO';
     <?= $this->Html->charset() ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Website developed with CakePHP Framework.">
+    <meta name="description" content="<?= __('Website developed with CakePHP Framework.') ?>">
     <meta name="keywords" content="Ruben Camargo, HTML, CSS, JavaScript, PHP, CakePHP, Font Awesome">
     <meta name="author" content="Ruben Camargo">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,27 +50,27 @@ $cakeDescription = 'RubenCAMARGO';
         </div>
         
         <div class="top-nav-links">
-        	<a href="<?= $this->Url->build('/') ?>blog">Blog</a>
+        	<a href="<?= $this->Url->build('/') ?>blog"><?= __('Blog') ?></a>
         	<?php if ($this->request->getSession()->check('Auth')) { ?>
         		<?php if ($this->request->getSession()->read('Auth.role_id') == 1) { ?>
-                    <a href="<?= $this->Url->build('/') ?>articles">Articles</a>
-                    <a href="<?= $this->Url->build('/') ?>tags">Tags</a>
-                    <a href="<?= $this->Url->build('/') ?>users">Users</a>
-                    <a href="<?= $this->Url->build('/') ?>roles">Roles</a>
+                    <a href="<?= $this->Url->build('/') ?>articles"><?= __('Articles') ?></a>
+                    <a href="<?= $this->Url->build('/') ?>tags"><?= __('Tags') ?></a>
+                    <a href="<?= $this->Url->build('/') ?>users"><?= __('Users') ?></a>
+                    <a href="<?= $this->Url->build('/') ?>roles"><?= __('Roles') ?></a>
                 <?php } ?>
                 <a href="<?= $this->Url->build('/') ?>profile/<?= $this->request->getSession()->read('Auth.id') ?>">
                 	<?= $this->request->getSession()->read('Auth.name') . ' ' . $this->request->getSession()->read('Auth.lastname') ?>
                 </a>
-        		<a href="<?= $this->Url->build('/') ?>logout">Logout</a>
+        		<a href="<?= $this->Url->build('/') ?>logout"><?= __('Logout') ?></a>
                 <?php } else { ?>
-                <a href="<?= $this->Url->build('/') ?>login">Login</a>
+                <a href="<?= $this->Url->build('/') ?>login"><?= __('Login') ?></a>
             <?php } ?>
             
             <?php
         	if ($this->request->getSession()->read('Config.language') == 'en_US') {
         	    echo $this->Html->image("flags/united-states.png",
         	    [
-        	        "alt" => "English",
+        	        "alt" => __('English'),
         	        'url' => '/changeLanguage/es_ES',
         	        'title' => __('English'),
         	        'class' => 'flag-icon'
@@ -80,7 +80,7 @@ $cakeDescription = 'RubenCAMARGO';
         	if ($this->request->getSession()->read('Config.language') == 'es_ES') {
         	    echo $this->Html->image("flags/spain.png",
         	    [
-        	        "alt" => "Español",
+        	        "alt" => __('Español'),
         	        'url' => '/changeLanguage/en_US',
         	        'title' => __('Spanish'),
         	        'class' => 'flag-icon'
@@ -91,17 +91,9 @@ $cakeDescription = 'RubenCAMARGO';
     </nav>
     
     <?php if ($this->request->getParam('action') == 'home') { ?>
-    <!--
-    <div class="image-header">
-    	<div class="text-header">
-    		Programador
-    	</div>
-    </div>
-    -->
-    
     <!-- Parallax -->
     <div class="parallax">
-    	<h1 class="text-parallax">Programador Web</h1>
+    	<h1 class="text-parallax"><?= __('Web Developer') ?></h1>
     </div>
     <?php } ?>
 
@@ -118,7 +110,7 @@ $cakeDescription = 'RubenCAMARGO';
         <div class="container">
         	<div class="row">
         		<div class="column-responsive column-6">
-        			&copy; Copyright 2020 - Rubén Camargo.
+        			&copy; <?= __('Copyright') ?> 2021 - Rubén Camargo.
         		</div>
         		
         		<div class="column-responsive column-6">
