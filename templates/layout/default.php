@@ -70,7 +70,7 @@ $cakeDescription = 'RubenCAMARGO';
         	if ($this->request->getSession()->read('Config.language') == 'en_US') {
         	    echo $this->Html->image("flags/united-states.png",
         	    [
-        	        "alt" => __('English'),
+        	        'alt' => __('English'),
         	        'url' => '/changeLanguage/es_ES',
         	        'title' => __('English'),
         	        'class' => 'flag-icon'
@@ -80,7 +80,7 @@ $cakeDescription = 'RubenCAMARGO';
         	if ($this->request->getSession()->read('Config.language') == 'es_ES') {
         	    echo $this->Html->image("flags/spain.png",
         	    [
-        	        "alt" => __('Español'),
+        	        'alt' => __('Spanish'),
         	        'url' => '/changeLanguage/en_US',
         	        'title' => __('Spanish'),
         	        'class' => 'flag-icon'
