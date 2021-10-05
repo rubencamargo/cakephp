@@ -155,6 +155,89 @@ $i = 1;
 <br />
 
 <div class="articles index content">
+    <h3><i class="fas fa-tools"></i> <?= __('Technologies') ?></h3>    
+</div>
+
+<br />
+
+<div class="row">
+    <div class="column-responsive column-2">
+    	<div class="articles view content">
+            <div>
+            	<?php
+            	   echo $this->Html->image('techs/html5.jpg', ['alt' => 'HTML']);
+            	?>
+            </div>
+            <h3>
+            	HTML
+            </h3>
+        </div>
+    </div>
+    <div class="column-responsive column-2">
+    	<div class="articles view content">
+            <div>
+            	<?php
+            	   echo $this->Html->image('techs/css3.jpg', ['alt' => 'CSS']);
+            	?>
+            </div>
+            <h3>
+            	CSS
+            </h3>
+        </div>
+    </div>
+    <div class="column-responsive column-2">
+    	<div class="articles view content">
+            <div>
+            	<?php
+            	   echo $this->Html->image('techs/jquery.jpg', ['alt' => 'JQuery']);
+            	?>
+            </div>
+            <h3>
+            	JQuery
+            </h3>
+        </div>
+    </div>
+    <div class="column-responsive column-2">
+    	<div class="articles view content">
+            <div>
+            	<?php
+            	   echo $this->Html->image('techs/bootstrap.jpg', ['alt' => 'Bootstrap']);
+            	?>
+            </div>
+            <h3>
+            	Bootstrap
+            </h3>
+        </div>
+    </div>
+    <div class="column-responsive column-2">
+    	<div class="articles view content">
+            <div>
+            	<?php
+            	   echo $this->Html->image('techs/cakephp.jpg', ['alt' => 'CakePHP']);
+            	?>
+            </div>
+            <h3>
+            	CakePHP
+            </h3>
+        </div>
+    </div>
+    <div class="column-responsive column-2">
+    	<div class="articles view content">
+            <div>
+            	<?php
+            	   echo $this->Html->image('techs/wordpress.jpg', ['alt' => 'Wordpress']);
+            	?>
+            </div>
+            <h3>
+            	Wordpress
+            </h3>
+        </div>
+    </div>
+</div>
+
+<br />
+
+<div class="articles index content">
     <h3><i class="fas fa-envelope"></i> <?= __('Contact') ?></h3>    
 </div>
 
@@ -194,4 +277,3 @@ $i = 1;
 </div>
 
 <br />
-

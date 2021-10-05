@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2021-10-01 16:22+0000\n"
+"POT-Creation-Date: 2021-10-05 21:16+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -412,18 +412,22 @@ msgid "Portfolio"
 msgstr ""
 
 #: Articles/home.php:158
+msgid "Technologies"
+msgstr ""
+
+#: Articles/home.php:241
 msgid "Contact"
 msgstr ""
 
-#: Articles/home.php:169
+#: Articles/home.php:252
 msgid "Phone"
 msgstr ""
 
-#: Articles/home.php:179
+#: Articles/home.php:262
 msgid "Office"
 msgstr ""
 
-#: Articles/home.php:189
+#: Articles/home.php:272
 #: Roles/view.php:48
 #: Users/add.php:19
 #: Users/login.php:11
@@ -685,9 +689,6 @@ msgid "English"
 msgstr ""
 
 #: layout/default.php:83
-msgid "Español"
-msgstr ""
-
 #: layout/default.php:85
 msgid "Spanish"
 msgstr ""

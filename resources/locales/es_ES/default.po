@@ -4,16 +4,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2021-10-01 16:22+0000\n"
-"PO-Revision-Date: 2021-10-02 18:35-0300\n"
+"POT-Creation-Date: 2021-10-05 21:16+0000\n"
+"PO-Revision-Date: 2021-10-05 18:18-0300\n"
+"Last-Translator: \n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0\n"
-"Last-Translator: \n"
-"Language: es_ES\n"
 
 #: Controller/ArticlesController.php:93 Controller/ArticlesController.php:126
 #: Controller/ArticlesController.php:148 Controller/ArticlesController.php:214
@@ -291,18 +291,22 @@ msgid "Portfolio"
 msgstr "Portafolio"
 
 #: Articles/home.php:158
+msgid "Technologies"
+msgstr "Tecnologías"
+
+#: Articles/home.php:241
 msgid "Contact"
 msgstr "Contacto"
 
-#: Articles/home.php:169
+#: Articles/home.php:252
 msgid "Phone"
 msgstr "Teléfono"
 
-#: Articles/home.php:179
+#: Articles/home.php:262
 msgid "Office"
 msgstr "Oficina"
 
-#: Articles/home.php:189 Roles/view.php:48 Users/add.php:19 Users/login.php:11
+#: Articles/home.php:272 Roles/view.php:48 Users/add.php:19 Users/login.php:11
 #: Users/view.php:38
 msgid "Email"
 msgstr "Correo Electrónico"
@@ -516,11 +520,7 @@ msgstr "Salir"
 msgid "English"
 msgstr "Inglés"
 
-#: layout/default.php:83
-msgid "Español"
-msgstr ""
-
-#: layout/default.php:85
+#: layout/default.php:83 layout/default.php:85
 msgid "Spanish"
 msgstr "Español"
 
