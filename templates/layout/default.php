@@ -14,6 +14,8 @@
  * @var \App\View\AppView $this
  */
 
+use Cake\Core\Configure;
+
 $cakeDescription = 'RubenCAMARGO';
 ?>
 <!DOCTYPE html>
@@ -107,10 +109,12 @@ $cakeDescription = 'RubenCAMARGO';
     <br />
     
     <footer>
-        <div class="container">
+    	<div class="container">
         	<div class="row">
         		<div class="column-responsive column-6">
         			&copy; <?= __('Copyright') ?> 2021 - Rubén Camargo.
+        			<br />
+        			<?= __('Developed with') ?> CakePHP <?= Configure::version() ?>.
         		</div>
         		
         		<div class="column-responsive column-6">
