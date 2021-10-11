@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2021-10-05 21:16+0000\n"
+"POT-Creation-Date: 2021-10-11 17:21+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -14,12 +14,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: Controller/ArticlesController.php:93
-#: Controller/ArticlesController.php:126
-#: Controller/ArticlesController.php:148
-#: Controller/ArticlesController.php:214
-#: Controller/ArticlesController.php:270
-#: Controller/ArticlesController.php:292
+#: Controller/ArticlesController.php:94
+#: Controller/ArticlesController.php:127
+#: Controller/ArticlesController.php:149
+#: Controller/ArticlesController.php:215
+#: Controller/ArticlesController.php:271
+#: Controller/ArticlesController.php:293
 #: Controller/RolesController.php:25
 #: Controller/RolesController.php:59
 #: Controller/RolesController.php:77
@@ -38,23 +38,23 @@ msgstr ""
 msgid "Restricted access."
 msgstr ""
 
-#: Controller/ArticlesController.php:180
-#: Controller/ArticlesController.php:244
-#: Controller/ArticlesController.php:299
+#: Controller/ArticlesController.php:181
+#: Controller/ArticlesController.php:245
+#: Controller/ArticlesController.php:300
 msgid "The article has been saved."
 msgstr ""
 
-#: Controller/ArticlesController.php:184
-#: Controller/ArticlesController.php:248
-#: Controller/ArticlesController.php:301
+#: Controller/ArticlesController.php:185
+#: Controller/ArticlesController.php:249
+#: Controller/ArticlesController.php:302
 msgid "The article could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/ArticlesController.php:275
+#: Controller/ArticlesController.php:276
 msgid "The article has been deleted."
 msgstr ""
 
-#: Controller/ArticlesController.php:277
+#: Controller/ArticlesController.php:278
 msgid "The article could not be deleted. Please, try again."
 msgstr ""
 
@@ -382,7 +382,7 @@ msgid "Add Article"
 msgstr ""
 
 #: Articles/blog.php:2
-#: layout/default.php:53
+#: layout/default.php:55
 msgid "Blog"
 msgstr ""
 
@@ -394,7 +394,7 @@ msgstr ""
 #: Articles/blog.php:43
 #: Articles/home.php:36
 #: Tags/index.php:3
-#: layout/default.php:57
+#: layout/default.php:59
 msgid "Tags"
 msgstr ""
 
@@ -441,7 +441,7 @@ msgid "New Article"
 msgstr ""
 
 #: Articles/index.php:3
-#: layout/default.php:56
+#: layout/default.php:58
 msgid "Articles"
 msgstr ""
 
@@ -517,6 +517,14 @@ msgstr ""
 msgid "Related Tags"
 msgstr ""
 
+#: Error/missing_connection.php:1
+msgid "Database connection failed. Please try again later."
+msgstr ""
+
+#: Error/missing_connection.php:3
+msgid "Working to solve the problem as soon as possible."
+msgstr ""
+
 #: Roles/add.php:11
 #: Roles/edit.php:16
 #: Roles/view.php:13
@@ -538,7 +546,7 @@ msgid "New Role"
 msgstr ""
 
 #: Roles/index.php:3
-#: layout/default.php:59
+#: layout/default.php:61
 msgid "Roles"
 msgstr ""
 
@@ -641,7 +649,7 @@ msgid "New User"
 msgstr ""
 
 #: Users/index.php:3
-#: layout/default.php:58
+#: layout/default.php:60
 msgid "Users"
 msgstr ""
 
@@ -663,7 +671,7 @@ msgstr ""
 
 #: Users/login.php:8
 #: Users/login.php:16
-#: layout/default.php:66
+#: layout/default.php:68
 msgid "Login"
 msgstr ""
 
@@ -675,30 +683,34 @@ msgstr ""
 msgid "Role"
 msgstr ""
 
-#: layout/default.php:25
+#: layout/default.php:27
 msgid "Website developed with CakePHP Framework."
 msgstr ""
 
-#: layout/default.php:64
+#: layout/default.php:66
 msgid "Logout"
 msgstr ""
 
-#: layout/default.php:73
 #: layout/default.php:75
+#: layout/default.php:77
 msgid "English"
 msgstr ""
 
-#: layout/default.php:83
 #: layout/default.php:85
+#: layout/default.php:87
 msgid "Spanish"
 msgstr ""
 
-#: layout/default.php:96
+#: layout/default.php:98
 msgid "Web Developer"
 msgstr ""
 
-#: layout/default.php:113
+#: layout/default.php:115
 msgid "Copyright"
+msgstr ""
+
+#: layout/default.php:117
+msgid "Developed with"
 msgstr ""
 
 #: layout/error.php:38
