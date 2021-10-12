@@ -52,7 +52,9 @@ $cakeDescription = 'RubenCAMARGO';
         </div>
         
         <div class="top-nav-links">
+        	<?php if (isset($haveArticles) && ($haveArticles)) { ?>
         	<a href="<?= $this->Url->build('/') ?>blog"><?= __('Blog') ?></a>
+        	<?php } ?>
         	<?php if ($this->request->getSession()->check('Auth')) { ?>
         		<?php if ($this->request->getSession()->read('Auth.role_id') == 1) { ?>
                     <a href="<?= $this->Url->build('/') ?>articles"><?= __('Articles') ?></a>

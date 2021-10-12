@@ -69,6 +69,10 @@ class AppController extends Controller
         } else {
             $this->request->getSession()->write('Config.language', I18n::getLocale());
         }
+        
+        $this->loadModel('Articles');
+        $haveArticles = $this->Articles->find('all')->where(['published' => 1])->first();
+        $this->set(compact('haveArticles'));
     }
     
     public function changeLanguage($language = null)
