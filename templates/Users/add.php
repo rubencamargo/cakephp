@@ -27,7 +27,7 @@
                     $var2 = rand(0, 9);
                     echo $this->Form->hidden('var1', ['value' => $var1]);
                     echo $this->Form->hidden('var2', ['value' => $var2]);
-                    $label = "Write the result of (" . $var1 . " + " . $var2 . "):";
+                    $label = __("Write the result of") . " (" . $var1 . " + " . $var2 . "):";
                     
                     echo $this->Form->control('captcha_local', ['placeholder' => $label, 'label' => false, 'autocomplete' => 'off']);
                 ?>

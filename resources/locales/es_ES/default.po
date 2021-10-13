@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2021-10-11 17:21+0000\n"
-"PO-Revision-Date: 2021-10-11 14:25-0300\n"
+"POT-Creation-Date: 2021-10-13 12:51+0000\n"
+"PO-Revision-Date: 2021-10-13 09:52-0300\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "Language: es_ES\n"
@@ -188,7 +188,7 @@ msgstr ""
 
 #: ArticlesTags/index.php:31 Articles/index.php:60 Articles/view.php:76
 #: Roles/index.php:33 Roles/view.php:65 Tags/index.php:33 Tags/view.php:65
-#: Users/index.php:54 Users/view.php:81 View/Helper/PaginatorHelper.php:1266
+#: Users/index.php:54 Users/view.php:81
 msgid "View"
 msgstr "Ver"
 
@@ -265,7 +265,7 @@ msgstr "Lista de Artículos"
 msgid "Add Article"
 msgstr "Agregar Artículo"
 
-#: Articles/blog.php:2 layout/default.php:55
+#: Articles/blog.php:2 layout/default.php:56
 msgid "Blog"
 msgstr "Blog"
 
@@ -274,7 +274,7 @@ msgid "Articles search by title"
 msgstr "Buscar artículos por título"
 
 #: Articles/blog.php:43 Articles/home.php:36 Tags/index.php:3
-#: layout/default.php:59
+#: layout/default.php:61
 msgid "Tags"
 msgstr "Etiquetas"
 
@@ -315,7 +315,7 @@ msgstr "Correo Electrónico"
 msgid "New Article"
 msgstr "Nuevo Artículo"
 
-#: Articles/index.php:3 layout/default.php:58
+#: Articles/index.php:3 layout/default.php:60
 msgid "Articles"
 msgstr "Artículos"
 
@@ -402,7 +402,7 @@ msgstr "Modificar Rol"
 msgid "New Role"
 msgstr "Nuevo Rol"
 
-#: Roles/index.php:3 layout/default.php:61
+#: Roles/index.php:3 layout/default.php:63
 msgid "Roles"
 msgstr "Roles"
 
@@ -474,6 +474,10 @@ msgstr "Registro"
 msgid "Retype Password"
 msgstr "Reescribir contraseña"
 
+#: Users/add.php:30
+msgid "Write the result of"
+msgstr "Escriba el resultado de"
+
 #: Users/edit.php:17 Users/view.php:13
 msgid "List Users"
 msgstr "Lista de Usuarios"
@@ -486,7 +490,7 @@ msgstr "Modificar Usuario"
 msgid "New User"
 msgstr "Nuevo Usuario"
 
-#: Users/index.php:3 layout/default.php:60
+#: Users/index.php:3 layout/default.php:62
 msgid "Users"
 msgstr "Usuarios"
 
@@ -506,7 +510,7 @@ msgstr "Desactivar"
 msgid "Activate"
 msgstr "Activar"
 
-#: Users/login.php:8 Users/login.php:16 layout/default.php:68
+#: Users/login.php:8 Users/login.php:16 layout/default.php:70
 msgid "Login"
 msgstr "Ingresar"
 
@@ -522,27 +526,27 @@ msgstr "Rol"
 msgid "Website developed with CakePHP Framework."
 msgstr "Sitio Web desarrollado con marco de trabajo CakePHP."
 
-#: layout/default.php:66
+#: layout/default.php:68
 msgid "Logout"
 msgstr "Salir"
 
-#: layout/default.php:75 layout/default.php:77
+#: layout/default.php:77 layout/default.php:79
 msgid "English"
 msgstr "Inglés"
 
-#: layout/default.php:85 layout/default.php:87
+#: layout/default.php:87 layout/default.php:89
 msgid "Spanish"
 msgstr "Español"
 
-#: layout/default.php:98
+#: layout/default.php:100
 msgid "Web Developer"
 msgstr "Desarrollador Web"
 
-#: layout/default.php:115
+#: layout/default.php:117
 msgid "Copyright"
 msgstr "Derechos reservados"
 
-#: layout/default.php:117
+#: layout/default.php:119
 msgid "Developed with"
 msgstr ""
 

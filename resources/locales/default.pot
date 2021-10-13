@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2021-10-11 17:21+0000\n"
+"POT-Creation-Date: 2021-10-13 12:51+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -262,7 +262,6 @@ msgstr ""
 #: Tags/view.php:65
 #: Users/index.php:54
 #: Users/view.php:81
-#: View/Helper/PaginatorHelper.php:1266
 msgid "View"
 msgstr ""
 
@@ -382,7 +381,7 @@ msgid "Add Article"
 msgstr ""
 
 #: Articles/blog.php:2
-#: layout/default.php:55
+#: layout/default.php:56
 msgid "Blog"
 msgstr ""
 
@@ -394,7 +393,7 @@ msgstr ""
 #: Articles/blog.php:43
 #: Articles/home.php:36
 #: Tags/index.php:3
-#: layout/default.php:59
+#: layout/default.php:61
 msgid "Tags"
 msgstr ""
 
@@ -441,7 +440,7 @@ msgid "New Article"
 msgstr ""
 
 #: Articles/index.php:3
-#: layout/default.php:58
+#: layout/default.php:60
 msgid "Articles"
 msgstr ""
 
@@ -546,7 +545,7 @@ msgid "New Role"
 msgstr ""
 
 #: Roles/index.php:3
-#: layout/default.php:61
+#: layout/default.php:63
 msgid "Roles"
 msgstr ""
 
@@ -633,6 +632,10 @@ msgstr ""
 msgid "Retype Password"
 msgstr ""
 
+#: Users/add.php:30
+msgid "Write the result of"
+msgstr ""
+
 #: Users/edit.php:17
 #: Users/view.php:13
 msgid "List Users"
@@ -649,7 +652,7 @@ msgid "New User"
 msgstr ""
 
 #: Users/index.php:3
-#: layout/default.php:60
+#: layout/default.php:62
 msgid "Users"
 msgstr ""
 
@@ -671,7 +674,7 @@ msgstr ""
 
 #: Users/login.php:8
 #: Users/login.php:16
-#: layout/default.php:68
+#: layout/default.php:70
 msgid "Login"
 msgstr ""
 
@@ -687,29 +690,29 @@ msgstr ""
 msgid "Website developed with CakePHP Framework."
 msgstr ""
 
-#: layout/default.php:66
+#: layout/default.php:68
 msgid "Logout"
 msgstr ""
 
-#: layout/default.php:75
 #: layout/default.php:77
+#: layout/default.php:79
 msgid "English"
 msgstr ""
 
-#: layout/default.php:85
 #: layout/default.php:87
+#: layout/default.php:89
 msgid "Spanish"
 msgstr ""
 
-#: layout/default.php:98
+#: layout/default.php:100
 msgid "Web Developer"
 msgstr ""
 
-#: layout/default.php:115
+#: layout/default.php:117
 msgid "Copyright"
 msgstr ""
 
-#: layout/default.php:117
+#: layout/default.php:119
 msgid "Developed with"
 msgstr ""
 
