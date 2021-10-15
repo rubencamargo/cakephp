@@ -25,18 +25,18 @@ input[type="email"], input[type="number"], input[type="password"], input[type="s
 }
 
 .parallax {
-  /* The image used */
-  background-image: url("../img/software-developer.jpg");
+	/* The image used */
+	background-image: url("../img/software-developer.jpg");
+	opacity: 0.8;
+	/* Set a specific height */
+	min-height: 400px;
 
-  /* Set a specific height */
-  min-height: 400px;
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: bottom center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-bottom: 30px;
+	/* Create the parallax scrolling effect */
+	background-attachment: fixed;
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-bottom: 30px;
 }
 
 .text-parallax {
@@ -86,5 +86,5 @@ td {
 }
 
 body {
-	background: #ffffff;
+	background: #cfd9df;
 }
