@@ -55,7 +55,7 @@ $i = 1;
 <br />
 
 <div class="row">
-    <div class="column-responsive column-4">
+    <div class="column-responsive column-4 portfolio">
     	<div class="articles view content">
             <div>
             	<?php
@@ -70,7 +70,7 @@ $i = 1;
             </p>
         </div>
     </div>
-    <div class="column-responsive column-4">
+    <div class="column-responsive column-4 portfolio">
     	<div class="articles view content">
             <div>
             	<?php
@@ -85,7 +85,7 @@ $i = 1;
             </p>
         </div>
     </div>
-    <div class="column-responsive column-4">
+    <div class="column-responsive column-4 portfolio">
     	<div class="articles view content">
             <div>
             	<?php
@@ -105,7 +105,7 @@ $i = 1;
 <br />
 
 <div class="row">
-    <div class="column-responsive column-4">
+    <div class="column-responsive column-4 portfolio">
     	<div class="articles view content">
             <div>
             	<?php
@@ -120,7 +120,7 @@ $i = 1;
             </p>
         </div>
     </div>
-    <div class="column-responsive column-4">
+    <div class="column-responsive column-4 portfolio">
     	<div class="articles view content">
             <div>
             	<?php
@@ -135,7 +135,7 @@ $i = 1;
             </p>
         </div>
     </div>
-    <div class="column-responsive column-4">
+    <div class="column-responsive column-4 portfolio">
     	<div class="articles view content">
             <div>
             	<?php
@@ -161,7 +161,7 @@ $i = 1;
 <br />
 
 <div class="row">
-    <div class="column-responsive column-2">
+    <div class="column-responsive column-2 technologies">
     	<div class="articles view content">
             <div>
             	<?php
@@ -173,7 +173,7 @@ $i = 1;
             </h3>
         </div>
     </div>
-    <div class="column-responsive column-2">
+    <div class="column-responsive column-2 technologies">
     	<div class="articles view content">
             <div>
             	<?php
@@ -185,7 +185,7 @@ $i = 1;
             </h3>
         </div>
     </div>
-    <div class="column-responsive column-2">
+    <div class="column-responsive column-2 technologies">
     	<div class="articles view content">
             <div>
             	<?php
@@ -197,7 +197,7 @@ $i = 1;
             </h3>
         </div>
     </div>
-    <div class="column-responsive column-2">
+    <div class="column-responsive column-2 technologies">
     	<div class="articles view content">
             <div>
             	<?php
@@ -209,7 +209,7 @@ $i = 1;
             </h3>
         </div>
     </div>
-    <div class="column-responsive column-2">
+    <div class="column-responsive column-2 technologies">
     	<div class="articles view content">
             <div>
             	<?php
@@ -221,7 +221,7 @@ $i = 1;
             </h3>
         </div>
     </div>
-    <div class="column-responsive column-2">
+    <div class="column-responsive column-2 technologies">
     	<div class="articles view content">
             <div>
             	<?php
@@ -244,7 +244,7 @@ $i = 1;
 <br />
 
 <div class="row">
-    <div class="column-responsive column-4">
+    <div class="column-responsive column-4 contact">
     	<div class="articles view content">
             <div class="contact-col">
             	<i class="fas fa-phone"></i>
@@ -254,7 +254,7 @@ $i = 1;
             </div>
         </div>
     </div>
-    <div class="column-responsive column-4">
+    <div class="column-responsive column-4 contact">
     	<div class="articles view content">
             <div class="contact-col">
             	<i class="fas fa-map-marker-alt"></i>
@@ -264,7 +264,7 @@ $i = 1;
             </div>
         </div>
     </div>
-    <div class="column-responsive column-4">
+    <div class="column-responsive column-4 contact">
     	<div class="articles view content">
             <div class="contact-col">
             	<i class="fas fa-at"></i>

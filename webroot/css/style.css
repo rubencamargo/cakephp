@@ -88,3 +88,16 @@ td {
 body {
 	background: #cfd9df;
 }
+
+.portfolio {
+	padding-top: 5px;
+}
+
+.technologies {
+	padding-top: 5px;
+	text-align: center;
+}
+
+.contact {
+	padding-top: 5px;
+}
