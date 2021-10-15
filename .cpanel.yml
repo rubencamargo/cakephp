@@ -3,3 +3,4 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/uesggisjwp0d/public_html/
     - /bin/cp -R * $DEPLOYPATH
+    - /bin/composer update
