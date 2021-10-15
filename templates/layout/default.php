@@ -17,11 +17,18 @@
 use Cake\Core\Configure;
 
 $cakeDescription = 'RubenCAMARGO';
+
+$lang = "es";
+if ($this->request->getSession()->check('Config.language')) {
+    $lang = explode('_', $this->request->getSession()->read('Config.language'));
+    $lang = $lang[0];
+}
 ?>
+
 <!DOCTYPE html>
-<html>
+<html lang="<?= $lang ?>">
 <head>
-    <?= $this->Html->charset() ?>
+    <?php //echo $this->Html->charset() ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="<?= __('Website developed with CakePHP Framework.') ?>">
