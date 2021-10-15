@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/ym0r05erpxun/public_html/
-    - /bin/cp -R images $DEPLOYPATH
+    - /bin/cp -R bin $DEPLOYPATH
