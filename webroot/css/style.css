@@ -84,3 +84,7 @@ td {
 .small-icon {
 	font-size: 14px !important;
 }
+
+body {
+	background: #ffffff;
+}
