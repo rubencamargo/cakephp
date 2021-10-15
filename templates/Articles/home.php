@@ -270,7 +270,7 @@ $i = 1;
             	<i class="fas fa-at"></i>
             	<br /><br />
 				<h3><?php echo __('Email'); ?></h3>
-				rubencamargo<i class="fas fa-at small-icon"></i>gmail.com
+				info<i class="fas fa-at small-icon"></i>rubencamargo.com.ar
             </div>
         </div>
     </div>
