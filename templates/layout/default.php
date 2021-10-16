@@ -146,5 +146,14 @@ if ($this->request->getSession()->check('Config.language')) {
     </footer>
     
     <?= $this->fetch('js') ?>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6849KX8NQ5"></script>
+    <script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-6849KX8NQ5');
+    </script>
 </body>
 </html>
