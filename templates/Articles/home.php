@@ -20,9 +20,9 @@ $i = 1;
                     <div>
                     	<?php
                     	if (($article->image_name) && (is_file(WWW_ROOT . 'img/articles/' . $article->image_name))) {
-                    	    echo $this->Html->image('articles/' . $article->image_name, ['url' => ['action' => 'detail', $article->slug]]);
+                    	    echo $this->Html->image('articles/' . $article->image_name, ['url' => ['action' => 'detail', $article->slug], 'alt' => 'Image']);
                     	} else {
-                    	    echo $this->Html->image('no-image-available.jpeg', ['url' => ['action' => 'detail', $article->slug]]);
+                    	    echo $this->Html->image('no-image-available.jpeg', ['url' => ['action' => 'detail', $article->slug], 'alt' => 'No Image']);
                     	}
                     	?>
                     </div>
@@ -59,7 +59,7 @@ $i = 1;
     	<div class="articles view content">
             <div>
             	<?php
-            	    echo $this->Html->image('portfolio/1.jpg');
+            	echo $this->Html->image('portfolio/1.jpg', ['alt' => 'Image']);
             	?>
             </div>
             <h3>
@@ -74,7 +74,7 @@ $i = 1;
     	<div class="articles view content">
             <div>
             	<?php
-            	    echo $this->Html->image('portfolio/2.jpg');
+            	echo $this->Html->image('portfolio/2.jpg', ['alt' => 'Image']);
             	?>
             </div>
             <h3>
@@ -89,7 +89,7 @@ $i = 1;
     	<div class="articles view content">
             <div>
             	<?php
-            	    echo $this->Html->image('portfolio/3.jpg');
+            	echo $this->Html->image('portfolio/3.jpg', ['alt' => 'Image']);
             	?>
             </div>
             <h3>
@@ -109,7 +109,7 @@ $i = 1;
     	<div class="articles view content">
             <div>
             	<?php
-            	    echo $this->Html->image('portfolio/4.jpg');
+            	echo $this->Html->image('portfolio/4.jpg', ['alt' => 'Image']);
             	?>
             </div>
             <h3>
@@ -124,7 +124,7 @@ $i = 1;
     	<div class="articles view content">
             <div>
             	<?php
-            	    echo $this->Html->image('portfolio/5.jpg');
+            	echo $this->Html->image('portfolio/5.jpg', ['alt' => 'Image']);
             	?>
             </div>
             <h3>
@@ -139,7 +139,7 @@ $i = 1;
     	<div class="articles view content">
             <div>
             	<?php
-            	    echo $this->Html->image('portfolio/6.jpg');
+            	echo $this->Html->image('portfolio/6.jpg', ['alt' => 'Image']);
             	?>
             </div>
             <h3>
