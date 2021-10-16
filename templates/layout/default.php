@@ -34,7 +34,6 @@ if ($this->request->getSession()->check('Config.language')) {
     <meta name="description" content="<?= __('Website developed with CakePHP Framework.') ?>">
     <meta name="keywords" content="Ruben Camargo, HTML, CSS, JavaScript, PHP, CakePHP, Font Awesome">
     <meta name="author" content="Ruben Camargo">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>
         <?= $cakeDescription ?>
