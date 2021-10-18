@@ -247,17 +247,17 @@
         },
         {
             "name": "cakephp/cakephp",
-            "version": "4.2.9",
-            "version_normalized": "4.2.9.0",
+            "version": "4.2.10",
+            "version_normalized": "4.2.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/cakephp.git",
-                "reference": "6cb068fd328219d79a02ef6df439b73459071368"
+                "reference": "ea47e927083e2f4bfaed0c404756d9852b617cad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/cakephp/zipball/6cb068fd328219d79a02ef6df439b73459071368",
-                "reference": "6cb068fd328219d79a02ef6df439b73459071368",
+                "url": "https://api.github.com/repos/cakephp/cakephp/zipball/ea47e927083e2f4bfaed0c404756d9852b617cad",
+                "reference": "ea47e927083e2f4bfaed0c404756d9852b617cad",
                 "shasum": ""
             },
             "require": {
@@ -305,7 +305,7 @@
                 "lib-ICU": "The intl PHP library, to use Text::transliterate() or Text::slug()",
                 "paragonie/csp-builder": "CSP builder, to use the CSP Middleware"
             },
-            "time": "2021-09-11T00:24:13+00:00",
+            "time": "2021-10-14T01:50:57+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -408,17 +408,17 @@
         },
         {
             "name": "cakephp/chronos",
-            "version": "2.2.0",
-            "version_normalized": "2.2.0.0",
+            "version": "2.3.0",
+            "version_normalized": "2.3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/chronos.git",
-                "reference": "556e14da67307ffc2e68beeb7df0694dc8d1207d"
+                "reference": "3ecd6e7ae191c676570cd1bed51fd561de4606dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/chronos/zipball/556e14da67307ffc2e68beeb7df0694dc8d1207d",
-                "reference": "556e14da67307ffc2e68beeb7df0694dc8d1207d",
+                "url": "https://api.github.com/repos/cakephp/chronos/zipball/3ecd6e7ae191c676570cd1bed51fd561de4606dd",
+                "reference": "3ecd6e7ae191c676570cd1bed51fd561de4606dd",
                 "shasum": ""
             },
             "require": {
@@ -428,7 +428,7 @@
                 "cakephp/cakephp-codesniffer": "^4.5",
                 "phpunit/phpunit": "^8.0 || ^9.0"
             },
-            "time": "2021-06-17T13:49:10+00:00",
+            "time": "2021-10-17T02:44:05+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -3477,17 +3477,17 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.10.8",
-            "version_normalized": "0.10.8.0",
+            "version": "v0.10.9",
+            "version_normalized": "0.10.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "e4573f47750dd6c92dca5aee543fa77513cbd8d3"
+                "reference": "01281336c4ae557fe4a994544f30d3a1bc204375"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/e4573f47750dd6c92dca5aee543fa77513cbd8d3",
-                "reference": "e4573f47750dd6c92dca5aee543fa77513cbd8d3",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/01281336c4ae557fe4a994544f30d3a1bc204375",
+                "reference": "01281336c4ae557fe4a994544f30d3a1bc204375",
                 "shasum": ""
             },
             "require": {
@@ -3509,7 +3509,7 @@
                 "ext-readline": "Enables support for arrow-key history navigation, and showing and manipulating command history.",
                 "hoa/console": "A pure PHP readline implementation. You'll want this if your PHP install doesn't already support readline or libedit."
             },
-            "time": "2021-04-10T16:23:39+00:00",
+            "time": "2021-10-10T13:37:39+00:00",
             "bin": [
                 "bin/psysh"
             ],
@@ -3549,7 +3549,7 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/psysh/issues",
-                "source": "https://github.com/bobthecow/psysh/tree/v0.10.8"
+                "source": "https://github.com/bobthecow/psysh/tree/v0.10.9"
             },
             "install-path": "../psy/psysh"
         },
@@ -3608,17 +3608,17 @@
         },
         {
             "name": "robmorgan/phinx",
-            "version": "0.12.8",
-            "version_normalized": "0.12.8.0",
+            "version": "0.12.9",
+            "version_normalized": "0.12.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/phinx.git",
-                "reference": "d2ed1b452cc90f4cae4ea6b5976b94fb9e5ed2a2"
+                "reference": "5a0146a74c1bc195d1f5da86afa3b68badf7d90e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/phinx/zipball/d2ed1b452cc90f4cae4ea6b5976b94fb9e5ed2a2",
-                "reference": "d2ed1b452cc90f4cae4ea6b5976b94fb9e5ed2a2",
+                "url": "https://api.github.com/repos/cakephp/phinx/zipball/5a0146a74c1bc195d1f5da86afa3b68badf7d90e",
+                "reference": "5a0146a74c1bc195d1f5da86afa3b68badf7d90e",
                 "shasum": ""
             },
             "require": {
@@ -3641,7 +3641,7 @@
                 "ext-pdo": "PDO extension is needed",
                 "symfony/yaml": "Install if using YAML configuration format"
             },
-            "time": "2021-07-28T15:31:39+00:00",
+            "time": "2021-10-12T10:49:25+00:00",
             "bin": [
                 "bin/phinx"
             ],
@@ -3691,7 +3691,7 @@
             ],
             "support": {
                 "issues": "https://github.com/cakephp/phinx/issues",
-                "source": "https://github.com/cakephp/phinx/tree/0.12.8"
+                "source": "https://github.com/cakephp/phinx/tree/0.12.9"
             },
             "install-path": "../robmorgan/phinx"
         },
