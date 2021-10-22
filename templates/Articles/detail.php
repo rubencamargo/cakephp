@@ -7,11 +7,11 @@
 <div class="row content">
 	<div class="column-responsive column-60">
 		<div class="articles view">
-			<h3><?= h($article->title) ?></h3>
+			<h1><?= h($article->title) ?></h1>
             <span><?= h($article->created->format('d/m/y H:i:s')) ?></span>
             
             <blockquote>
-                <?= $this->Text->autoParagraph(h($article->body)); ?>
+                <?= $this->Text->autoParagraph(($article->body)); ?>
             </blockquote>
 		</div>
 	</div>

@@ -34,3 +34,14 @@
         </div>
     </div>
 </div>
+
+<?= $this->Html->script('https://cdn.tiny.cloud/1/h36uzevzp3mdwc7mfqnqe55jqc5rb7gt2g6tuik7tcaehisx/tinymce/5/tinymce.min.js', ['referrerpolicy' => 'origin']) ?>
+
+<script type="text/javascript">
+tinymce.init({
+	selector: '#body',
+	height: 500,
+	plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+	toolbar_mode: 'floating',
+});
+</script>
