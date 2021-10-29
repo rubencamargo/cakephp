@@ -176,10 +176,10 @@ class UsersController extends AppController
             
             if ($this->Users->save($user)) {
                 $mailer = new Mailer();
-                $mailer->setFrom('info@rubencamargo.com.ar', 'WebPage emailer');
-                $mailer->setTo('rubencamargo@gmail.com', 'Ruben Camargo');
+                $mailer->setFrom('info@rubencamargo.com.ar', 'RUBENCAMARGO.COM.AR');
+                $mailer->setTo('info@rubencamargo.com', 'Ruben Camargo');
                 $mailer->setSubject('Usuario registrado.');
-                $mailer->deliver('Se ha registrado ' . $user->name . ' ' . $user->lastname . '.');
+                $mailer->deliver('Se ha registrado ' . $user->name . ' ' . $user->lastname . '.<br>' . 'Desde ' . $user->country_name . '.<br>' . 'Email ' . $user->email . '.<br>');
                 
                 $this->Flash->success(__('The user has been registered. Please login now here.'));
                 return $this->redirect(['action' => 'login']);
