@@ -177,7 +177,7 @@ class UsersController extends AppController
             if ($this->Users->save($user)) {
                 $mailer = new Mailer();
                 $mailer->setFrom('info@rubencamargo.com.ar', 'RUBENCAMARGO.COM.AR');
-                $mailer->setTo('info@rubencamargo.com', 'Ruben Camargo');
+                $mailer->setTo('info@rubencamargo.com.ar', 'Ruben Camargo');
                 $mailer->setSubject('Usuario registrado.');
                 $mailer->deliver('Se ha registrado ' . $user->name . ' ' . $user->lastname . '.<br>' . 'Desde ' . $user->country_name . '.<br>' . 'Email ' . $user->email . '.<br>');
                 
