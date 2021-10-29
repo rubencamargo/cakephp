@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use Cake\Http\Client;
+use Cake\Mailer\Mailer;
 
 /**
  * Users Controller
@@ -174,6 +175,12 @@ class UsersController extends AppController
             }
             
             if ($this->Users->save($user)) {
+                $mailer = new Mailer();
+                $mailer->setFrom('info@rubencamargo.com.ar', 'WebPage emailer');
+                $mailer->setTo('rubencamargo@gmail.com', 'Ruben Camargo');
+                $mailer->setSubject('Usuario registrado.');
+                $mailer->deliver('Se ha registrado ' . $user->name . ' ' . $user->lastname . '.');
+                
                 $this->Flash->success(__('The user has been registered. Please login now here.'));
                 return $this->redirect(['action' => 'login']);
             }
