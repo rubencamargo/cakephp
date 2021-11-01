@@ -22,15 +22,26 @@
                     echo $this->Form->hidden('language', ['value' => $this->request->getSession()->read('Config.language')]);
                 ?>
                 
-                <?php
-                    $var1 = rand(0, 9);
-                    $var2 = rand(0, 9);
-                    echo $this->Form->hidden('var1', ['value' => $var1]);
-                    echo $this->Form->hidden('var2', ['value' => $var2]);
-                    $label = __("Write the result of") . " (" . $var1 . " + " . $var2 . "):";
+                <div class="captcha-box">
+                	<?php
+                    	$var1 = rand(0, 9);
+                    	$var2 = rand(0, 9);
+                	?>
+                	
+                	<div class="captcha-text">
+                		<?= __("Write the result of") . " (" . $var1 . " + " . $var2 . "):"; ?>
+                	</div>
                     
-                    echo $this->Form->control('captcha_local', ['placeholder' => $label, 'label' => false, 'autocomplete' => 'off']);
-                ?>
+                    <div class="captcha-input">
+                    <?php
+                        echo $this->Form->hidden('var1', ['value' => $var1]);
+                        echo $this->Form->hidden('var2', ['value' => $var2]);
+                        echo $this->Form->hidden('res', ['value' => $var1 + $var2]);
+                        
+                        echo $this->Form->control('captcha_local', ['class' => 'captcha', 'placeholder' => $var1 . " + " . $var2 . " = ", 'label' => false, 'autocomplete' => 'off']);
+                    ?>
+                    </div>
+                </div>
             </fieldset>
             
             <?= $this->Form->button(__('Submit')) ?>
