@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2021-10-13 12:51+0000\n"
-"PO-Revision-Date: 2021-10-13 09:52-0300\n"
+"POT-Creation-Date: 2021-11-01 19:39+0000\n"
+"PO-Revision-Date: 2021-11-01 16:40-0300\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "Language: es_ES\n"
@@ -15,35 +15,49 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0\n"
 
-#: Controller/ArticlesController.php:94 Controller/ArticlesController.php:127
-#: Controller/ArticlesController.php:149 Controller/ArticlesController.php:215
-#: Controller/ArticlesController.php:271 Controller/ArticlesController.php:293
-#: Controller/RolesController.php:25 Controller/RolesController.php:59
-#: Controller/RolesController.php:77 Controller/RolesController.php:110
-#: Controller/RolesController.php:141 Controller/TagsController.php:25
-#: Controller/TagsController.php:59 Controller/TagsController.php:77
-#: Controller/TagsController.php:112 Controller/TagsController.php:145
-#: Controller/UsersController.php:82 Controller/UsersController.php:123
-#: Controller/UsersController.php:201 Controller/UsersController.php:234
-#: Controller/UsersController.php:254
+#: Controller/ArticlesController.php:97 Controller/ArticlesController.php:123
+#: Controller/ArticlesController.php:158 Controller/ArticlesController.php:176
+#: Controller/ArticlesController.php:242 Controller/ArticlesController.php:298
+#: Controller/ArticlesController.php:320 Controller/CommentsController.php:25
+#: Controller/CommentsController.php:52 Controller/CommentsController.php:70
+#: Controller/CommentsController.php:103 Controller/CommentsController.php:135
+#: Controller/CommentsController.php:157 Controller/RolesController.php:25
+#: Controller/RolesController.php:59 Controller/RolesController.php:77
+#: Controller/RolesController.php:110 Controller/RolesController.php:141
+#: Controller/TagsController.php:25 Controller/TagsController.php:59
+#: Controller/TagsController.php:77 Controller/TagsController.php:112
+#: Controller/TagsController.php:145 Controller/UsersController.php:84
+#: Controller/UsersController.php:125 Controller/UsersController.php:219
+#: Controller/UsersController.php:252 Controller/UsersController.php:272
 msgid "Restricted access."
 msgstr "Acceso restringido."
 
-#: Controller/ArticlesController.php:181 Controller/ArticlesController.php:245
-#: Controller/ArticlesController.php:300
+#: Controller/ArticlesController.php:104 Controller/CommentsController.php:77
+#: Controller/CommentsController.php:110 Controller/CommentsController.php:164
+msgid "The comment has been saved."
+msgstr "El comentario ha sido guardado."
+
+#: Controller/ArticlesController.php:108 Controller/CommentsController.php:81
+#: Controller/CommentsController.php:114 Controller/CommentsController.php:166
+msgid "The comment could not be saved. Please, try again."
+msgstr ""
+"El comentario no pudo ser guardado. Por favor, inténtelo de nuevo más tarde."
+
+#: Controller/ArticlesController.php:208 Controller/ArticlesController.php:272
+#: Controller/ArticlesController.php:327
 msgid "The article has been saved."
 msgstr ""
 
-#: Controller/ArticlesController.php:185 Controller/ArticlesController.php:249
-#: Controller/ArticlesController.php:302
+#: Controller/ArticlesController.php:212 Controller/ArticlesController.php:276
+#: Controller/ArticlesController.php:329
 msgid "The article could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/ArticlesController.php:276
+#: Controller/ArticlesController.php:303
 msgid "The article has been deleted."
 msgstr ""
 
-#: Controller/ArticlesController.php:278
+#: Controller/ArticlesController.php:305
 msgid "The article could not be deleted. Please, try again."
 msgstr ""
 
@@ -64,6 +78,15 @@ msgstr ""
 #: Controller/ArticlesTagsController.php:107
 msgid "The articles tag could not be deleted. Please, try again."
 msgstr ""
+
+#: Controller/CommentsController.php:140
+msgid "The comment has been deleted."
+msgstr ""
+
+#: Controller/CommentsController.php:142
+msgid "The comment could not be deleted. Please, try again."
+msgstr ""
+"El comentario no pudo ser guardado. Por favor, inténtelo de nuevo más tarde."
 
 #: Controller/RolesController.php:85 Controller/RolesController.php:118
 msgid "The role has been saved."
@@ -97,50 +120,47 @@ msgstr ""
 msgid "The tag could not be deleted. Please, try again."
 msgstr ""
 
-#: Controller/UsersController.php:31
+#: Controller/UsersController.php:33
 msgid "User inactive"
 msgstr "Usuario inactivo"
 
-#: Controller/UsersController.php:54
+#: Controller/UsersController.php:56
 msgid "Invalid username or password"
-msgstr ""
+msgstr "Usuario o contraseña inválida"
 
-#: Controller/UsersController.php:66
+#: Controller/UsersController.php:68
 msgid "Logout success."
-msgstr ""
+msgstr "Salida satisfactoria."
 
-#: Controller/UsersController.php:142
-msgid "The sum is not correct. Please, try again."
-msgstr ""
-
-#: Controller/UsersController.php:177
+#: Controller/UsersController.php:195
 msgid "The user has been registered. Please login now here."
-msgstr ""
+msgstr "Usuario registrado correctamente. Ahora ingrese aquí."
 
-#: Controller/UsersController.php:181 Controller/UsersController.php:213
-#: Controller/UsersController.php:263
+#: Controller/UsersController.php:199 Controller/UsersController.php:231
+#: Controller/UsersController.php:281
 msgid "The user could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/UsersController.php:209 Controller/UsersController.php:261
+#: Controller/UsersController.php:227 Controller/UsersController.php:279
 msgid "The user has been saved."
 msgstr ""
 
-#: Controller/UsersController.php:239
+#: Controller/UsersController.php:257
 msgid "The user has been deleted."
 msgstr ""
 
-#: Controller/UsersController.php:241
+#: Controller/UsersController.php:259
 msgid "The user could not be deleted. Please, try again."
 msgstr ""
 
 #: ArticlesTags/add.php:12 ArticlesTags/edit.php:12 ArticlesTags/index.php:19
-#: ArticlesTags/view.php:10 Articles/add.php:12 Articles/edit.php:12
+#: ArticlesTags/view.php:10 Articles/add.php:12 Articles/edit.php:13
 #: Articles/index.php:27 Articles/view.php:10 Articles/view.php:67
-#: Roles/add.php:10 Roles/edit.php:10 Roles/index.php:22 Roles/view.php:10
-#: Roles/view.php:52 Tags/add.php:11 Tags/edit.php:11 Tags/index.php:22
-#: Tags/view.php:10 Tags/view.php:52 Users/edit.php:11 Users/index.php:28
-#: Users/view.php:10 Users/view.php:68
+#: Comments/add.php:12 Comments/edit.php:12 Comments/index.php:20
+#: Comments/view.php:10 Roles/add.php:10 Roles/edit.php:10 Roles/index.php:22
+#: Roles/view.php:10 Roles/view.php:52 Tags/add.php:11 Tags/edit.php:11
+#: Tags/index.php:22 Tags/view.php:10 Tags/view.php:52 Users/edit.php:11
+#: Users/index.php:28 Users/view.php:10 Users/view.php:68
 msgid "Actions"
 msgstr "Acciones"
 
@@ -153,21 +173,24 @@ msgid "Add Articles Tag"
 msgstr ""
 
 #: ArticlesTags/add.php:26 ArticlesTags/edit.php:31 Articles/add.php:32
-#: Articles/edit.php:44 Roles/add.php:23 Roles/edit.php:28 Tags/add.php:25
-#: Tags/edit.php:30 Users/add.php:36 Users/edit.php:38
+#: Articles/detail.php:33 Articles/edit.php:45 Comments/add.php:28
+#: Comments/edit.php:34 Roles/add.php:23 Roles/edit.php:28 Tags/add.php:25
+#: Tags/edit.php:30 Users/add.php:47 Users/edit.php:38
 msgid "Submit"
 msgstr "Enviar"
 
-#: ArticlesTags/edit.php:14 ArticlesTags/index.php:33 Articles/edit.php:14
-#: Articles/index.php:62 Articles/view.php:78 Roles/edit.php:12
-#: Roles/index.php:35 Roles/view.php:67 Tags/edit.php:13 Tags/index.php:35
-#: Tags/view.php:67 Users/edit.php:13 Users/index.php:56 Users/view.php:83
+#: ArticlesTags/edit.php:14 ArticlesTags/index.php:33 Articles/edit.php:15
+#: Articles/index.php:62 Articles/view.php:78 Comments/edit.php:14
+#: Comments/index.php:38 Roles/edit.php:12 Roles/index.php:35 Roles/view.php:67
+#: Tags/edit.php:13 Tags/index.php:35 Tags/view.php:67 Users/edit.php:13
+#: Users/index.php:56 Users/view.php:83
 msgid "Delete"
 msgstr "Eliminar"
 
 #: ArticlesTags/edit.php:16 ArticlesTags/index.php:33 ArticlesTags/view.php:12
-#: Articles/edit.php:16 Articles/index.php:62 Articles/view.php:12
-#: Articles/view.php:78 Roles/edit.php:14 Roles/index.php:35 Roles/view.php:12
+#: Articles/edit.php:17 Articles/index.php:62 Articles/view.php:12
+#: Articles/view.php:78 Comments/edit.php:16 Comments/index.php:38
+#: Comments/view.php:12 Roles/edit.php:14 Roles/index.php:35 Roles/view.php:12
 #: Roles/view.php:67 Tags/edit.php:15 Tags/index.php:35 Tags/view.php:12
 #: Tags/view.php:67 Users/edit.php:15 Users/index.php:56 Users/view.php:12
 #: Users/view.php:83
@@ -187,39 +210,45 @@ msgid "Articles Tags"
 msgstr ""
 
 #: ArticlesTags/index.php:31 Articles/index.php:60 Articles/view.php:76
-#: Roles/index.php:33 Roles/view.php:65 Tags/index.php:33 Tags/view.php:65
-#: Users/index.php:54 Users/view.php:81
+#: Comments/index.php:36 Roles/index.php:33 Roles/view.php:65 Tags/index.php:33
+#: Tags/view.php:65 Users/index.php:54 Users/view.php:81
+#: View/Helper/PaginatorHelper.php:1266
 msgid "View"
 msgstr "Ver"
 
 #: ArticlesTags/index.php:32 Articles/index.php:61 Articles/view.php:77
-#: Roles/index.php:34 Roles/view.php:66 Tags/index.php:34 Tags/view.php:66
-#: Users/index.php:55 Users/view.php:82
+#: Comments/index.php:37 Roles/index.php:34 Roles/view.php:66 Tags/index.php:34
+#: Tags/view.php:66 Users/index.php:55 Users/view.php:82
 msgid "Edit"
 msgstr "Modificar"
 
-#: ArticlesTags/index.php:42 Articles/blog.php:61 Articles/index.php:71
-#: Roles/index.php:44 Tags/index.php:44 Users/index.php:65
+#: ArticlesTags/index.php:42 Articles/blog.php:63 Articles/index.php:71
+#: Comments/index.php:47 Roles/index.php:44 Tags/index.php:44
+#: Users/index.php:65
 msgid "first"
 msgstr "primero"
 
-#: ArticlesTags/index.php:43 Articles/blog.php:62 Articles/index.php:72
-#: Roles/index.php:45 Tags/index.php:45 Users/index.php:66
+#: ArticlesTags/index.php:43 Articles/blog.php:64 Articles/index.php:72
+#: Comments/index.php:48 Roles/index.php:45 Tags/index.php:45
+#: Users/index.php:66
 msgid "previous"
 msgstr "anterior"
 
-#: ArticlesTags/index.php:45 Articles/blog.php:64 Articles/index.php:74
-#: Roles/index.php:47 Tags/index.php:47 Users/index.php:68
+#: ArticlesTags/index.php:45 Articles/blog.php:66 Articles/index.php:74
+#: Comments/index.php:50 Roles/index.php:47 Tags/index.php:47
+#: Users/index.php:68
 msgid "next"
 msgstr "siguiente"
 
-#: ArticlesTags/index.php:46 Articles/blog.php:65 Articles/index.php:75
-#: Roles/index.php:48 Tags/index.php:48 Users/index.php:69
+#: ArticlesTags/index.php:46 Articles/blog.php:67 Articles/index.php:75
+#: Comments/index.php:51 Roles/index.php:48 Tags/index.php:48
+#: Users/index.php:69
 msgid "last"
 msgstr "último"
 
-#: ArticlesTags/index.php:48 Articles/blog.php:67 Articles/index.php:77
-#: Roles/index.php:50 Tags/index.php:50 Users/index.php:71
+#: ArticlesTags/index.php:48 Articles/blog.php:69 Articles/index.php:77
+#: Comments/index.php:53 Roles/index.php:50 Tags/index.php:50
+#: Users/index.php:71
 msgid ""
 "Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} "
 "total"
@@ -231,33 +260,33 @@ msgstr ""
 msgid "Delete Articles Tag"
 msgstr ""
 
-#: ArticlesTags/view.php:22
+#: ArticlesTags/view.php:22 Comments/view.php:26
 msgid "Article"
-msgstr "Articuloa"
+msgstr "Artículo"
 
 #: ArticlesTags/view.php:26
 msgid "Tag"
 msgstr "Etiqueta"
 
 #: ArticlesTags/view.php:30 Articles/view.php:23 Articles/view.php:63
-#: Roles/view.php:22 Roles/view.php:44 Tags/view.php:26 Tags/view.php:44
-#: Users/view.php:22 Users/view.php:60
+#: Comments/view.php:22 Roles/view.php:22 Roles/view.php:44 Tags/view.php:26
+#: Tags/view.php:44 Users/view.php:22 Users/view.php:60
 msgid "Id"
 msgstr ""
 
 #: ArticlesTags/view.php:34 Articles/view.php:39 Articles/view.php:65
-#: Roles/view.php:30 Roles/view.php:50 Tags/view.php:30 Tags/view.php:50
-#: Users/view.php:46 Users/view.php:66
+#: Comments/view.php:38 Roles/view.php:30 Roles/view.php:50 Tags/view.php:30
+#: Tags/view.php:50 Users/view.php:46 Users/view.php:66
 msgid "Created"
 msgstr "Creado"
 
 #: ArticlesTags/view.php:38 Articles/view.php:43 Articles/view.php:66
-#: Roles/view.php:34 Roles/view.php:51 Tags/view.php:34 Tags/view.php:51
-#: Users/view.php:50 Users/view.php:67
+#: Comments/view.php:42 Roles/view.php:34 Roles/view.php:51 Tags/view.php:34
+#: Tags/view.php:51 Users/view.php:50 Users/view.php:67
 msgid "Modified"
 msgstr "Modificado"
 
-#: Articles/add.php:13 Articles/edit.php:18 Articles/view.php:13
+#: Articles/add.php:13 Articles/edit.php:19 Articles/view.php:13
 msgid "List Articles"
 msgstr "Lista de Artículos"
 
@@ -265,7 +294,7 @@ msgstr "Lista de Artículos"
 msgid "Add Article"
 msgstr "Agregar Artículo"
 
-#: Articles/blog.php:2 layout/default.php:56
+#: Articles/blog.php:2 layout/default.php:62
 msgid "Blog"
 msgstr "Blog"
 
@@ -273,40 +302,61 @@ msgstr "Blog"
 msgid "Articles search by title"
 msgstr "Buscar artículos por título"
 
-#: Articles/blog.php:43 Articles/home.php:36 Tags/index.php:3
-#: layout/default.php:61
+#: Articles/blog.php:30 Articles/blog.php:32 Articles/home.php:23
+#: Articles/home.php:25 Articles/home.php:30
+msgid "article"
+msgstr "articulo"
+
+#: Articles/blog.php:44 Articles/home.php:37 Tags/index.php:3
+#: layout/default.php:68
 msgid "Tags"
 msgstr "Etiquetas"
 
-#: Articles/edit.php:26 Articles/view.php:11
+#: Articles/detail.php:26 Comments/add.php:20
+msgid "Add Comment"
+msgstr "Agregar Comentario"
+
+#: Articles/detail.php:43 Comments/index.php:9 layout/default.php:67
+msgid "Comments"
+msgstr "Comentarios"
+
+#: Articles/detail.php:49 Comments/view.php:47
+msgid "Comment"
+msgstr "Comentario"
+
+#: Articles/detail.php:51
+msgid "Date"
+msgstr "Fecha"
+
+#: Articles/edit.php:27 Articles/view.php:11
 msgid "Edit Article"
 msgstr "Modificar Artículo"
 
-#: Articles/home.php:3
-msgid "News"
-msgstr "Noticias"
+#: Articles/home.php:3 Articles/index.php:3 layout/default.php:66
+msgid "Articles"
+msgstr "Artículos"
 
-#: Articles/home.php:52
+#: Articles/home.php:54
 msgid "Portfolio"
 msgstr "Portafolio"
 
-#: Articles/home.php:158
+#: Articles/home.php:160
 msgid "Technologies"
 msgstr "Tecnologías"
 
-#: Articles/home.php:241
+#: Articles/home.php:243
 msgid "Contact"
 msgstr "Contacto"
 
-#: Articles/home.php:252
+#: Articles/home.php:254
 msgid "Phone"
 msgstr "Teléfono"
 
-#: Articles/home.php:262
+#: Articles/home.php:264
 msgid "Office"
 msgstr "Oficina"
 
-#: Articles/home.php:272 Roles/view.php:48 Users/add.php:19 Users/login.php:11
+#: Articles/home.php:274 Roles/view.php:48 Users/add.php:19 Users/login.php:11
 #: Users/view.php:38
 msgid "Email"
 msgstr "Correo Electrónico"
@@ -315,27 +365,25 @@ msgstr "Correo Electrónico"
 msgid "New Article"
 msgstr "Nuevo Artículo"
 
-#: Articles/index.php:3 layout/default.php:60
-msgid "Articles"
-msgstr "Artículos"
-
 #: Articles/index.php:19
 msgid "Image"
 msgstr "Foto"
 
-#: Articles/index.php:55 Articles/view.php:48 Users/index.php:48
+#: Articles/index.php:55 Articles/view.php:48 Comments/index.php:31
+#: Comments/view.php:35 Users/index.php:48
 msgid "Yes"
 msgstr "Si"
 
-#: Articles/index.php:55 Articles/view.php:48 Users/index.php:48
+#: Articles/index.php:55 Articles/view.php:48 Comments/index.php:31
+#: Comments/view.php:35 Users/index.php:48
 msgid "No"
 msgstr "No"
 
-#: Articles/index.php:55 Users/index.php:48
+#: Articles/index.php:55 Comments/index.php:31 Users/index.php:48
 msgid "Change status"
 msgstr "Cambiar estado"
 
-#: Articles/index.php:55 Users/index.php:48
+#: Articles/index.php:55 Comments/index.php:31 Users/index.php:48
 msgid "Are you sure you want to {0}?"
 msgstr "Realmente desea {0}?"
 
@@ -351,7 +399,7 @@ msgstr "Publicar"
 msgid "Delete Article"
 msgstr "Eliminar Artículo"
 
-#: Articles/view.php:27
+#: Articles/view.php:27 Comments/view.php:30
 msgid "User"
 msgstr "Usuario"
 
@@ -375,6 +423,44 @@ msgstr "Cuerpo"
 #: Articles/view.php:58
 msgid "Related Tags"
 msgstr ""
+
+#: Comments/add.php:13 Comments/edit.php:18 Comments/view.php:13
+msgid "List Comments"
+msgstr "Lista de Comentarios"
+
+#: Comments/edit.php:25 Comments/view.php:11
+msgid "Edit Comment"
+msgstr "Modificar Comentario"
+
+#: Comments/index.php:8 Comments/view.php:14
+msgid "New Comment"
+msgstr "Nuevo Comentario"
+
+#: Comments/index.php:31
+msgid "Inactive"
+msgstr "Inactivo"
+
+#: Comments/index.php:31 Comments/view.php:34
+msgid "Active"
+msgstr "Activo"
+
+#: Comments/view.php:12
+msgid "Delete Comment"
+msgstr "Eliminar Comentario"
+
+#: Comments/view.php:53
+msgid "Response"
+msgstr "Respuesta"
+
+#: Error/error400.php:48 Error/error500.php:48 Error/missing_action.php:48
+#: Error/missing_controller.php:48
+msgid "An error has occurred."
+msgstr "Un error ha ocurrido."
+
+#: Error/error400.php:56 Error/error500.php:56 Error/missing_action.php:56
+#: Error/missing_controller.php:56 layout/error.php:38
+msgid "Back"
+msgstr "Atrás"
 
 #: Error/missing_connection.php:1
 msgid "Database connection failed. Please try again later."
@@ -402,7 +488,7 @@ msgstr "Modificar Rol"
 msgid "New Role"
 msgstr "Nuevo Rol"
 
-#: Roles/index.php:3 layout/default.php:63
+#: Roles/index.php:3 layout/default.php:70
 msgid "Roles"
 msgstr "Roles"
 
@@ -474,7 +560,7 @@ msgstr "Registro"
 msgid "Retype Password"
 msgstr "Reescribir contraseña"
 
-#: Users/add.php:30
+#: Users/add.php:32
 msgid "Write the result of"
 msgstr "Escriba el resultado de"
 
@@ -490,7 +576,7 @@ msgstr "Modificar Usuario"
 msgid "New User"
 msgstr "Nuevo Usuario"
 
-#: Users/index.php:3 layout/default.php:62
+#: Users/index.php:3 layout/default.php:69
 msgid "Users"
 msgstr "Usuarios"
 
@@ -510,7 +596,7 @@ msgstr "Desactivar"
 msgid "Activate"
 msgstr "Activar"
 
-#: Users/login.php:8 Users/login.php:16 layout/default.php:70
+#: Users/login.php:8 Users/login.php:16 layout/default.php:77
 msgid "Login"
 msgstr "Ingresar"
 
@@ -522,34 +608,48 @@ msgstr "Eliminar Usuario"
 msgid "Role"
 msgstr "Rol"
 
-#: layout/default.php:27
+#: layout/default.php:19 layout/default.php:107
+msgid "Web Programmer"
+msgstr "Programador Web"
+
+#: layout/default.php:34
 msgid "Website developed with CakePHP Framework."
 msgstr "Sitio Web desarrollado con marco de trabajo CakePHP."
 
-#: layout/default.php:68
+#: layout/default.php:75
 msgid "Logout"
 msgstr "Salir"
 
-#: layout/default.php:77 layout/default.php:79
+#: layout/default.php:84 layout/default.php:86
 msgid "English"
 msgstr "Inglés"
 
-#: layout/default.php:87 layout/default.php:89
+#: layout/default.php:94 layout/default.php:96
 msgid "Spanish"
 msgstr "Español"
 
-#: layout/default.php:100
-msgid "Web Developer"
-msgstr "Desarrollador Web"
-
-#: layout/default.php:117
+#: layout/default.php:125
 msgid "Copyright"
 msgstr "Derechos reservados"
 
-#: layout/default.php:119
+#: layout/default.php:127
 msgid "Developed with"
-msgstr ""
+msgstr "Desarrollado con"
 
-#: layout/error.php:38
-msgid "Back"
-msgstr "Atrás"
+#~ msgid "detail"
+#~ msgstr "detalle"
+
+#~ msgid "register"
+#~ msgstr "registro"
+
+#~ msgid "logout"
+#~ msgstr "salir"
+
+#~ msgid "login"
+#~ msgstr "ingresar"
+
+#~ msgid "News"
+#~ msgstr "Noticias"
+
+#~ msgid "Web Developer"
+#~ msgstr "Desarrollador Web"
