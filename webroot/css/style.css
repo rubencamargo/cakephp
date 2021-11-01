@@ -45,6 +45,11 @@ input[type="email"], input[type="number"], input[type="password"], input[type="s
 	padding-top: 150px;
 }
 
+.subtext-parallax {
+	text-align: center;
+	color: #ffffff;
+}
+
 footer {
 	padding-top: 40px;
 	padding-bottom: 40px;
@@ -69,6 +74,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-icon {
 	color: #ffffff;
+}
+
+.comment-icon {
+	font-size: 14px !important
 }
 
 .flag-icon {
@@ -102,3 +111,13 @@ body {
 	padding-top: 5px;
 }
 
+.captcha-text {
+	width: 50% !important;
+	float: left;
+	padding-top: 5px;
+}
+
+.captcha-input {
+	width: 50% !important;
+	float: left;
+}
