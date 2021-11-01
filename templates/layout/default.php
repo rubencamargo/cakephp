@@ -16,7 +16,7 @@
 
 use Cake\Core\Configure;
 
-$cakeDescription = 'RubenCAMARGO';
+$cakeDescription = 'RubenCAMARGO' . ' - ' . __('Web Programmer');
 
 $lang = "es";
 if ($this->request->getSession()->check('Config.language')) {
@@ -64,6 +64,7 @@ if ($this->request->getSession()->check('Config.language')) {
             	<?php if ($this->request->getSession()->check('Auth')) { ?>
             		<?php if ($this->request->getSession()->read('Auth.role_id') == 1) { ?>
                         <a href="<?= $this->Url->build('/') ?>articles"><?= __('Articles') ?></a>
+                        <a href="<?= $this->Url->build('/') ?>comments"><?= __('Comments') ?></a>
                         <a href="<?= $this->Url->build('/') ?>tags"><?= __('Tags') ?></a>
                         <a href="<?= $this->Url->build('/') ?>users"><?= __('Users') ?></a>
                         <a href="<?= $this->Url->build('/') ?>roles"><?= __('Roles') ?></a>
@@ -103,7 +104,8 @@ if ($this->request->getSession()->check('Config.language')) {
         <?php if ($this->request->getParam('action') == 'home') { ?>
         <!-- Parallax -->
         <div class="parallax">
-        	<h1 class="text-parallax"><?= __('Web Developer') ?></h1>
+        	<h1 class="text-parallax"><?= __('Web Programmer') ?></h1>
+        	<h2 class="subtext-parallax"><?= __('') ?></h2>
         </div>
         <?php } ?>
     
