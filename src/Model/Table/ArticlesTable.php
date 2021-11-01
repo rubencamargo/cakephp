@@ -63,6 +63,14 @@ class ArticlesTable extends Table
         ]);
     }
 
+    public function beforeSave(EventInterface $event, $entity, $options)
+    {
+        if ($entity->isNew() && !$entity->slug) {
+            $sluggedTitle = Text::slug($entity->title);
+            $entity->slug = substr($sluggedTitle, 0, 200);
+        }
+    }
+    
     /**
      * Default validation rules.
      *
