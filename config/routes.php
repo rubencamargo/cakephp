@@ -55,12 +55,18 @@ $routes->scope('/', function (RouteBuilder $builder) {
 
     $builder->connect('/home', ['controller' => 'Articles', 'action' => 'home']);
     $builder->connect('/blog', ['controller' => 'Articles', 'action' => 'blog']);
-    $builder->connect('/detail/*', ['controller' => 'Articles', 'action' => 'detail']);
+    $builder->connect('/article/*', ['controller' => 'Articles', 'action' => 'detail']);
+    $builder->connect('/articulo/*', ['controller' => 'Articles', 'action' => 'detail']);
     
     $builder->connect('/register', ['controller' => 'Users', 'action' => 'add']);
     $builder->connect('/login', ['controller' => 'Users', 'action' => 'login']);
     $builder->connect('/logout', ['controller' => 'Users', 'action' => 'logout']);
     $builder->connect('/profile/*', ['controller' => 'Users', 'action' => 'edit']);
+
+    $builder->connect('/registro', ['controller' => 'Users', 'action' => 'add']);
+    $builder->connect('/ingresar', ['controller' => 'Users', 'action' => 'login']);
+    $builder->connect('/salir', ['controller' => 'Users', 'action' => 'logout']);
+    $builder->connect('/perfil/*', ['controller' => 'Users', 'action' => 'edit']);
     
     $builder->connect('/changeLanguage/*', ['controller' => 'App', 'action' => 'changeLanguage']);
     
