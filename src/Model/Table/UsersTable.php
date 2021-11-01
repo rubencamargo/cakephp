@@ -91,14 +91,27 @@ class UsersTable extends Table
             ->maxLength('password', 255)
             ->requirePresence('password', 'create')
             ->notEmptyString('password');
-
+        
+        $validator
+            ->scalar('retype_password')
+            ->maxLength('retype_password', 255)
+            ->requirePresence('retype_password', 'create')
+            ->notEmptyString('retype_password');
+        
+        $validator
+            ->sameAs('retype_password', 'password', 'Password match failed.');
             
         $validator
-            ->sameAs('retype_password', 'password', 'Password not match.');
+            ->sameAs('captcha_local', 'res', 'Sum incorrect.');
+            
+        $validator
+            ->integer('captcha_local')
+            ->requirePresence('captcha_local', 'create')
+            ->maxLength('captcha_local', 2);
             
         return $validator;
     }
-
+    
     /**
      * Returns a rules checker object that will be used for validating
      * application integrity.
