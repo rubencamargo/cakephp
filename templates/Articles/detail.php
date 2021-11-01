@@ -14,6 +14,62 @@
                 <?= $this->Text->autoParagraph(($article->body)); ?>
             </blockquote>
 		</div>
+		
+		<?php if ($this->request->getSession()->check('Auth')) { ?>
+		
+		<hr />
+		
+		<div class="column-responsive column">
+            <div class="comments form content">
+                <?= $this->Form->create(null, ['url' => ['action' => 'add-comment']]) ?>
+                <fieldset>
+                    <legend><?= __('Add Comment') ?></legend>
+                    <?php
+                        echo $this->Form->hidden('article_id', ['value' => $article->id]);
+                        echo $this->Form->hidden('user_id', ['value' => $this->request->getSession()->read('Auth.id')]);
+                        echo $this->Form->control('comment');
+                    ?>
+                </fieldset>
+                <?= $this->Form->button(__('Submit')) ?>
+                <?= $this->Form->end() ?>
+            </div>
+        </div>
+        
+        <?php } ?>
+        
+        <?php if (!empty($article->comments)) { ?>
+        <hr />
+		
+        <h3><?= __('Comments') ?></h3>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                        	<?= __('Comment') ?>
+                        </th>
+                        <th><?= __('Date') ?></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($article->comments as $comment): ?>
+                    <tr>
+                        <td>
+                        	<i class="fa fa-pencil comment-icon"></i>&nbsp;&nbsp;
+                        	<?= $comment->comment ?>
+                        	<?php if ($comment->response) { ?>
+                        	<br />
+                        	<i class="fa fa-check comment-icon"></i>&nbsp;&nbsp;
+                        	<?= $comment->response ?>
+                        	<?php } ?>
+                        </td>
+                        <td><?= h($comment->created) ?></td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+        <?php } ?>
 	</div>
     
     <div class="column-responsive column-40">

@@ -5,6 +5,7 @@ namespace App\Controller;
 
 use Cake\Http\Client;
 use Cake\Mailer\Mailer;
+use Cake\Core\Configure;
 
 /**
  * Users Controller
@@ -152,9 +153,19 @@ class UsersController extends AppController
             
             // Geoip
             $http = new Client();
-            //$response = $http->get('http://api.ipapi.com/134.201.250.155?access_key=d12feaf54bcf5b9edf3ad592cba4c205&format=1');
-            $response = $http->get('http://api.ipapi.com/' . $user->ip . '?access_key=d12feaf54bcf5b9edf3ad592cba4c205&format=1');
-            $response_json = $response->getJson();
+            
+            $response = null;
+            $response_json = [];
+            
+            try {
+                //$response = $http->get('http://api.ipapi.com/134.201.250.155?access_key=d12feaf54bcf5b9edf3ad592cba4c205&format=1');
+                $response = $http->get('http://api.ipapi.com/' . $user->ip . '?access_key=d12feaf54bcf5b9edf3ad592cba4c205&format=1');
+                if ($response) {
+                    $response_json = $response->getJson();
+                }
+            } catch (Exception $exception) {
+                
+            }
             
             if (isset($response_json['ip'])) {
                 $user->country_flag = $response_json['location']['country_flag'];
@@ -167,17 +178,19 @@ class UsersController extends AppController
             }
             
             if ($this->Users->save($user)) {
-                $mailer = new Mailer();
-                $mailer->setEmailFormat('html');
-                $mailer->setFrom('info@rubencamargo.com.ar', 'RUBENCAMARGO.COM.AR');
-                $mailer->setTo('info@rubencamargo.com.ar', 'Ruben Camargo');
-                $mailer->setSubject('Usuario registrado.');
-
-                $mailer->deliver(
-                    '<br>Se ha registrado <b>' . $user->name . ' ' . $user->lastname . '</b>.' . 
-                    '<br>Desde <b>' . $user->country_name . '</b>.' . 
-                    '<br>Email <b>' . $user->email . '</b>.'
-                );
+                if (!Configure::read('debug')) {
+                    $mailer = new Mailer();
+                    $mailer->setEmailFormat('html');
+                    $mailer->setFrom('info@rubencamargo.com.ar', 'RUBENCAMARGO.COM.AR');
+                    $mailer->setTo('info@rubencamargo.com.ar', 'Ruben Camargo');
+                    $mailer->setSubject('Usuario registrado.');
+    
+                    $mailer->deliver(
+                        '<br>Se ha registrado <b>' . $user->name . ' ' . $user->lastname . '</b>.' . 
+                        '<br>Desde <b>' . $user->country_name . '</b>.' . 
+                        '<br>Email <b>' . $user->email . '</b>.'
+                    );
+                }
                 
                 $this->Flash->success(__('The user has been registered. Please login now here.'));
                 return $this->redirect(['action' => 'login']);

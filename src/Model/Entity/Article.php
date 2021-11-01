@@ -11,13 +11,17 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property int $user_id
  * @property string $title
- * @property string $slug
+ * @property string|null $slug
  * @property string|null $body
+ * @property string|null $image_name
+ * @property string|null $image_type
+ * @property string|null $image_size
  * @property bool|null $published
  * @property \Cake\I18n\FrozenTime|null $created
  * @property \Cake\I18n\FrozenTime|null $modified
  *
  * @property \App\Model\Entity\User $user
+ * @property \App\Model\Entity\Comment[] $comments
  * @property \App\Model\Entity\Tag[] $tags
  */
 class Article extends Entity
@@ -43,6 +47,7 @@ class Article extends Entity
         'created' => true,
         'modified' => true,
         'user' => true,
+        'comments' => true,
         'tags' => true,
     ];
 }

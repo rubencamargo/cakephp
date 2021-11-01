@@ -1,6 +1,6 @@
 <?php if ($articles->count()) { ?>
 <div class="articles index content">
-    <h3><i class="fas fa-newspaper"></i> <?= __('News') ?></h3>
+    <h3><i class="fas fa-newspaper"></i> <?= __('Articles') ?></h3>
 </div>
 
 <br />
@@ -20,18 +20,19 @@ $i = 1;
                     <div>
                     	<?php
                     	if (($article->image_name) && (is_file(WWW_ROOT . 'img/articles/' . $article->image_name))) {
-                    	    echo $this->Html->image('articles/' . $article->image_name, ['url' => ['action' => 'detail', $article->slug], 'alt' => 'Image']);
+                    	    echo $this->Html->image('articles/' . $article->image_name, ['url' => '/' . __('article') . '/' . $article->slug]); //['action' => 'detail', $article->slug], 'alt' => 'Image']);
                     	} else {
-                    	    echo $this->Html->image('no-image-available.jpeg', ['url' => ['action' => 'detail', $article->slug], 'alt' => 'No Image']);
+                    	    echo $this->Html->image('no-image-available.jpeg', ['url' => '/' . __('article') . '/' . $article->slug]); //['action' => 'detail', $article->slug], 'alt' => 'No Image']);
                     	}
                     	?>
                     </div>
                     <h3>
-                    	<?= $this->Html->link($article->title, ['action' => 'detail', $article->slug]) ?>
+                    	<?= $this->Html->link($article->title, '/' . __('article') . '/' . $article->slug) ?>
                     </h3>
                     <p>
                     	<?= h($article->created->format('d/m/Y')) ?>
                     </p>
+                    <!--
                     <p>
                     	<?= __('Tags') ?>:
                     	<?php
@@ -40,6 +41,7 @@ $i = 1;
                     	    }
                     	?>
                     </p>
+                    -->
                 </div>
             </div>
         <?php $i++; ?>

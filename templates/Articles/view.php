@@ -51,7 +51,7 @@
             <div class="text">
                 <strong><?= __('Body') ?></strong>
                 <blockquote>
-                    <?= $this->Text->autoParagraph(h($article->body)); ?>
+                    <?= $this->Text->autoParagraph($article->body); ?>
                 </blockquote>
             </div>
             <div class="related">

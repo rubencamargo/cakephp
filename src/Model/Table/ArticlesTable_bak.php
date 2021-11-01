@@ -8,11 +8,13 @@ use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
+use Cake\Utility\Text;
+use Cake\Event\EventInterface;
+
 /**
  * Articles Model
  *
  * @property \App\Model\Table\UsersTable&\Cake\ORM\Association\BelongsTo $Users
- * @property \App\Model\Table\CommentsTable&\Cake\ORM\Association\HasMany $Comments
  * @property \App\Model\Table\TagsTable&\Cake\ORM\Association\BelongsToMany $Tags
  *
  * @method \App\Model\Entity\Article newEmptyEntity()
@@ -53,9 +55,6 @@ class ArticlesTable extends Table
             'foreignKey' => 'user_id',
             'joinType' => 'INNER',
         ]);
-        $this->hasMany('Comments', [
-            'foreignKey' => 'article_id',
-        ]);
         $this->belongsToMany('Tags', [
             'foreignKey' => 'article_id',
             'targetForeignKey' => 'tag_id',
@@ -63,6 +62,14 @@ class ArticlesTable extends Table
         ]);
     }
 
+    public function beforeSave(EventInterface $event, $entity, $options)
+    {
+        if ($entity->isNew() && !$entity->slug) {
+            $sluggedTitle = Text::slug($entity->title);
+            $entity->slug = substr($sluggedTitle, 0, 200);
+        }
+    }
+    
     /**
      * Default validation rules.
      *
@@ -81,30 +88,16 @@ class ArticlesTable extends Table
             ->requirePresence('title', 'create')
             ->notEmptyString('title');
 
-        $validator
-            ->scalar('slug')
-            ->maxLength('slug', 255)
-            ->allowEmptyString('slug')
-            ->add('slug', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
+//         $validator
+//             ->scalar('slug')
+//             ->maxLength('slug', 255)
+//             ->requirePresence('slug', 'create')
+//             ->notEmptyString('slug')
+//             ->add('slug', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
             ->scalar('body')
             ->allowEmptyString('body');
-
-        $validator
-            ->scalar('image_name')
-            ->maxLength('image_name', 50)
-            ->allowEmptyFile('image_name');
-
-        $validator
-            ->scalar('image_type')
-            ->maxLength('image_type', 10)
-            ->allowEmptyFile('image_type');
-
-        $validator
-            ->scalar('image_size')
-            ->maxLength('image_size', 10)
-            ->allowEmptyFile('image_size');
 
         $validator
             ->boolean('published')
@@ -122,7 +115,7 @@ class ArticlesTable extends Table
      */
     public function buildRules(RulesChecker $rules): RulesChecker
     {
-        $rules->add($rules->isUnique(['slug']), ['errorField' => 'slug']);
+        //$rules->add($rules->isUnique(['slug']), ['errorField' => 'slug']);
         $rules->add($rules->existsIn(['user_id'], 'Users'), ['errorField' => 'user_id']);
 
         return $rules;

@@ -72,12 +72,41 @@ class ArticlesController extends AppController
         $this->Authorization->skipAuthorization();
         
         $article = $this->Articles->find('all', [
-            'contain' => ['Users', 'Tags'],
+            'contain' => [
+                'Users', 
+                'Tags', 
+                'Comments.Users' => function (\Cake\ORM\Query $query) {
+                    return $query->where(['Comments.active' => 1]);
+                }
+            ],
             'conditions' => ['slug' => $slug]
         ])
         ->first();
         
         $this->set(compact('article'));
+    }
+    
+    public function addComment()
+    {
+        $this->viewBuilder()->setLayout(null);
+        $this->loadModel('Comments');
+        $comment = $this->Comments->newEmptyEntity();
+        
+        //$this->Authorization->authorize($article);
+        if (!$this->Authorization->can($comment, 'add')) {
+            $this->Flash->error(__('Restricted access.'));
+            return $this->redirect($this->referer());
+        }
+        
+        if ($this->request->is('post')) {
+            $comment = $this->Comments->patchEntity($comment, $this->request->getData());
+            if ($this->Comments->save($comment)) {
+                $this->Flash->success(__('The comment has been saved.'));
+                
+                return $this->redirect($this->referer());
+            }
+            $this->Flash->error(__('The comment could not be saved. Please, try again.'));
+        }
     }
     
     /**
@@ -120,18 +149,16 @@ class ArticlesController extends AppController
      */
     public function view($id = null)
     {
-        $article = $this->Articles->newEmptyEntity();
-        
+        $article = $this->Articles->get($id, [
+            'contain' => ['Users', 'Tags'],
+        ]);
+
         //$this->Authorization->authorize($article);
         if (!$this->Authorization->can($article, 'view')) {
             $this->Flash->error(__('Restricted access.'));
             return $this->redirect(['controller' => 'Articles', 'action' => 'blog']);
         }
         
-        $article = $this->Articles->get($id, [
-            'contain' => ['Users', 'Tags'],
-        ]);
-
         $this->set(compact('article'));
     }
 
