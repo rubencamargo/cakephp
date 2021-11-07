@@ -11,7 +11,9 @@
             <?= $this->Form->create($user) ?>
             <fieldset>
                 <legend><?= __('Register') ?></legend>
+                
                 <br />
+                
                 <?php
                     echo $this->Form->hidden('role_id', ['options' => $roles, 'value' => 2]);
                     echo $this->Form->control('name', ['placeholder' => __('Name'), 'label' => false, 'autocomplete' => 'off']);
@@ -29,7 +31,7 @@
                 	?>
                 	
                 	<div class="captcha-text">
-                		<?= __("Write the result of") . " (" . $var1 . " + " . $var2 . "):"; ?>
+                		<?= __("Write the result of") . " (" . $var1 . " + " . $var2 . "):"; ?> &nbsp;&nbsp;
                 	</div>
                     
                     <div class="captcha-input">
@@ -37,8 +39,7 @@
                         echo $this->Form->hidden('var1', ['value' => $var1]);
                         echo $this->Form->hidden('var2', ['value' => $var2]);
                         echo $this->Form->hidden('res', ['value' => $var1 + $var2]);
-                        
-                        echo $this->Form->control('captcha_local', ['class' => 'captcha', 'placeholder' => $var1 . " + " . $var2 . " = ", 'label' => false, 'autocomplete' => 'off']);
+                        echo $this->Form->control('captcha_local', ['class' => 'captcha', 'placeholder' => $var1 . " + " . $var2 . " = ", 'label' => false, 'autocomplete' => 'off', 'value' => '']);
                     ?>
                     </div>
                 </div>

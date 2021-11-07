@@ -99,15 +99,15 @@ class UsersTable extends Table
             ->notEmptyString('retype_password');
         
         $validator
-            ->sameAs('retype_password', 'password', 'Password match failed.');
-            
-        $validator
-            ->sameAs('captcha_local', 'res', 'Sum incorrect.');
-            
+        ->sameAs('retype_password', 'password', __('Password match failed.'));
+        
         $validator
             ->integer('captcha_local')
             ->requirePresence('captcha_local', 'create')
             ->maxLength('captcha_local', 2);
+ 
+        $validator
+            ->sameAs('captcha_local', 'res', __('Sum incorrect.'));
             
         return $validator;
     }

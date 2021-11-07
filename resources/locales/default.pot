@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2021-11-01 19:39+0000\n"
+"POT-Creation-Date: 2021-11-07 21:23+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -176,6 +176,14 @@ msgstr ""
 msgid "The user could not be deleted. Please, try again."
 msgstr ""
 
+#: Model/Table/UsersTable.php:102
+msgid "Password match failed."
+msgstr ""
+
+#: Model/Table/UsersTable.php:110
+msgid "Sum incorrect."
+msgstr ""
+
 #: ArticlesTags/add.php:12
 #: ArticlesTags/edit.php:12
 #: ArticlesTags/index.php:19
@@ -227,7 +235,7 @@ msgstr ""
 #: Roles/edit.php:28
 #: Tags/add.php:25
 #: Tags/edit.php:30
-#: Users/add.php:47
+#: Users/add.php:48
 #: Users/edit.php:38
 msgid "Submit"
 msgstr ""
@@ -507,7 +515,7 @@ msgstr ""
 
 #: Articles/home.php:274
 #: Roles/view.php:48
-#: Users/add.php:19
+#: Users/add.php:21
 #: Users/login.php:11
 #: Users/view.php:38
 msgid "Email"
@@ -688,7 +696,7 @@ msgstr ""
 
 #: Roles/view.php:26
 #: Roles/view.php:46
-#: Users/add.php:17
+#: Users/add.php:19
 #: Users/view.php:30
 msgid "Name"
 msgstr ""
@@ -702,13 +710,13 @@ msgid "Role Id"
 msgstr ""
 
 #: Roles/view.php:47
-#: Users/add.php:18
+#: Users/add.php:20
 #: Users/view.php:34
 msgid "Lastname"
 msgstr ""
 
 #: Roles/view.php:49
-#: Users/add.php:20
+#: Users/add.php:22
 #: Users/login.php:12
 #: Users/view.php:42
 msgid "Password"
@@ -757,11 +765,11 @@ msgstr ""
 msgid "Register"
 msgstr ""
 
-#: Users/add.php:21
+#: Users/add.php:23
 msgid "Retype Password"
 msgstr ""
 
-#: Users/add.php:32
+#: Users/add.php:34
 msgid "Write the result of"
 msgstr ""
 

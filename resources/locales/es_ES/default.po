@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2021-11-01 19:39+0000\n"
-"PO-Revision-Date: 2021-11-01 16:40-0300\n"
+"POT-Creation-Date: 2021-11-07 21:23+0000\n"
+"PO-Revision-Date: 2021-11-07 18:30-0300\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "Language: es_ES\n"
@@ -139,11 +139,11 @@ msgstr "Usuario registrado correctamente. Ahora ingrese aquí."
 #: Controller/UsersController.php:199 Controller/UsersController.php:231
 #: Controller/UsersController.php:281
 msgid "The user could not be saved. Please, try again."
-msgstr ""
+msgstr "El usuario no pudo ser guardado. Por favor, inténtelo nuevamente."
 
 #: Controller/UsersController.php:227 Controller/UsersController.php:279
 msgid "The user has been saved."
-msgstr ""
+msgstr "Usuario guardado correctamente."
 
 #: Controller/UsersController.php:257
 msgid "The user has been deleted."
@@ -152,6 +152,14 @@ msgstr ""
 #: Controller/UsersController.php:259
 msgid "The user could not be deleted. Please, try again."
 msgstr ""
+
+#: Model/Table/UsersTable.php:102
+msgid "Password match failed."
+msgstr "Falló la coincidencia de contraseña."
+
+#: Model/Table/UsersTable.php:110
+msgid "Sum incorrect."
+msgstr "Suma incorrecta."
 
 #: ArticlesTags/add.php:12 ArticlesTags/edit.php:12 ArticlesTags/index.php:19
 #: ArticlesTags/view.php:10 Articles/add.php:12 Articles/edit.php:13
@@ -175,7 +183,7 @@ msgstr ""
 #: ArticlesTags/add.php:26 ArticlesTags/edit.php:31 Articles/add.php:32
 #: Articles/detail.php:33 Articles/edit.php:45 Comments/add.php:28
 #: Comments/edit.php:34 Roles/add.php:23 Roles/edit.php:28 Tags/add.php:25
-#: Tags/edit.php:30 Users/add.php:47 Users/edit.php:38
+#: Tags/edit.php:30 Users/add.php:48 Users/edit.php:38
 msgid "Submit"
 msgstr "Enviar"
 
@@ -356,7 +364,7 @@ msgstr "Teléfono"
 msgid "Office"
 msgstr "Oficina"
 
-#: Articles/home.php:274 Roles/view.php:48 Users/add.php:19 Users/login.php:11
+#: Articles/home.php:274 Roles/view.php:48 Users/add.php:21 Users/login.php:11
 #: Users/view.php:38
 msgid "Email"
 msgstr "Correo Electrónico"
@@ -500,7 +508,7 @@ msgstr "Buscar roles por título"
 msgid "Delete Role"
 msgstr "Eliminar Rol"
 
-#: Roles/view.php:26 Roles/view.php:46 Users/add.php:17 Users/view.php:30
+#: Roles/view.php:26 Roles/view.php:46 Users/add.php:19 Users/view.php:30
 msgid "Name"
 msgstr "Nombre"
 
@@ -512,11 +520,11 @@ msgstr ""
 msgid "Role Id"
 msgstr ""
 
-#: Roles/view.php:47 Users/add.php:18 Users/view.php:34
+#: Roles/view.php:47 Users/add.php:20 Users/view.php:34
 msgid "Lastname"
 msgstr "Apellido"
 
-#: Roles/view.php:49 Users/add.php:20 Users/login.php:12 Users/view.php:42
+#: Roles/view.php:49 Users/add.php:22 Users/login.php:12 Users/view.php:42
 msgid "Password"
 msgstr "Contraseña"
 
@@ -556,11 +564,11 @@ msgstr ""
 msgid "Register"
 msgstr "Registro"
 
-#: Users/add.php:21
+#: Users/add.php:23
 msgid "Retype Password"
 msgstr "Reescribir contraseña"
 
-#: Users/add.php:32
+#: Users/add.php:34
 msgid "Write the result of"
 msgstr "Escriba el resultado de"
 

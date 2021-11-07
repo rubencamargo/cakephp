@@ -114,10 +114,20 @@ body {
 .captcha-text {
 	width: 50% !important;
 	float: left;
-	padding-top: 5px;
+	padding-top: 6px;
+	text-align: right;
 }
 
 .captcha-input {
 	width: 50% !important;
 	float: left;
+}
+
+.error-message {
+	background: #fcebea;
+	color: #cc1f1a;
+	border: solid 1px #ef5753;
+	padding: 8px;
+	margin-bottom: 10px;
+	border-radius: .4rem;
 }
