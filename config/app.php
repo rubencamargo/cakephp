@@ -417,5 +417,10 @@ return [
      */
     'Session' => [
         'defaults' => 'database',
+        'ini' => [
+            'session.cookie_samesite' => 'Strict',
+            'session.cookie_path' => '/',
+            'session.cookie_domain' => '.rubencamargo.com.ar'
+        ]
     ],
 ];
