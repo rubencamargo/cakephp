@@ -131,7 +131,7 @@ class ArticlesController extends AppController
         }
         
         $this->paginate = [
-            'contain' => ['Users', 'Tags'],
+            'contain' => ['Users', 'Tags', 'Types'],
             'conditions' => $conditions
         ];
         
@@ -221,7 +221,8 @@ class ArticlesController extends AppController
         ]);
         
         $tags = $this->Articles->Tags->find('list', ['limit' => 200]);
-        $this->set(compact('article', 'users', 'tags'));
+        $types = $this->Articles->Types->find('list', ['limit' => 200]);
+        $this->set(compact('article', 'users', 'tags', 'types'));
     }
 
     /**
@@ -278,7 +279,8 @@ class ArticlesController extends AppController
         
         $users = $this->Articles->Users->find('list', ['limit' => 200]);
         $tags = $this->Articles->Tags->find('list', ['limit' => 200]);
-        $this->set(compact('article', 'users', 'tags'));
+        $types = $this->Articles->Types->find('list', ['limit' => 200]);
+        $this->set(compact('article', 'users', 'tags', 'types'));
     }
 
     /**
