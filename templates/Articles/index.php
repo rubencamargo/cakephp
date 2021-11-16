@@ -19,6 +19,7 @@
                     <th><?= __('Image') ?></th>
                     <th><?= $this->Paginator->sort('user_id') ?></th>
                     <th><?= $this->Paginator->sort('title') ?></th>
+                    <th><?= $this->Paginator->sort('type') ?></th>
                     <!-- <th><?= $this->Paginator->sort('slug') ?></th> -->
                     <th>Tags</th>
                     <th><?= $this->Paginator->sort('published') ?></th>
@@ -42,6 +43,7 @@
                     </td>
                     <td><?= $article->has('user') ? $article->user->name . ' ' . $article->user->lastname : '' ?></td>
                     <td><?= h($article->title) ?></td>
+                    <td><?= h($article->type->name) ?></td>
                     <!-- <td><?= h($article->slug) ?></td> -->
                     <td>
                     	<?php
