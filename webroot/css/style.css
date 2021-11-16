@@ -131,3 +131,21 @@ body {
 	margin-bottom: 10px;
 	border-radius: .4rem;
 }
+
+.success {
+	color: #ffffff !important;
+	background: blue;
+	border: solid 1px blue;
+}
+
+.warning {
+	color: #ffffff !important;
+	background: orange;
+	border: solid 1px orange;
+}
+
+.danger {
+	color: #ffffff !important;
+	background: red;
+	border: solid 1px red;
+}
