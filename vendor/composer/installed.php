@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '635c362b4cbc61f8d193d3a1c1bf53cc483ad909',
+        'reference' => '51643703ccef0465cce7f91c81dd52e61feed99a',
         'name' => 'cakephp/app',
         'dev' => true,
     ),
@@ -25,7 +25,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '635c362b4cbc61f8d193d3a1c1bf53cc483ad909',
+            'reference' => '51643703ccef0465cce7f91c81dd52e61feed99a',
             'dev_requirement' => false,
         ),
         'cakephp/authentication' => array(
@@ -245,12 +245,12 @@
             'dev_requirement' => true,
         ),
         'composer/spdx-licenses' => array(
-            'pretty_version' => '1.5.5',
-            'version' => '1.5.5.0',
+            'pretty_version' => '1.5.6',
+            'version' => '1.5.6.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/./spdx-licenses',
             'aliases' => array(),
-            'reference' => 'de30328a7af8680efdc03e396aad24befd513200',
+            'reference' => 'a30d487169d799745ca7280bc90fdfa693536901',
             'dev_requirement' => true,
         ),
         'composer/xdebug-handler' => array(
