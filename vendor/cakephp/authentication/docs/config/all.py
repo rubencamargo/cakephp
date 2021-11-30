@@ -12,7 +12,7 @@ from cakephpsphinx.config.all import *
 # The full version, including alpha/beta/rc tags.
 release = '2.x'
 
-# The search index version.
+# The search index version
 search_version = 'authentication-2'
 
 # The marketing display name for the book.
@@ -28,11 +28,11 @@ version_list = [
 ]
 
 # Languages available.
-languages = ['en', 'ja']
+languages = ['en', 'es', 'fr', 'ja']
 
 # The GitHub branch name for this version of the docs
 # for edit links to point at.
-branch = 'master'
+branch = '2.x'
 
 # Current version being built
 version = '2.x'

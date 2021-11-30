@@ -8,6 +8,8 @@ Project's ROOT directory (where the **composer.json** file is located)
 
     php composer.phar require "cakephp/authentication:^2.0"
 
+Version 2 of the Authentication Plugin is compatible with CakePHP 4.
+
 Load the plugin by adding the following statement in your project's ``src/Application.php``::
 
     public function bootstrap(): void
@@ -34,9 +36,9 @@ imports::
     use Cake\Http\MiddlewareQueue;
     use Cake\Routing\Router;
     use Psr\Http\Message\ServerRequestInterface;
-    
 
-Next, add the ``AuthenticationProviderInterface`` to the implemented interfaces
+
+Next, add ``AuthenticationServiceProviderInterface`` to the implemented interfaces
 on your application::
 
     class Application extends BaseApplication implements AuthenticationServiceProviderInterface
@@ -44,10 +46,28 @@ on your application::
 
 Then add ``AuthenticationMiddleware`` to the middleware queue in your ``middleware()`` function::
 
-    $middlewareQueue->add(new AuthenticationMiddleware($this));
-    
-.. note::
-    Make sure you add ``AuthenticationMiddleware`` before ``AuthorizationMiddleware`` if you have both.
+Then update your application's ``middleware()`` method to look like::
+
+    public function middleware(MiddlewareQueue $middlewareQueue): MiddlewareQueue
+    {
+        $middlewareQueue->add(new ErrorHandlerMiddleware(Configure::read('Error')))
+            // Other middleware that CakePHP provides.
+            ->add(new AssetMiddleware())
+            ->add(new RoutingMiddleware($this))
+            ->add(new BodyParserMiddleware())
+
+            // Add the AuthenticationMiddleware. It should be
+            // after routing and body parser.
+            ->add(new AuthenticationMiddleware($this));
+
+        return $middlewareQueue();
+    }
+
+.. warning::
+    The order of middleware is important. Ensure that you have
+    ``AuthenticationMiddleware`` after the routing and body parser middleware.
+    If you're having trouble logging in with JSON requests or redirects are
+    incorrect double check your middleware order.
 
 ``AuthenticationMiddleware`` will call a hook method on your application when
 it starts handling the request. This hook method allows your application to

@@ -13,6 +13,7 @@ using the Password Identifier looks like::
        ],
        'resolver' => [
            'className' => 'Authentication.Orm',
+           'userModel' => 'Users'
            'finder' => 'active'
        ],
        'passwordHasher' => [
@@ -64,6 +65,8 @@ JWT Subject
 
 Checks the passed JWT token against a datasource.
 
+Configuration options:
+
 -  **tokenField**: The field in the database to check against. Default
    is ``id``.
 -  **dataField**: The payload key to get user identifier from. Default
@@ -76,6 +79,8 @@ LDAP
 
 Checks the passed credentials against a LDAP server. This identifier
 requires the PHP LDAP extension.
+
+Configuration options:
 
 -  **fields**: The fields for the lookup. Default is
    ``['username' => 'username', 'password' => 'password']``.
@@ -158,6 +163,7 @@ Configuration options:
 -  **userModel**: The user model identities are located in. Default is
    ``Users``.
 -  **finder**: The finder to use with the model. Default is ``all``.
+   You can read more about model finders `here <https://book.cakephp.org/4/en/orm/retrieving-data-and-resultsets.html#custom-finder-methods>`__.
 
 In order to use ORM resolver you must require ``cakephp/orm`` in your
 ``composer.json`` file (if you are not already using the full CakePHP framework).
