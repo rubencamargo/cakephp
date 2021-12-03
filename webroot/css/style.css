@@ -37,12 +37,17 @@ input[type="email"], input[type="number"], input[type="password"], input[type="s
 	background-repeat: no-repeat;
 	background-size: cover;
 	margin-bottom: 30px;
+	padding-top: 150px;
 }
 
 .text-parallax {
 	text-align: center;
 	color: #ffffff;
-	padding-top: 150px;
+	margin: 0 auto;
+	width: 400px;
+	border: 1px solid #cccccc;
+	border-radius: 20px;
+	background-color: rgba(204, 204, 204, 0.5);
 }
 
 .subtext-parallax {
