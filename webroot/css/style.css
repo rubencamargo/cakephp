@@ -50,6 +50,11 @@ input[type="email"], input[type="number"], input[type="password"], input[type="s
 	background-color: rgba(204, 204, 204, 0.5);
 }
 
+.text-parallax:hover {
+	background-color: rgba(104, 104, 104, 0.5);
+	cursor: default;
+}
+
 .subtext-parallax {
 	text-align: center;
 	color: #ffffff;
