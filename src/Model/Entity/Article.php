@@ -37,6 +37,7 @@ class Article extends Entity
      */
     protected $_accessible = [
         'user_id' => true,
+        'type_id' => true,
         'title' => true,
         'slug' => true,
         'body' => true,
@@ -48,7 +49,6 @@ class Article extends Entity
         'modified' => true,
         'user' => true,
         'comments' => true,
-        'tags' => true,
-        'type' => true
+        'tags' => true
     ];
 }

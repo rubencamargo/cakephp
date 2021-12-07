@@ -48,6 +48,8 @@ class ArticlesTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+        
+        $this->addBehavior('Sluggable');
 
         $this->belongsTo('Users', [
             'foreignKey' => 'user_id',
@@ -64,14 +66,6 @@ class ArticlesTable extends Table
             'targetForeignKey' => 'tag_id',
             'joinTable' => 'articles_tags',
         ]);
-    }
-
-    public function beforeSave(EventInterface $event, $entity, $options)
-    {
-        if ($entity->isNew() && !$entity->slug) {
-            $sluggedTitle = Text::slug($entity->title);
-            $entity->slug = substr($sluggedTitle, 0, 200);
-        }
     }
     
     /**
@@ -135,7 +129,8 @@ class ArticlesTable extends Table
     {
         $rules->add($rules->isUnique(['slug']), ['errorField' => 'slug']);
         $rules->add($rules->existsIn(['user_id'], 'Users'), ['errorField' => 'user_id']);
-
+        $rules->add($rules->existsIn(['type_id'], 'Types'), ['errorField' => 'type_id']);
+        
         return $rules;
     }
 }
