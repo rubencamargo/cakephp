@@ -48,6 +48,8 @@ $i = 1;
     <?php endforeach; ?>
 </div>
 
+
+<?php if ($portfolios->count()) { ?>
 <br />
 
 <div class="articles index content">
@@ -57,103 +59,40 @@ $i = 1;
 <br />
 
 <div class="row">
+	<?php
+	$columns = 3;
+	$i = 1;
+	?>
+	
+    <?php foreach ($portfolios as $portfolio) { ?>
     <div class="column-responsive column-4 portfolio">
     	<div class="articles view content">
             <div>
             	<?php
-            	echo $this->Html->image('portfolio/1.jpg', ['alt' => 'Image']);
+            	if (($portfolio->image_name) && (is_file(WWW_ROOT . 'img/articles/' . $portfolio->image_name))) {
+            	    echo $this->Html->image('articles/' . $portfolio->image_name, ['alt' => $portfolio->image_name]);
+            	} else {
+            	    echo $this->Html->image('no-image-available.jpeg', ['alt' => $portfolio->image_name]);
+            	}
             	?>
             </div>
             <h3>
-            	AITA
+            	<?= h($portfolio->title) ?>
             </h3>
             <p>
-            	Enero 2021
+            	<?= $portfolio->body ?>
             </p>
         </div>
     </div>
-    <div class="column-responsive column-4 portfolio">
-    	<div class="articles view content">
-            <div>
-            	<?php
-            	echo $this->Html->image('portfolio/2.jpg', ['alt' => 'Image']);
-            	?>
-            </div>
-            <h3>
-            	Aquotech
-            </h3>
-            <p>
-            	Febrero 2021
-            </p>
-        </div>
-    </div>
-    <div class="column-responsive column-4 portfolio">
-    	<div class="articles view content">
-            <div>
-            	<?php
-            	echo $this->Html->image('portfolio/3.jpg', ['alt' => 'Image']);
-            	?>
-            </div>
-            <h3>
-            	Cyber Oprac
-            </h3>
-            <p>
-            	Marzo 2021
-            </p>
-        </div>
-    </div>
+    
+    <?php if ($i % $columns == 0) {echo "</div><br /><div class='row'>";} ?>
+    
+    <?php $i++; ?>
+    <?php } ?>
 </div>
+<?php } ?>
 
-<br />
-
-<div class="row">
-    <div class="column-responsive column-4 portfolio">
-    	<div class="articles view content">
-            <div>
-            	<?php
-            	echo $this->Html->image('portfolio/4.jpg', ['alt' => 'Image']);
-            	?>
-            </div>
-            <h3>
-            	Infinity Air
-            </h3>
-            <p>
-            	Enero 2021
-            </p>
-        </div>
-    </div>
-    <div class="column-responsive column-4 portfolio">
-    	<div class="articles view content">
-            <div>
-            	<?php
-            	echo $this->Html->image('portfolio/5.jpg', ['alt' => 'Image']);
-            	?>
-            </div>
-            <h3>
-            	Negocios Líquidos
-            </h3>
-            <p>
-            	Febrero 2021
-            </p>
-        </div>
-    </div>
-    <div class="column-responsive column-4 portfolio">
-    	<div class="articles view content">
-            <div>
-            	<?php
-            	echo $this->Html->image('portfolio/6.jpg', ['alt' => 'Image']);
-            	?>
-            </div>
-            <h3>
-            	Serenata Guayanesa
-            </h3>
-            <p>
-            	Marzo 2021
-            </p>
-        </div>
-    </div>
-</div>
-
+<?php if ($technologies->count()) { ?>
 <br />
 
 <div class="articles index content">
@@ -163,79 +102,35 @@ $i = 1;
 <br />
 
 <div class="row">
-    <div class="column-responsive column-2 technologies">
+    <?php
+	$columns = 6;
+	$i = 1;
+	?>
+	
+	<?php foreach ($technologies as $technology) { ?>
+	<div class="column-responsive column-2 technologies">
     	<div class="articles view content">
             <div>
             	<?php
-            	   echo $this->Html->image('techs/html5.jpg', ['alt' => 'HTML']);
+            	if (($technology->image_name) && (is_file(WWW_ROOT . 'img/articles/' . $technology->image_name))) {
+            	    echo $this->Html->image('articles/' . $technology->image_name, ['alt' => $technology->image_name]);
+            	} else {
+            	    echo $this->Html->image('no-image-available.jpeg', ['alt' => $technology->image_name]);
+            	}
             	?>
             </div>
             <h3>
-            	HTML
+            	<?php echo $technology->title ?>
             </h3>
         </div>
     </div>
-    <div class="column-responsive column-2 technologies">
-    	<div class="articles view content">
-            <div>
-            	<?php
-            	   echo $this->Html->image('techs/css3.jpg', ['alt' => 'CSS']);
-            	?>
-            </div>
-            <h3>
-            	CSS
-            </h3>
-        </div>
-    </div>
-    <div class="column-responsive column-2 technologies">
-    	<div class="articles view content">
-            <div>
-            	<?php
-            	   echo $this->Html->image('techs/jquery.jpg', ['alt' => 'JQuery']);
-            	?>
-            </div>
-            <h3>
-            	JQuery
-            </h3>
-        </div>
-    </div>
-    <div class="column-responsive column-2 technologies">
-    	<div class="articles view content">
-            <div>
-            	<?php
-            	   echo $this->Html->image('techs/bootstrap.jpg', ['alt' => 'Bootstrap']);
-            	?>
-            </div>
-            <h3>
-            	Bootstrap
-            </h3>
-        </div>
-    </div>
-    <div class="column-responsive column-2 technologies">
-    	<div class="articles view content">
-            <div>
-            	<?php
-            	   echo $this->Html->image('techs/cakephp.jpg', ['alt' => 'CakePHP']);
-            	?>
-            </div>
-            <h3>
-            	CakePHP
-            </h3>
-        </div>
-    </div>
-    <div class="column-responsive column-2 technologies">
-    	<div class="articles view content">
-            <div>
-            	<?php
-            	   echo $this->Html->image('techs/wordpress.jpg', ['alt' => 'Wordpress']);
-            	?>
-            </div>
-            <h3>
-            	Wordpress
-            </h3>
-        </div>
-    </div>
+    
+    <?php if ($i % $columns == 0) {echo "</div><br /><div class='row'>";} ?>
+    
+    <?php $i++; ?>
+    <?php } ?>
 </div>
+<?php } ?>
 
 <br />
 

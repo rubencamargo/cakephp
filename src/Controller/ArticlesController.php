@@ -38,19 +38,33 @@ class ArticlesController extends AppController
         */
         
         $articles = $this->Articles->find('all')
-                    ->contain(['Users', 'Tags'])
-                    ->where(['Published' => 1])
-                    ->order(['Articles.id' => 'DESC'])
-                    ->limit(3);
+        ->contain(['Users', 'Tags'])
+        ->where(['Published' => 1, 'type_id' => 1])
+        ->order(['Articles.id' => 'DESC'])
+        ->limit(3);
+
+        $portfolios = $this->Articles->find('all')
+        ->contain(['Users', 'Tags'])
+        ->where(['Published' => 1, 'type_id' => 2])
+        //->order(['Articles.id' => 'DESC'])
+        ->limit(6);
+        
+        $technologies = $this->Articles->find('all')
+        ->contain(['Users', 'Tags'])
+        ->where(['Published' => 1, 'type_id' => 3])
+        //->order(['Articles.id' => 'DESC'])
+        ->limit(6);
         
         $this->set(compact('articles'));
+        $this->set(compact('portfolios'));
+        $this->set(compact('technologies'));
     }
     
     public function blog()
     {
         $this->Authorization->skipAuthorization();
         
-        $conditions = ['Published' => 1];
+        $conditions = ['Published' => 1, 'type_id' => 1];
         if ($this->request->getQuery('search') != '') {
             $search = $this->request->getQuery('search');
             $conditions = ['Articles.title like ' => '%' . $search . '%'];
@@ -132,7 +146,8 @@ class ArticlesController extends AppController
         
         $this->paginate = [
             'contain' => ['Users', 'Tags', 'Types'],
-            'conditions' => $conditions
+            'conditions' => $conditions,
+            'order' => ['Articles.id' => 'DESC']
         ];
         
         $articles = $this->paginate($this->Articles);
@@ -150,7 +165,7 @@ class ArticlesController extends AppController
     public function view($id = null)
     {
         $article = $this->Articles->get($id, [
-            'contain' => ['Users', 'Tags'],
+            'contain' => ['Users', 'Tags', 'Types'],
         ]);
 
         //$this->Authorization->authorize($article);
@@ -193,7 +208,7 @@ class ArticlesController extends AppController
                 // Save and upload image
                 $image = $this->request->getData('image');
                 
-                $article->image_name = $article->id . '-' . $image->getClientFilename();
+                $article->image_name = time() . '-' . $image->getClientFilename();
                 $article->image_type = $image->getClientMediaType();
                 $article->image_size = $image->getSize();
                 
@@ -301,7 +316,13 @@ class ArticlesController extends AppController
             return $this->redirect(['controller' => 'Articles', 'action' => 'blog']);
         }
         
+        $targetPath = WWW_ROOT . 'img' . DS . 'articles' . DS . $article->image_name;
+        
         if ($this->Articles->delete($article)) {
+            if (file_exists($targetPath)) {
+                unlink($targetPath);
+            }
+            
             $this->Flash->success(__('The article has been deleted.'));
         } else {
             $this->Flash->error(__('The article could not be deleted. Please, try again.'));

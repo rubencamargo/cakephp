@@ -20,12 +20,28 @@
             <h3><?= h($article->title) ?></h3>
             <table>
                 <tr>
+                    <th><?= __('Image') ?></th>
+                    <td>
+                    	<?php
+                    	if (($article->image_name) && (is_file(WWW_ROOT . 'img/articles/' . $article->image_name))) {
+                    	    echo $this->Html->image('articles/' . $article->image_name, ['width' => '200']);
+                    	} else {
+                    	    echo $this->Html->image('no-image-available.jpeg', ['width' => '200']);
+                    	}
+                    	?>
+                    </td>
+                </tr>
+                <tr>
                     <th><?= __('Id') ?></th>
                     <td><?= $this->Number->format($article->id) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('User') ?></th>
                     <td><?= $article->has('user') ? $article->user->name . ' ' . $article->user->lastname : '' ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Type') ?></th>
+                    <td><?= $article->has('type') ? $article->type->name : '' ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Title') ?></th>
