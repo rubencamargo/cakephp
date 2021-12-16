@@ -129,6 +129,7 @@ class ComposerStaticInitb3713d51b647b0ae6bd6d5905f276cf5
             'Composer\\XdebugHandler\\' => 23,
             'Composer\\Spdx\\' => 14,
             'Composer\\Semver\\' => 16,
+            'Composer\\Pcre\\' => 14,
             'Composer\\MetadataMinifier\\' => 26,
             'Composer\\CaBundle\\' => 18,
             'Composer\\' => 9,
@@ -357,6 +358,10 @@ class ComposerStaticInitb3713d51b647b0ae6bd6d5905f276cf5
         'Composer\\Semver\\' => 
         array (
             0 => __DIR__ . '/..' . '/composer/semver/src',
+        ),
+        'Composer\\Pcre\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/composer/pcre/src',
         ),
         'Composer\\MetadataMinifier\\' => 
         array (
