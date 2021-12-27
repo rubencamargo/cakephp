@@ -1,4 +1,4 @@
 @ECHO OFF
 setlocal DISABLEDELAYEDEXPANSION
-SET BIN_TARGET=%~dp0/../composer/composer/bin/composer
+SET BIN_TARGET=%~dp0/composer
 php "%BIN_TARGET%" %*
