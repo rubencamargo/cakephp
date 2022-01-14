@@ -384,6 +384,7 @@ class Installer
      * @param bool $doInstall
      *
      * @return int
+     * @phpstan-return self::ERROR_*
      */
     protected function doUpdate(InstalledRepositoryInterface $localRepo, $doInstall)
     {
@@ -633,7 +634,7 @@ class Installer
             $ghe = new GithubActionError($this->io);
             $ghe->emit($err."\n".$prettyProblem);
 
-            return max(self::ERROR_GENERIC_FAILURE, $e->getCode());
+            return $e->getCode();
         }
 
         $lockTransaction->setNonDevPackages($nonDevLockTransaction);
@@ -645,6 +646,7 @@ class Installer
      * @param  InstalledRepositoryInterface $localRepo
      * @param  bool                         $alreadySolved Whether the function is called as part of an update command or independently
      * @return int                          exit code
+     * @phpstan-return self::ERROR_*
      */
     protected function doInstall(InstalledRepositoryInterface $localRepo, $alreadySolved = false)
     {

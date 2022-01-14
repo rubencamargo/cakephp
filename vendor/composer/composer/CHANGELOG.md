@@ -1,3 +1,26 @@
+### [2.2.4] 2022-01-08
+
+  * Fixed handling of process timeout when running async processes during installation
+  * Fixed GitLab API handling when projects have a repository disabled (#10440)
+  * Fixed reading of environment variables (e.g. APPDATA) containing unicode characters to workaround a PHP bug on Windows (#10434)
+  * Fixed partial update issues with path repos missing if a path repo is required by a path repo (#10431)
+  * Fixed support for sourcing binaries via the new bin proxies ([#10389](https://github.com/composer/composer/issues/10389#issuecomment-1007372740))
+  * Fixed messaging when GitHub tokens need SSO authorization (#10432)
+
+### [2.2.3] 2021-12-31
+
+  * Fixed issue with PHPUnit and process isolation now including PHPUnit <6.5 (#10387)
+  * Fixed interoperability issue with laminas/laminas-zendframework-bridge and Composer 2.2 (#10401)
+  * Fixed binary proxies for shell scripts to work correctly when they are symlinked (jakzal/phpqa#336)
+  * Fixed overly greedy pool optimization in cases where a locked package is not required by anything anymore in a partial update (#10405)
+
+### [2.2.2] 2021-12-29
+
+  * Added [`COMPOSER_BIN_DIR` env var and `_composer_bin_dir` global](https://getcomposer.org/doc/articles/vendor-binaries.md#finding-the-composer-bin-dir-from-a-binary) containing the path to the bin-dir for binaries. Packages relying on finding the bin dir with `$BASH_SOURCES[0]` will need to update their binaries (#10402)
+  * Fixed issue when new binary proxies are combined with PHPUnit and process isolation (#10387)
+  * Fixed deprecation warnings when using Symfony 5.4+ and requiring composer/composer itself (#10404)
+  * Fixed UX of plugin warnings (#10381)
+
 ### [2.2.1] 2021-12-22
 
   * Fixed plugin autoloading including files autoload rules from the root package (#10382)
@@ -1344,6 +1367,9 @@
 
   * Initial release
 
+[2.2.4]: https://github.com/composer/composer/compare/2.2.3...2.2.4
+[2.2.3]: https://github.com/composer/composer/compare/2.2.2...2.2.3
+[2.2.2]: https://github.com/composer/composer/compare/2.2.1...2.2.2
 [2.2.1]: https://github.com/composer/composer/compare/2.2.0...2.2.1
 [2.2.0]: https://github.com/composer/composer/compare/2.2.0-RC1...2.2.0
 [2.2.0-RC1]: https://github.com/composer/composer/compare/2.1.14...2.2.0-RC1
