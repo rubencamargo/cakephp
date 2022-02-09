@@ -45,6 +45,9 @@ use Cake\Routing\RouteBuilder;
 $routes->setRouteClass(DashedRoute::class);
 
 $routes->scope('/', function (RouteBuilder $builder) {
+    $builder->setExtensions(['json', 'xml']);
+    $builder->resources('Apis');
+    
     /*
      * Here, we are connecting '/' (base path) to a controller called 'Pages',
      * its action called 'display', and we pass a param to select the view file
@@ -106,3 +109,15 @@ $routes->scope('/', function (RouteBuilder $builder) {
  * });
  * ```
  */
+
+/*
+$routes->scope('/api', function (RouteBuilder $builder) {
+    // No $builder->applyMiddleware() here.
+    
+    // Parse specified extensions from URLs
+    $builder->setExtensions(['json', 'xml']);
+    
+    // Connect API actions here.
+    $builder->resources('Articles');
+});
+*/
