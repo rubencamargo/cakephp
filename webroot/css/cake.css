@@ -94,6 +94,10 @@ th {
 .top-nav-links a {
     font-weight: bold;
 }
+.top-nav-links a:hover {
+    color: #d33c43 !important;
+    border-bottom: solid 1px #d33c43;
+}
 
 .side-nav-item {
     display: block;
