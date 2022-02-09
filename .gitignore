@@ -4,6 +4,11 @@
 /config/.env
 /logs/*
 /tmp/*
+/tests/*
+/webroot/img/articles/*
+/webroot/img/portfolio/*
+/webroot/img/techs/*
+/webroot/img/users/*
 #/vendor/*
 
 # OS generated files #
