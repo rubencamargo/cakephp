@@ -69,6 +69,13 @@
                 </tbody>
             </table>
         </div>
+        <?php } else { ?>
+        
+        <br />
+        
+        <div class="message warning">
+        	<?php echo __('Login for comment.') ?>
+        </div>
         <?php } ?>
 	</div>
     

@@ -17,7 +17,7 @@ return [
      * Development Mode:
      * true: Errors and warnings shown.
      */
-    'debug' => filter_var(env('DEBUG', false), FILTER_VALIDATE_BOOLEAN),
+    'debug' => filter_var(env('DEBUG', true), FILTER_VALIDATE_BOOLEAN),
 
     /*
      * Configure basic information about the application.
@@ -417,10 +417,10 @@ return [
      */
     'Session' => [
         'defaults' => 'database',
-        'ini' => [
-            'session.cookie_samesite' => 'Strict',
-            'session.cookie_path' => '/',
-            'session.cookie_domain' => '.rubencamargo.com.ar'
-        ]
+//         'ini' => [
+//             'session.cookie_samesite' => 'Strict',
+//             'session.cookie_path' => '/',
+//             'session.cookie_domain' => '.rubencamargo.com.ar'
+//         ]
     ],
 ];
