@@ -9,7 +9,7 @@
 /webroot/img/portfolio/*
 /webroot/img/techs/*
 /webroot/img/users/*
-#/vendor/*
+/vendor/*
 
 # OS generated files #
 ######################
